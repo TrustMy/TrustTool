@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/TrustAlgorithm/TrustAlgorithm.iml" filepath="$PROJECT_DIR$/TrustAlgorithm/TrustAlgorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrustBasis/TrustBasis.iml" filepath="$PROJECT_DIR$/TrustBasis/TrustBasis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrustTBSlibrary/TrustTBSlibrary.iml" filepath="$PROJECT_DIR$/TrustTBSlibrary/TrustTBSlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrustTool.iml" filepath="$PROJECT_DIR$/TrustTool.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/trustlibrary/trustlibrary.iml" filepath="$PROJECT_DIR$/trustlibrary/trustlibrary.iml" />
     </modules>
   </component>
 </project>

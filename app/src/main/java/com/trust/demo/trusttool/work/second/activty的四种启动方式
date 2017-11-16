@@ -1,0 +1,26 @@
+standar,singleTop,singleTask,singleInstance
+1:standar ---- 默认模式
+    每次启动activity的时候,都会重新创建一个新的实例.不轮有没有重复的实例.哪个activity启动了activity这个activity就会启动目标activity添加到任务栈中.
+    生命周期一次调用.
+    使用时不需要特殊声明,系统默认
+2:singleTop ----- 栈顶复用模式
+    启动activity的时候,如果目标activity没有实例化过,就会创建一个实例,若栈顶有实例化这个activity不会被创建.
+    实例化的时候生命周期正常调用,singleTop,若已经实例化则不会调用onCreta(),onStart()方法,只会调用onNewIntent()
+    方法.
+    使用:
+        在AndroidManifest.xml 中 activtiy标签下 添加 android:launchMode="singleTop"
+        <activity android:name=".singletop.SingleTopActivity" android:launchMode="singleTop">
+3:singleTask -----栈内复用模式
+    singleTask启动activity的时候,首先会根据taskAffinity去寻找当前是否存在一个对应的名字的任务站
+    如果不存在:创建一个新的Task 并创建新的activity实例入栈到新创建的Task中去
+    存在:得到任务栈,查找任务栈中是否存在该acitivty实例;
+            存在:将该activity上面的activity实例都出栈,然后回调启动activity实例的onNewIntent方法
+            不存在:新建,入栈
+    使用:
+        <activity android:name=".ActivitySingleTask" android:launchMode="singleTask" android:taskAffinity="com.castiel.demo.singletask"/>
+
+4:singleInstance -----全局唯一模式
+    该模式具备singleTask所有的特性,区别是,这种模式下的activty会单独占用一个Task栈,具有全局唯一性.(个人感觉和静态变量一样)
+    整个项目中就这一个实例,除非这个特殊的任务栈被销毁了,否则不会创建新的实例.在整个系统中是单例的.
+    使用:
+        <activity android:name=".singleinstance.SingleInstanceActivity" android:launchMode="singleInstance" >

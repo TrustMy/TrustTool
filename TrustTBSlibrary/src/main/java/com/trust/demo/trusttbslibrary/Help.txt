@@ -1,0 +1,15 @@
+使用方法
+1:xml 创建布局
+    <com.trust.demo.trusttool.tbs.TBSView
+           android:id="@+id/tbs_view"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"></com.trust.demo.trusttool.tbs.TBSView>
+    在activity中绑定
+    tbsView = (TBSView)findViewById(R.id.tbs_view);
+    tbsView.show();
+2:传入文档路径
+    如:  File file = new File("/storage/emulated/0/test.txt");
+              tbsView.displayFile(file);
+    然后就ok了
+
+生成Release arr  Terminal   输入命令  gradlew assembleRelease

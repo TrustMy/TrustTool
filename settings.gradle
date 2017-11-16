@@ -1,1 +1,1 @@
-include ':app', ':trustlibrary'
+include ':app', ':TrustBasis', ':TrustAlgorithm', ':TrustTBSlibrary'
