@@ -349,7 +349,7 @@ public class TrustTools<T extends View> implements Serializable {
 
     private Bitmap displayImage(String imagePath) {
         if (imagePath == null) {
-            L.e("找不到这个文件!");
+            TrustLogTool.e("找不到这个文件!");
             return null;
         }else{
 
@@ -477,7 +477,7 @@ public class TrustTools<T extends View> implements Serializable {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         // 把压缩后的数据存放到baos中
         result.compress(Bitmap.CompressFormat.JPEG, 100 ,baos);
-        L.d("bitmap:"+(bitmap.getByteCount() / 1024 )+"KB"
+        TrustLogTool.d("bitmap:"+(bitmap.getByteCount() / 1024 )+"KB"
                 +"|bitmap2 大小:"+(result.getByteCount() / 1024 )+"KB");
         return result;
     }
@@ -515,10 +515,10 @@ public class TrustTools<T extends View> implements Serializable {
             } catch (IOException e) {
 
                 e.printStackTrace();
-                L.e("读取img 错误:"+e.toString());
+                TrustLogTool.e("读取img 错误:"+e.toString());
 
             }
-            L.d("rotate :"+rotate);
+            TrustLogTool.d("rotate :"+rotate);
             // 1:compress bitmap
             try {
                 BitmapFactory.Options o = new BitmapFactory.Options();
@@ -614,7 +614,7 @@ public class TrustTools<T extends View> implements Serializable {
             InputStream inputStream= new FileInputStream(new File(path));
             return getBitmap(path);
         }catch(FileNotFoundException e){
-            L.d("找不到文件使用url查找:");
+            TrustLogTool.d("找不到文件使用url查找:");
             e.printStackTrace();
                 return getBitmap();
 //            return null;
@@ -649,7 +649,7 @@ public class TrustTools<T extends View> implements Serializable {
                     break;
             }
         }catch (FileNotFoundException e){
-            L.e("没有找到文件");
+            TrustLogTool.e("没有找到文件");
             e.printStackTrace();
         }
         catch (IOException e) {
@@ -689,7 +689,7 @@ public class TrustTools<T extends View> implements Serializable {
                 quality = 90;
             }
         } catch (FileNotFoundException e) {
-            L.e("FileNotFoundException:"+e.toString());
+            TrustLogTool.e("FileNotFoundException:"+e.toString());
             System.gc();
         } catch(OutOfMemoryError e){
             System.gc();
@@ -776,7 +776,7 @@ public class TrustTools<T extends View> implements Serializable {
                     break;
             }
         }catch (FileNotFoundException e){
-            L.e("ExifInterface 没有找到文件");
+            TrustLogTool.e("ExifInterface 没有找到文件");
             System.gc();
         }
         catch (IOException e) {

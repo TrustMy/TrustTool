@@ -18,7 +18,7 @@ import java.util.Locale;
 /**
  * Created by Trust on 2017/5/10.
  */
-public class L {
+public class TrustLogTool {
 
     public static String customTagPrefix = "lhh";  // 自定义Tag的前缀，可以是作者名
     public static boolean isSaveLog = false;    // 是否把保存日志到SD卡中
@@ -26,7 +26,7 @@ public class L {
 
     private static DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.SIMPLIFIED_CHINESE);
 
-    private L() {
+    private TrustLogTool() {
     }
 
     public static void setCustomTagPrefix(String TAG){

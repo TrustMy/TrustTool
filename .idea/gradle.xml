@@ -12,6 +12,8 @@
             <option value="$PROJECT_DIR$/TrustBasis" />
             <option value="$PROJECT_DIR$/TrustTBSlibrary" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/test" />
+            <option value="$PROJECT_DIR$/trustbluetooth" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
