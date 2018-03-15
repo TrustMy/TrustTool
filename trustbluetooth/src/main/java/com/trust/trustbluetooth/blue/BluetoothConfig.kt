@@ -1,4 +1,4 @@
-package com.trust.trustbluetooth
+package com.trust.trustbluetooth.blue
 
 import java.util.*
 

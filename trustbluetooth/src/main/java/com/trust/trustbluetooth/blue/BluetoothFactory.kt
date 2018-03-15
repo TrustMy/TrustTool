@@ -1,4 +1,4 @@
-package com.trust.trustbluetooth
+package com.trust.trustbluetooth.blue
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
@@ -11,11 +11,11 @@ import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.trust.trustbluetooth.BluetoothConfig.Companion.BLUE_SOCKET_NAME
-import com.trust.trustbluetooth.BluetoothConfig.Companion.BLUE_UUID
-import com.trust.trustbluetooth.BluetoothConfig.Companion.COM_UUID
-import com.trust.trustbluetooth.BluetoothConfig.Companion.DEVICE_BLUETOOH
-import com.trust.trustbluetooth.BluetoothConfig.Companion.PHONE_BLUETOOH
+import com.trust.trustbluetooth.blue.BluetoothConfig.Companion.BLUE_SOCKET_NAME
+import com.trust.trustbluetooth.blue.BluetoothConfig.Companion.BLUE_UUID
+import com.trust.trustbluetooth.blue.BluetoothConfig.Companion.COM_UUID
+import com.trust.trustbluetooth.blue.BluetoothConfig.Companion.DEVICE_BLUETOOH
+import com.trust.trustbluetooth.blue.BluetoothConfig.Companion.PHONE_BLUETOOH
 
 
 import java.io.IOException
@@ -24,7 +24,7 @@ import java.util.*
 /**
  * Created by Trust on 2018/3/1.
  */
- class  BluetoothFactory (context:Context ,onBluetoothFactoryCallBack :OnBluetoothFactoryCallBack){
+ class  BluetoothFactory (context:Context ,onBluetoothFactoryCallBack : OnBluetoothFactoryCallBack){
     private var NAME = "BluetoothFactory"
     private var mBluetoothAdapter : BluetoothAdapter? = null
     private var mAcceptThread : AcceptThread? = null
@@ -35,7 +35,7 @@ import java.util.*
     private var mIsChart :Boolean =true //默认手机蓝牙
     // 广播接收器，主要是接收蓝牙状态改变时发出的广播
     private var mReceiver: BroadcastReceiver? = null
-    private var mOnBluetoothFactoryCallBack :OnBluetoothFactoryCallBack? = null
+    private var mOnBluetoothFactoryCallBack : OnBluetoothFactoryCallBack? = null
 
     interface OnBluetoothFactoryCallBack{
         //成功搜索到蓝牙
@@ -64,14 +64,14 @@ import java.util.*
             mOnBluetoothFactoryCallBack!!.onStandByBlue(false)
         }else{
             mOnBluetoothFactoryCallBack!!.onStandByBlue(true)
-            mAcceptThread = AcceptThread(mBluetoothAdapter!!, object : AcceptThread.onBluetoothAcceptCallBack{
+            mAcceptThread = AcceptThread(mBluetoothAdapter!!, object : AcceptThread.onBluetoothAcceptCallBack {
                 override fun acceptCallBack(bluetoothName: String?) {
                     if (bluetoothName != null) {
                         mBlueSockt = mAcceptThread!!.getBlueSockt()
-                        mConnectedThread = ConnectedThread(mBlueSockt!!,connectedThread)
+                        mConnectedThread = ConnectedThread(mBlueSockt!!, connectedThread)
                         mConnectedThread!!.start()
                         mOnBluetoothFactoryCallBack!!.onConnectStatus(true)
-                    }else{
+                    } else {
                         mOnBluetoothFactoryCallBack!!.onConnectStatus(false)
                     }
                 }
@@ -152,7 +152,7 @@ import java.util.*
         }
     }
 
-    private var connectedThread = object : ConnectedThread.onConnectedThread{
+    private var connectedThread = object : ConnectedThread.onConnectedThread {
         override fun connectedThreadCallBack(bundle: Bundle) {
             var chatStr = bundle.getString("str")
             mOnBluetoothFactoryCallBack!!.onReceiveData(chatStr)
@@ -160,13 +160,13 @@ import java.util.*
 
     }
 
-    private var connectThread = object : ConnectThread.onConnectThread{
+    private var connectThread = object : ConnectThread.onConnectThread {
         override fun connectThread(isConnect : Boolean) {
             Log.d(NAME,"链接状态:"+isConnect)
             mOnBluetoothFactoryCallBack!!.onConnectStatus(isConnect)
             if (isConnect) {
                 mBlueSockt = mConnectThread!!.getSocket()
-                mConnectedThread = ConnectedThread(mBlueSockt!!,connectedThread)
+                mConnectedThread = ConnectedThread(mBlueSockt!!, connectedThread)
                 mConnectedThread!!.start()
             }
         }
@@ -185,7 +185,7 @@ import java.util.*
     @SuppressLint("MissingPermission")
     fun connect(device: BluetoothDevice){
         mBluetoothAdapter!!.cancelDiscovery()
-        mConnectThread = ConnectThread(device,mIsChart ,connectThread)
+        mConnectThread = ConnectThread(device, mIsChart, connectThread)
         mConnectThread!!.start()
     }
 

@@ -1,14 +1,13 @@
-package com.trust.trustbluetooth
+package com.trust.trustbluetooth.blue
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothServerSocket
 import android.bluetooth.BluetoothSocket
 import android.util.Log
-import com.trust.trustbluetooth.BluetoothConfig.Companion.BLUE_SOCKET_NAME
-import com.trust.trustbluetooth.BluetoothConfig.Companion.BLUE_UUID
+import com.trust.trustbluetooth.blue.BluetoothConfig.Companion.BLUE_SOCKET_NAME
+import com.trust.trustbluetooth.blue.BluetoothConfig.Companion.BLUE_UUID
 import java.io.IOException
-import java.util.*
 
 /**
  * Created by Trust on 2018/2/27.

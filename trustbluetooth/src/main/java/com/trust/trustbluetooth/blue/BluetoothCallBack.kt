@@ -1,4 +1,4 @@
-package com.trust.trustbluetooth
+package com.trust.trustbluetooth.blue
 
 /**
  * Created by Trust on 2018/3/1.
