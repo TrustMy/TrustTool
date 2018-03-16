@@ -16,7 +16,8 @@
         <activity android:name=".ble.peripheral.PeripheralActivity" />
         <activity android:name=".ble.central.CentralActivity" />
         <activity android:name=".BlueActivity" />
-        <activity android:name=".ble.BleActivity"></activity>
+        <activity android:name=".ble.BleActivity" />
+        <activity android:name=".blue.TraditionActivity"></activity>
     </application>
 
 </manifest>

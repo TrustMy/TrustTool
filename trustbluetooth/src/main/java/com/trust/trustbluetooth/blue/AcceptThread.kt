@@ -34,6 +34,7 @@ class AcceptThread(adapter : BluetoothAdapter ,acceptCallBack: onBluetoothAccept
             Log.d(NAME,"开始等待蓝牙连接...")
             mBluetoothSocket = mBluetoothServerSocket!!.accept()
             Log.d(NAME,"远程蓝牙连接成功!!")
+
         }catch (e : IOException){
             e.printStackTrace()
             mBluetoothSocket = null
@@ -49,4 +50,10 @@ class AcceptThread(adapter : BluetoothAdapter ,acceptCallBack: onBluetoothAccept
     fun getBlueSockt() : BluetoothSocket{
         return  mBluetoothSocket!!
     }
+
+    fun disConnection(){
+        mBluetoothServerSocket!!.close()
+        mBluetoothSocket!!.close()
+    }
+
 }

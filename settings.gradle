@@ -1,1 +1,1 @@
-include ':app', ':TrustBasis', ':TrustAlgorithm', ':TrustTBSlibrary', ':trustbluetooth', ':test'
+include ':app', ':TrustBasis', ':TrustAlgorithm', ':TrustTBSlibrary', ':trustbluetooth', ':test', ':TrustLive'

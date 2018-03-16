@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import com.trust.trustbluetooth.ble.BleActivity
 import com.trust.trustbluetooth.ble.central.CentralActivity
+import com.trust.trustbluetooth.blue.TraditionActivity
 import kotlinx.android.synthetic.main.activity_blue.*
 class BlueActivity : AppCompatActivity() ,View.OnClickListener{
     var context : Context?= null
@@ -24,7 +25,7 @@ class BlueActivity : AppCompatActivity() ,View.OnClickListener{
         var intent = Intent()
         when (v!!.id) {
             R.id.bluetooth_btn -> {//
-                intent.setClass(context, CentralActivity::class.java)
+                intent.setClass(context, TraditionActivity::class.java)
             }
             R.id.bluetooth_ble_btn -> {//低功耗
                 intent.setClass(context, BleActivity::class.java)

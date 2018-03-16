@@ -38,6 +38,7 @@ class CentralActivity : AppCompatActivity() ,View.OnClickListener , CentralBluet
         central_connected_device_btn.setOnClickListener(this)
         central_show_blue_btn.setOnClickListener(this)
         central_send_data_btn.setOnClickListener(this)
+        central_disconnection_btn.setOnClickListener(this)
         mContext = this
         mCentralFactory = CentralFactory()
         mCentralFactory!!.init(mContext!!,this)
@@ -57,6 +58,9 @@ class CentralActivity : AppCompatActivity() ,View.OnClickListener , CentralBluet
             }
             R.id.central_send_data_btn ->{
                 mCentralFactory!!.writeData(central_send_data_ed.text.toString().toByteArray())
+            }
+            R.id.central_disconnection_btn ->{
+                mCentralFactory!!.disConnction()
             }
         }
     }

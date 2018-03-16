@@ -63,71 +63,7 @@ import java.util.*
         if(mBluetoothAdapter == null){
             mOnBluetoothFactoryCallBack!!.onStandByBlue(false)
         }else{
-            mOnBluetoothFactoryCallBack!!.onStandByBlue(true)
-            mAcceptThread = AcceptThread(mBluetoothAdapter!!, object : AcceptThread.onBluetoothAcceptCallBack {
-                override fun acceptCallBack(bluetoothName: String?) {
-                    if (bluetoothName != null) {
-                        mBlueSockt = mAcceptThread!!.getBlueSockt()
-                        mConnectedThread = ConnectedThread(mBlueSockt!!, connectedThread)
-                        mConnectedThread!!.start()
-                        mOnBluetoothFactoryCallBack!!.onConnectStatus(true)
-                    } else {
-                        mOnBluetoothFactoryCallBack!!.onConnectStatus(false)
-                    }
-                }
-            })
-            mAcceptThread!!.start()
-
-
-            mReceiver = object :BroadcastReceiver(){
-                @SuppressLint("MissingPermission")
-                override fun onReceive(context: Context?, intent: Intent?) {
-                    when( intent!!.action){
-                        //找到设备
-                        BluetoothDevice.ACTION_FOUND -> {
-                            var device = intent.getParcelableExtra<BluetoothDevice>(BluetoothDevice.EXTRA_DEVICE)
-                            if (device != null) {
-                                if (device.name != null) {
-                                    mOnBluetoothFactoryCallBack!!.onFoundSuccessBlueDevice(device)
-                                }
-                            }
-                            Log.d(NAME,"found device :" +device.name)
-                        }
-                        //搜索中
-                        BluetoothAdapter.ACTION_DISCOVERY_STARTED -> {
-                            Log.d(NAME,"start found device ")
-                            mOnBluetoothFactoryCallBack!!.onStartFoundBlueDevice()
-                        }
-                        //搜索结束
-                        BluetoothAdapter.ACTION_DISCOVERY_FINISHED -> {
-                            Log.d(NAME,"finished found device ")
-                            mOnBluetoothFactoryCallBack!!.onFinishedFoundBlueDevice()
-                        }
-                        BluetoothDevice.ACTION_ACL_DISCONNECTED ->{
-                            mBlueSockt = null
-                            mOnBluetoothFactoryCallBack!!.onDissConnect()
-                        }
-                    }
-                }
-
-            }
-
-            val filter1 = IntentFilter(BluetoothDevice.ACTION_FOUND)
-            val filter2 = IntentFilter(
-                    BluetoothAdapter.ACTION_DISCOVERY_STARTED)
-            val filter3 = IntentFilter(
-                    BluetoothAdapter.ACTION_DISCOVERY_FINISHED)
-            val filter4 = IntentFilter(
-                    BluetoothDevice.ACTION_ACL_DISCONNECTED)
-            val filter5 = IntentFilter(
-                    BluetoothAdapter.ACTION_CONNECTION_STATE_CHANGED)
-
-            mContext!!.registerReceiver(mReceiver, filter1)
-            mContext!!.registerReceiver(mReceiver, filter2)
-            mContext!!.registerReceiver(mReceiver, filter3)
-            mContext!!.registerReceiver(mReceiver, filter4)
-            mContext!!.registerReceiver(mReceiver, filter5)
-
+            initConfig()
         }
     }
 
@@ -189,6 +125,74 @@ import java.util.*
         mConnectThread!!.start()
     }
 
+    fun initConfig(){
+        mOnBluetoothFactoryCallBack!!.onStandByBlue(true)
+        mAcceptThread = AcceptThread(mBluetoothAdapter!!, object : AcceptThread.onBluetoothAcceptCallBack {
+            override fun acceptCallBack(bluetoothName: String?) {
+                if (bluetoothName != null) {
+                    mBlueSockt = mAcceptThread!!.getBlueSockt()
+                    mConnectedThread = ConnectedThread(mBlueSockt!!, connectedThread)
+                    mConnectedThread!!.start()
+                    mOnBluetoothFactoryCallBack!!.onConnectStatus(true)
+                } else {
+                    mOnBluetoothFactoryCallBack!!.onConnectStatus(false)
+                }
+            }
+        })
+        mAcceptThread!!.start()
+
+
+        mReceiver = object :BroadcastReceiver(){
+            @SuppressLint("MissingPermission")
+            override fun onReceive(context: Context?, intent: Intent?) {
+                when( intent!!.action){
+                //找到设备
+                    BluetoothDevice.ACTION_FOUND -> {
+                        var device = intent.getParcelableExtra<BluetoothDevice>(BluetoothDevice.EXTRA_DEVICE)
+                        if (device != null) {
+                            if (device.name != null) {
+                                mOnBluetoothFactoryCallBack!!.onFoundSuccessBlueDevice(device)
+                            }
+                        }
+                        Log.d(NAME,"found device :" +device.name)
+                    }
+                //搜索中
+                    BluetoothAdapter.ACTION_DISCOVERY_STARTED -> {
+                        Log.d(NAME,"start found device ")
+                        mOnBluetoothFactoryCallBack!!.onStartFoundBlueDevice()
+                    }
+                //搜索结束
+                    BluetoothAdapter.ACTION_DISCOVERY_FINISHED -> {
+                        Log.d(NAME,"finished found device ")
+                        mOnBluetoothFactoryCallBack!!.onFinishedFoundBlueDevice()
+                    }
+                    BluetoothDevice.ACTION_ACL_DISCONNECTED ->{
+                        mBlueSockt = null
+                        mOnBluetoothFactoryCallBack!!.onDissConnect()
+                    }
+                }
+            }
+
+        }
+
+        val filter1 = IntentFilter(BluetoothDevice.ACTION_FOUND)
+        val filter2 = IntentFilter(
+                BluetoothAdapter.ACTION_DISCOVERY_STARTED)
+        val filter3 = IntentFilter(
+                BluetoothAdapter.ACTION_DISCOVERY_FINISHED)
+        val filter4 = IntentFilter(
+                BluetoothDevice.ACTION_ACL_DISCONNECTED)
+        val filter5 = IntentFilter(
+                BluetoothAdapter.ACTION_CONNECTION_STATE_CHANGED)
+
+        mContext!!.registerReceiver(mReceiver, filter1)
+        mContext!!.registerReceiver(mReceiver, filter2)
+        mContext!!.registerReceiver(mReceiver, filter3)
+        mContext!!.registerReceiver(mReceiver, filter4)
+        mContext!!.registerReceiver(mReceiver, filter5)
+    }
+
+
 
     //开始搜索蓝牙
     @SuppressLint("MissingPermission")
@@ -203,6 +207,32 @@ import java.util.*
         // 将已配对的蓝牙设备显示到第一个ListView中
         val deviceSets:Set<BluetoothDevice> = mBluetoothAdapter!!.bondedDevices
     }
+
+
+    /**
+     * 停止搜索
+     */
+    fun stopFind(){
+        mBluetoothAdapter!!.cancelDiscovery()
+    }
+
+    fun disconnection(){
+        if (mConnectThread != null) {
+            mConnectThread!!.disconnction()
+            mConnectThread!!.interrupt()
+        }
+        if (mConnectedThread != null) {
+            mConnectedThread!!.disConnection()
+            mConnectedThread!!.interrupt()
+        }
+        if (mAcceptThread != null) {
+            mAcceptThread!!.disConnection()
+            mAcceptThread!!.interrupt()
+        }
+
+        initConfig()
+    }
+
 
     //开启蓝牙可见性
     fun showBlue(context: Context){

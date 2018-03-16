@@ -31,7 +31,7 @@ class ConnectThread (d :BluetoothDevice,isChat : Boolean,connectCallBack : onCon
     @SuppressLint("MissingPermission")
     override fun run() {
         Thread(Runnable {   try {
-            mSocket = if (false) {
+            mSocket = if (isChat) {
                 device!!.createRfcommSocketToServiceRecord(BLUE_UUID)
             }else{
                 device!!.createRfcommSocketToServiceRecord(COM_UUID)
@@ -53,5 +53,10 @@ class ConnectThread (d :BluetoothDevice,isChat : Boolean,connectCallBack : onCon
 
     fun getSocket():BluetoothSocket{
         return mSocket!!
+    }
+
+
+    fun disconnction(){
+        mSocket!!.close()
     }
 }

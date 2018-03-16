@@ -42,7 +42,6 @@ class CentralFactory {
 
         mCentralBluetoothGattCallback = CentralBluetoothGattCallback()
 
-
         mReceiver = object : BroadcastReceiver(){
             @SuppressLint("MissingPermission")
             override fun onReceive(context: Context?, intent: Intent?) {
@@ -130,6 +129,7 @@ class CentralFactory {
      */
     fun disConnction(){
         mBluetoothGatt!!.disconnect()
+        mBluetoothGatt!!.close()
     }
 
     /**

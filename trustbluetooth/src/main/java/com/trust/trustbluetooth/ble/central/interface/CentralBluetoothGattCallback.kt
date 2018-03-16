@@ -28,7 +28,7 @@ class CentralBluetoothGattCallback (): BluetoothGattCallback() {
         when (newState) {
             BluetoothProfile.STATE_CONNECTED -> {//连接成功
                 mCentralBluetoothCallBack!!.onConnectStatus(true,newState)
-                mBluetoothGatt!!.discoverServices()
+                    LogUtils.e("lhh","isStatus:"+mBluetoothGatt!!.discoverServices())
             }
             BluetoothProfile.STATE_DISCONNECTED -> //连接失败
                 mCentralBluetoothCallBack!!.onConnectStatus(false,newState)

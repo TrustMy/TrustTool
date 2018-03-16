@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context="com.trust.trustbluetooth.ble.central.CentralActivity">
 
     <TextView
@@ -101,6 +102,14 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:text="断开当前连接"
+        android:id="@+id/central_disconnection_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>

@@ -68,4 +68,9 @@ class ConnectedThread(s : BluetoothSocket , callBack : onConnectedThread) : Thre
         }
         Log.d(NAME,buf.size.toString() + "---")
     }
+
+
+    fun disConnection(){
+        mBluetoothSocket!!.close()
+    }
 }
