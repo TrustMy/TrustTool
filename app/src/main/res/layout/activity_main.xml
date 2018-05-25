@@ -27,4 +27,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/open_start_btn"
+        android:text="调用外部高德地图和百度地图导航"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.trust.splashactivity">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:theme="@style/splashTheme">
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/title_activity_splash"
+            >
+
+        </activity>
+        <activity android:name=".TestActivity"
+           ></activity>
+    </application>
+
+</manifest>

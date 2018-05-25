@@ -1,0 +1,65 @@
+ext{
+    //TODO  项目基础配置
+
+    isModule = false // false 组建模式 trust 集成模式
+
+    //项目sdk版本
+    androidVersion = [
+            compileSdkVersion:26,
+            minSdkVersion : 14,
+            targetSdkVersion : 26,
+            versionCode:7,
+            versionName : "1.4.0"
+    ]
+
+    //项目包名
+    appid = [
+            "app":"com.trust.sy.sendi.sendiapp"
+    ]
+
+    //依赖 android suppory包版本
+    supportLibraryVersion = "26.1.0"
+
+    //基本依赖
+    supporCompiles = [
+            "v7":"com.android.support:appcompat-v7:${supportLibraryVersion}",
+            "cardview":"com.android.support:cardview-v7:${supportLibraryVersion}",
+            "design":"com.android.support:design:${supportLibraryVersion}",
+            "recyclerview":"com.android.support:recyclerview-v7:${supportLibraryVersion}"
+    ]
+
+    /**
+     * 项目最外层 build.gradle
+     * buildscript{}外面声明
+     *  apply from: "gradleConfig.gradle"
+     */
+
+   /**
+    * 项目中声明
+    def sdkVersion = rootProject.ext.androidVersion
+    def appid = rootProject.ext.appid
+    def supporCompiles = rootProject.ext.supporCompiles
+    */
+
+
+  /**
+   *  sdk版本写法
+    applicationId appid["app"]
+    minSdkVersion sdkVersion.minSdkVersion
+    targetSdkVersion sdkVersion.targetSdkVersion
+    versionCode sdkVersion.versionCode
+    versionName sdkVersion.versionName*/
+
+
+  /**
+   *  dependencies  写法
+    implementation supporCompiles["v7"]
+    implementation supporCompiles["cardview"]
+    implementation supporCompiles["recyclerview"]*/
+
+
+
+
+
+
+}

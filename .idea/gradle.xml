@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/TrustLive" />
             <option value="$PROJECT_DIR$/TrustTBSlibrary" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/maplibrary" />
+            <option value="$PROJECT_DIR$/splashactivity" />
             <option value="$PROJECT_DIR$/test" />
             <option value="$PROJECT_DIR$/trustbluetooth" />
           </set>

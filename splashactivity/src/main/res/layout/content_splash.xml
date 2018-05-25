@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.trust.splashactivity.SplashActivity"
+    android:background="#00000000"
+    tools:showIn="@layout/activity_splash">
+
+    <ImageView
+        android:id="@+id/splash_img"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+    <com.trust.splashactivity.progress.SplashProgressView
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        app:radius="20dp"
+        app:strokeWidth="5dp"
+        app:circleColor="#3c3f41"
+        app:ringColor="#666868"
+        app:ringBgColor="#ab6229"
+        app:textColor="#ffffff"
+        android:id="@+id/splas_progress_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+</RelativeLayout>
