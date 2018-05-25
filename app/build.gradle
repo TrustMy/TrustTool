@@ -41,4 +41,5 @@ dependencies {
     compile project(':trustbluetooth')
     compile project(':TrustLive')
     implementation project(':maplibrary')
+    implementation project(':TrustStatusBarLibrary')
 }

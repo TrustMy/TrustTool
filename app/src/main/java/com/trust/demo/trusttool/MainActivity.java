@@ -4,12 +4,14 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Toast;
 
 import com.trust.live.TrustLiveActivity;
@@ -17,6 +19,7 @@ import com.trust.maplibrary.MapUtils;
 import com.trust.maplibrary.bean.LocationBean;
 import com.trust.maplibrary.callback.MapUtilsCallBack;
 import com.trust.maplibrary.dialog.MapDialog;
+import com.trust.statusbarlibrary.TrustStatusBarUtils;
 import com.trust.trustbluetooth.BlueActivity;
 
 import org.jetbrains.annotations.NotNull;
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         context = this;
 
@@ -66,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
               }).showMapDialog(getFragmentManager(),new LocationBean(31.0998709364, 121.6226745098));
           }
       });
+        TrustStatusBarUtils.Companion.getSingleton(this).setStatusBarTransparent(this,findViewById(R.id.test_layout));
+
     }
-
-
 }
