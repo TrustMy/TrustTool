@@ -1,16 +1,17 @@
 apply plugin: 'com.android.library'
-
+def sdkVersion = rootProject.ext.androidVersion
+def appid = rootProject.ext.appid
+def supporCompiles = rootProject.ext.supporCompiles
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion sdkVersion.compileSdkVersion
+    buildToolsVersion supportLibraryVersion
 
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
-
+        minSdkVersion sdkVersion.minSdkVersion
+        targetSdkVersion sdkVersion.targetSdkVersion
+        versionCode sdkVersion.versionCode
+        versionName sdkVersion.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -22,11 +23,12 @@ android {
         }
     }
 
+    buildToolsVersion '26.0.2'
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:26.1.0'
+    implementation supporCompiles["v7"]
     testCompile 'junit:junit:4.12'
     androidTestCompile('com.android.support.test.espresso:espresso-core:3.0.1', {
         exclude group: 'com.android.support', module: 'support-annotations'

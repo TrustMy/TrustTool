@@ -6,7 +6,7 @@ ext{
     //项目sdk版本
     androidVersion = [
             compileSdkVersion:26,
-            minSdkVersion : 14,
+            minSdkVersion : 15,
             targetSdkVersion : 26,
             versionCode:7,
             versionName : "1.4.0"
@@ -18,7 +18,7 @@ ext{
     ]
 
     //依赖 android suppory包版本
-    supportLibraryVersion = "26.1.0"
+    supportLibraryVersion = "26.0.0"
 
     //基本依赖
     supporCompiles = [

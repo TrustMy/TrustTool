@@ -1,16 +1,18 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
+def sdkVersion = rootProject.ext.androidVersion
+def appid = rootProject.ext.appid
+def supporCompiles = rootProject.ext.supporCompiles
 android {
-    compileSdkVersion 26
+    compileSdkVersion sdkVersion.compileSdkVersion
 
 
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion sdkVersion.minSdkVersion
+        targetSdkVersion sdkVersion.targetSdkVersion
+        versionCode sdkVersion.versionCode
+        versionName sdkVersion.versionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -28,7 +30,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation supporCompiles["v7"]
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

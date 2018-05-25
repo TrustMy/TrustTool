@@ -1,14 +1,16 @@
 apply plugin: 'com.android.application'
-
+def sdkVersion = rootProject.ext.androidVersion
+def appid = rootProject.ext.appid
+def supporCompiles = rootProject.ext.supporCompiles
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion sdkVersion.compileSdkVersion
+    buildToolsVersion supportLibraryVersion
     defaultConfig {
         applicationId "com.trust.demo.trusttool"
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion sdkVersion.minSdkVersion
+        targetSdkVersion sdkVersion.targetSdkVersion
+        versionCode sdkVersion.versionCode
+        versionName sdkVersion.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //X5兼容64位手机
         ndk {
@@ -22,6 +24,8 @@ android {
         }
     }
 
+
+    buildToolsVersion '26.0.2'
 }
 
 dependencies {
@@ -29,7 +33,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
+    implementation supporCompiles["v7"]
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     compile files('libs/tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar')

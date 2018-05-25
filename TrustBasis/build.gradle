@@ -1,15 +1,16 @@
 apply plugin: 'com.android.library'
-
+def sdkVersion = rootProject.ext.androidVersion
+def appid = rootProject.ext.appid
+def supporCompiles = rootProject.ext.supporCompiles
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion sdkVersion.compileSdkVersion
+    buildToolsVersion supportLibraryVersion
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-
+        minSdkVersion sdkVersion.minSdkVersion
+        targetSdkVersion sdkVersion.targetSdkVersion
+        versionCode sdkVersion.versionCode
+        versionName sdkVersion.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -19,6 +20,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '26.0.2'
 }
 
 dependencies {
@@ -26,7 +28,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.0'
+    implementation supporCompiles["v7"]
     testCompile 'junit:junit:4.12'
     //rxjava
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
