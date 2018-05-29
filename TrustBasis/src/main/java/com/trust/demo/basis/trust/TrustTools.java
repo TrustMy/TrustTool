@@ -1,5 +1,6 @@
 package com.trust.demo.basis.trust;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
@@ -19,12 +20,15 @@ import android.os.Build;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.content.FileProvider;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
+import com.trust.demo.basis.trust.utils.TrustLogUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -60,6 +64,7 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by Trust on 2017/8/7.
+ * 基础工具类
  */
 
 public class TrustTools<T extends View> implements Serializable {
@@ -75,19 +80,16 @@ public class TrustTools<T extends View> implements Serializable {
 
     /**
      * 倒计时显示
-     * @param value
-     * @param time
      */
     public  void  Countdown(Activity activity,final T value , final int time){
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                final int count = time;
-                Observable.interval(0,1, TimeUnit.SECONDS).take(count+1).map(new Function<Long, Object>() {
+                Observable.interval(0,1, TimeUnit.SECONDS).take(time +1).map(new Function<Long, Object>() {
                     @Override
                     public Object apply(@NonNull Long aLong) throws Exception {
 
-                        return count-aLong;
+                        return time -aLong;
                     }
                 }).subscribeOn(Schedulers.io())
                         .doOnSubscribe(new Consumer<Disposable>() {
@@ -176,7 +178,7 @@ public class TrustTools<T extends View> implements Serializable {
      * @return
      */
     public static String getSystemTimeString(){
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date dateTime = new Date(System.currentTimeMillis());//获取当前时间
         String systemTime = formatter.format(dateTime);
         return systemTime;
@@ -197,9 +199,8 @@ public class TrustTools<T extends View> implements Serializable {
      */
     public static long getTime( String format) {
         try {
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-            long timeStart=sdf.parse(format).getTime();
-            return timeStart;
+            @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+            return sdf.parse(format).getTime();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -207,13 +208,13 @@ public class TrustTools<T extends View> implements Serializable {
     }
 
     public static String getTime(Date time){
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String str=sdf.format(time);
         return str;
     }
 
     public static String getTime(Date time , String pattern){
-        SimpleDateFormat sdf=new SimpleDateFormat(pattern);
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf=new SimpleDateFormat(pattern);
         String str=sdf.format(time);
         return str;
     }
@@ -232,7 +233,7 @@ public class TrustTools<T extends View> implements Serializable {
      * 省略小数点后几位
      * @param v  小数
      * @param scale  几位
-     * @return
+     *
      */
     public   static   double   round(double v,int   scale){
         if(scale<0){
@@ -293,6 +294,7 @@ public class TrustTools<T extends View> implements Serializable {
      * @param context
      * @return
      */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private Bitmap handlerImageOnKikat(Intent data , Context context){
         String imagePath = null;
         Uri url = data.getData();
@@ -349,7 +351,7 @@ public class TrustTools<T extends View> implements Serializable {
 
     private Bitmap displayImage(String imagePath) {
         if (imagePath == null) {
-            TrustLogTool.e("找不到这个文件!");
+            TrustLogUtils.e("找不到这个文件!");
             return null;
         }else{
 
@@ -477,7 +479,7 @@ public class TrustTools<T extends View> implements Serializable {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         // 把压缩后的数据存放到baos中
         result.compress(Bitmap.CompressFormat.JPEG, 100 ,baos);
-        TrustLogTool.d("bitmap:"+(bitmap.getByteCount() / 1024 )+"KB"
+        TrustLogUtils.d("bitmap:"+(bitmap.getByteCount() / 1024 )+"KB"
                 +"|bitmap2 大小:"+(result.getByteCount() / 1024 )+"KB");
         return result;
     }
@@ -515,10 +517,10 @@ public class TrustTools<T extends View> implements Serializable {
             } catch (IOException e) {
 
                 e.printStackTrace();
-                TrustLogTool.e("读取img 错误:"+e.toString());
+                TrustLogUtils.e("读取img 错误:"+e.toString());
 
             }
-            TrustLogTool.d("rotate :"+rotate);
+            TrustLogUtils.d("rotate :"+rotate);
             // 1:compress bitmap
             try {
                 BitmapFactory.Options o = new BitmapFactory.Options();
@@ -614,7 +616,7 @@ public class TrustTools<T extends View> implements Serializable {
             InputStream inputStream= new FileInputStream(new File(path));
             return getBitmap(path);
         }catch(FileNotFoundException e){
-            TrustLogTool.d("找不到文件使用url查找:");
+            TrustLogUtils.d("找不到文件使用url查找:");
             e.printStackTrace();
                 return getBitmap();
 //            return null;
@@ -649,7 +651,7 @@ public class TrustTools<T extends View> implements Serializable {
                     break;
             }
         }catch (FileNotFoundException e){
-            TrustLogTool.e("没有找到文件");
+            TrustLogUtils.e("没有找到文件");
             e.printStackTrace();
         }
         catch (IOException e) {
@@ -689,7 +691,7 @@ public class TrustTools<T extends View> implements Serializable {
                 quality = 90;
             }
         } catch (FileNotFoundException e) {
-            TrustLogTool.e("FileNotFoundException:"+e.toString());
+            TrustLogUtils.e("FileNotFoundException:"+e.toString());
             System.gc();
         } catch(OutOfMemoryError e){
             System.gc();
@@ -776,7 +778,7 @@ public class TrustTools<T extends View> implements Serializable {
                     break;
             }
         }catch (FileNotFoundException e){
-            TrustLogTool.e("ExifInterface 没有找到文件");
+            TrustLogUtils.e("ExifInterface 没有找到文件");
             System.gc();
         }
         catch (IOException e) {
@@ -883,8 +885,7 @@ public class TrustTools<T extends View> implements Serializable {
 
     /**
      * 打开本地相册
-     *
-     * @param requestCode
+
      */
     public  void openAlbum(Activity activity, int requestCode) {
         Intent intent = new Intent("android.intent.action.GET_CONTENT");
@@ -911,7 +912,7 @@ public class TrustTools<T extends View> implements Serializable {
         SharedPreferences.Editor editdf = context.getSharedPreferences(editorTag,
                 Activity.MODE_PRIVATE).edit();
         editdf.putString(key,value);
-        editdf.commit();
+        editdf.apply();
     }
 
     public String getUserMsg(Context context , String editorTag, String key){
@@ -927,8 +928,7 @@ public class TrustTools<T extends View> implements Serializable {
 
     public String conversionType(float num){
         DecimalFormat decimalFormat=new DecimalFormat("0.0");//构造方法的字符格式这里如果小数不足1位,会以0补足.
-        String msg=decimalFormat.format(num);//format 返回的是字符串
-        return msg;
+        return decimalFormat.format(num);
     }
 
 }

@@ -2,6 +2,7 @@ package com.trust.trustbluetooth
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,6 +19,7 @@ class BlueActivity : AppCompatActivity() ,View.OnClickListener{
         context = this
         bluetooth_btn.setOnClickListener(this)
         bluetooth_ble_btn.setOnClickListener(this)
+
     }
 
 

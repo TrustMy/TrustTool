@@ -1,9 +1,11 @@
 package com.trust.demo.trusttool;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.trust.demo.trusttool.tbs.TBSView;
+import com.trust.statusbarlibrary.TrustStatusBarUtils;
 
 import java.io.File;
 
@@ -20,6 +22,7 @@ public class TBSActivity extends AppCompatActivity {
 
         File file = new File("/storage/emulated/0/test.txt");
         tbsView.displayFile(file);
+        TrustStatusBarUtils.Companion.getSingleton(this).setStatusBarTransparent(this);
     }
 
 
