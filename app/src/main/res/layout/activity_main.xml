@@ -12,12 +12,7 @@
 
 
     
-    <ImageView
-        android:scaleType="fitXY"
-        android:src="@drawable/grile"
-        android:id="@+id/test_img"
-        android:layout_width="match_parent"
-        android:layout_height="220dp" />
+
     
     <com.trust.statusbarlibrary.view.TrustStatusBarView
         android:id="@+id/test_trust_bar"
@@ -39,11 +34,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+
+
+
+
     <Button
         android:layout_marginTop="10dp"
         android:id="@+id/open_start_btn"
         android:text="调用外部高德地图和百度地图导航"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <ImageView
+        android:src="@drawable/grile"
+        android:id="@+id/test_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/view_btn"
+        android:text="自定义view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>

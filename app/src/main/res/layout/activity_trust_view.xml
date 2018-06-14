@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.trust.viewlibrary.Flowlayoutsss xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.trust.demo.trusttool.activity.TrustViewActivity">
+
+    <TextView
+        android:layout_margin="4dp"
+        android:background="@color/colorPrimary"
+        android:text="asdasdasdasd"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:layout_margin="4dp"
+        android:background="@color/colorPrimary"
+        android:text="啊是大"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_margin="4dp"
+        android:background="@color/colorPrimary"
+        android:text="asdasdasdasd按时大苏打"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_margin="4dp"
+        android:background="@color/colorPrimary"
+        android:text="asdasdasdasd飒飒大苏打实打实大苏打"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_margin="4dp"
+        android:background="@color/colorPrimary"
+        android:text="asdasdasdasd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_margin="4dp"
+        android:background="@color/colorPrimary"
+        android:text="asdasdasdasd啊实打实打算大苏打"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_margin="4dp"
+        android:background="@color/colorPrimary"
+        android:text="asdasdasdasd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_margin="4dp"
+        android:background="@color/colorPrimary"
+        android:text="asdasdasdasd啊费人过热而该"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</com.trust.viewlibrary.Flowlayoutsss>

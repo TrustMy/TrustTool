@@ -42,4 +42,8 @@ dependencies {
     compile project(':TrustLive')
     implementation project(':maplibrary')
     implementation project(':TrustStatusBarLibrary')
+    implementation project(':TrustViewLibrary')
 }
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'

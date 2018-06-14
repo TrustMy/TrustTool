@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Trust.iml" filepath="$PROJECT_DIR$/Trust.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrustAlgorithm/TrustAlgorithm.iml" filepath="$PROJECT_DIR$/TrustAlgorithm/TrustAlgorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrustBasis/TrustBasis.iml" filepath="$PROJECT_DIR$/TrustBasis/TrustBasis.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrustLive/TrustLive.iml" filepath="$PROJECT_DIR$/TrustLive/TrustLive.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrustStatusBarLibrary/TrustStatusBarLibrary.iml" filepath="$PROJECT_DIR$/TrustStatusBarLibrary/TrustStatusBarLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrustTBSlibrary/TrustTBSlibrary.iml" filepath="$PROJECT_DIR$/TrustTBSlibrary/TrustTBSlibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TrustTool.iml" filepath="$PROJECT_DIR$/TrustTool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrustViewLibrary/TrustViewLibrary.iml" filepath="$PROJECT_DIR$/TrustViewLibrary/TrustViewLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/maplibrary/maplibrary.iml" filepath="$PROJECT_DIR$/maplibrary/maplibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/splashactivity/splashactivity.iml" filepath="$PROJECT_DIR$/splashactivity/splashactivity.iml" />
