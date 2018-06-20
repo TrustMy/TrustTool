@@ -56,12 +56,12 @@ public class TrustPaintView extends View{
             mPaintRadar = new Paint();
             mPaintRadar.setStyle(Paint.Style.FILL_AND_STROKE);
             mPaintRadar.setAntiAlias(true);
-//            post(run);
+            post(run);
 
 
             mBitPaint = new Paint();
             bitmap = BitmapFactory.decodeResource(getResources(), drawable.two);
-
+            isFirst = false;
         }
     }
 
@@ -87,15 +87,19 @@ public class TrustPaintView extends View{
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
         //雷达图
-//        leidatu(canvas);
-        initPaint();
+        leidatu(canvas);
+//        daoYingTu(canvas);
+    }
+
+    private void daoYingTu(Canvas canvas) {
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
         canvas.drawBitmap(bitmap,0,0,null);
 
         Matrix matrix = new Matrix();
-         matrix.preScale(1, -1);
+        matrix.preScale(1, -1);
         Bitmap reflectionImage = Bitmap.createBitmap(bitmap, 0,
                            height / 2, width, height / 2, matrix, false);
 
@@ -107,7 +111,7 @@ public class TrustPaintView extends View{
                                      + 4,0x70ffffff, 0x00ffffff,
                             Shader.TileMode.MIRROR);
         testPaint.setShader(shader);
-        testPaint.setXfermode(new PorterDuffXfermode(android.graphics.PorterDuff.Mode.DST_IN));
+        testPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
 
         canvas.drawBitmap(reflectionImage,0,bitmap.getHeight()+4,null);
         canvas.drawRect(0, bitmap.getHeight(), bitmap.getWidth(), reflectionImage.getHeight()

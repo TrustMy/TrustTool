@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                view.setAngle(TrustStatusBarView.Companion.getLEFT());
+                view.setAngle(TrustStatusBarView.Companion.getRIGHT());
             }
         });
         findViewById(R.id.test_img).setOnClickListener(new View.OnClickListener() {
