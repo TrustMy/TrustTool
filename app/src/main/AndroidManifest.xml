@@ -24,8 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TBSActivity"></activity>
-        <activity android:name=".activity.TrustViewActivity"></activity>
+        <activity android:name=".TBSActivity" />
+        <activity android:name=".activity.TrustViewActivity" />
+        <activity android:name=".mvptest.MVPTestActivity"></activity>
     </application>
 
 </manifest>

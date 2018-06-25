@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.trust.demo.basis.trust.utils.TrustLogUtils;
 import com.trust.demo.basis.trust.utils.TrustHttpUtils;
 import com.trust.demo.trusttool.activity.TrustViewActivity;
+import com.trust.demo.trusttool.mvptest.MVPTestActivity;
 import com.trust.live.TrustLiveActivity;
 import com.trust.maplibrary.MapUtils;
 import com.trust.maplibrary.bean.LocationBean;
@@ -106,6 +107,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(context, TrustViewActivity.class));
+            }
+        });
+
+        findViewById(R.id.mvp_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, MVPTestActivity.class));
             }
         });
     }

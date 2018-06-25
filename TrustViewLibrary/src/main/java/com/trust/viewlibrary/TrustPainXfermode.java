@@ -2,6 +2,7 @@ package com.trust.viewlibrary;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -72,6 +73,33 @@ public class TrustPainXfermode extends View {
         canvas.drawRect(360,60,500,200,newPaint);
 
 
+
+
+        //目标图
+        Paint aimsBitPaint = new Paint();
+        aimsBitPaint.setAntiAlias(true);
+        aimsBitPaint.setStyle(Paint.Style.FILL);
+        aimsBitPaint.setColor(Color.parseColor("#5f5f5f"));
+
+        canvas.drawCircle(280,280,50,aimsBitPaint);
+
+        Paint originalPaint = new Paint();
+        originalPaint.setColor(Color.parseColor("#fff000"));
+        originalPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+
+        canvas.drawRect(230,230,330,330,originalPaint);
+
+
+
+
+        Paint testPaint = new Paint();
+        testPaint.setColor(Color.BLACK);
+        testPaint.setAntiAlias(true);
+        testPaint.setStyle(Paint.Style.FILL);
+        canvas.save();
+        canvas.translate(100,100);
+        canvas.rotate(45);
+        canvas.drawRect(0,0,200,200,testPaint);
 
     }
 }

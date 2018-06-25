@@ -1,4 +1,4 @@
-package com.trust.demo.basis.trust
+package com.trust.demo.basis.base
 
 import android.annotation.SuppressLint
 import android.app.Application
