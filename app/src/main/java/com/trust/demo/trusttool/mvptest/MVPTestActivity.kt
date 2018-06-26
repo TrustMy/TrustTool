@@ -16,16 +16,14 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
     }
 
     override fun initData() {
-        getPresent().login("lhh",null)
+        getPresent().login("lhh","11111")
     }
 
     override fun createPresenter(): LoginPresenter {
         return LoginPresenter(this)
     }
 
-    override fun createView(): LoginView {
-        return this
-    }
+
 
 
 

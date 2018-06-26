@@ -1,6 +1,5 @@
 package com.trust.demo.basis.base.presenter
 
-import com.trust.demo.basis.base.model.TrustModel
 import com.trust.demo.basis.base.veiw.TrustView
 
 /**
@@ -11,7 +10,7 @@ import com.trust.demo.basis.base.veiw.TrustView
 
     fun getView():V{return  mView!!}
 
-    fun attachView(view : V){
+    fun attachView(view: V){
         mView = view
     }
 

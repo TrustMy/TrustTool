@@ -3,27 +3,25 @@ package com.trust.demo.basis.base
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
-import android.view.View
-import com.trust.demo.basis.R
 import com.trust.demo.basis.base.presenter.TrustPresenter
-import com.trust.demo.basis.base.presenter.TrustPresenterListener
 import com.trust.demo.basis.base.veiw.TrustView
 
 /**
  * Created by Trust on 2018/6/25.
+ * MVP Activity
  */
-open abstract class TrustMVPActivtiy <V : TrustView ,P : TrustPresenter<V>>: AppCompatActivity() {
+open abstract class TrustMVPActivtiy <V : TrustView ,P : TrustPresenter<V>>: AppCompatActivity(),TrustView {
     protected var mActivity:Activity? = null
     protected var mContext:Context? = null
     protected abstract fun getLayoutId():Int
     protected abstract fun initView(savedInstanceState: Bundle?)
     protected abstract fun initData()
+    //每个页面中间媒介
     protected var presenter:P? = null
-    protected var view:V? = null
+    //交给子类实现返回子类自己的媒介
     protected abstract fun createPresenter():P
-    protected abstract fun createView():V
+
 
     fun getPresent():P{return presenter!!}
 
@@ -38,17 +36,20 @@ open abstract class TrustMVPActivtiy <V : TrustView ,P : TrustPresenter<V>>: App
 
     }
 
+    //绑定中间媒介和接口
     private fun init(){
         if (this.presenter == null) {
             this.presenter = createPresenter()
         }
 
-        if (this.view == null) {
-            this.view = createView()
+        if (this.presenter != null){
+            this.presenter!!.attachView((this)as V)
         }
+    }
 
-        if (this.presenter != null && this.view != null){
-            this.presenter!!.attachView(this.view!!)
-        }
+    //解绑
+    override fun onDestroy() {
+        super.onDestroy()
+        this.presenter!!.detachView()
     }
 }
