@@ -8,13 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.trust.demo.basis.base.presenter.TrustPresenter
+import com.trust.demo.basis.base.presenter.TrustPresenters
 import com.trust.demo.basis.base.veiw.TrustView
 
 /**
  * Created by Trust on 2018/6/26.
  * MvpFragment
  */
-abstract class TrustMVPFragment <V : TrustView,P : TrustPresenter<V>>:Fragment() {
+abstract class TrustMVPFragment <V : TrustView,P : TrustPresenters<V>>:Fragment() {
     protected var mActivity: Activity? = null
     protected var mContext: Context? = null
     protected abstract fun getLayoutId():Int

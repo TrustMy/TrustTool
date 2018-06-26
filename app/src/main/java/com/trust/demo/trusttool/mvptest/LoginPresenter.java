@@ -1,17 +1,15 @@
 package com.trust.demo.trusttool.mvptest;
 
-import com.trust.demo.basis.base.presenter.TrustPresenter;
+import com.trust.demo.basis.base.presenter.TrustPresenters;
 
 /**
  * Created by Trust on 2018/6/25.
  */
 
-public class LoginPresenter extends TrustPresenter<LoginView> implements OnLoginFinushedInterface,LoginPresenterInterface{
-    private LoginView loginView;
+public class LoginPresenter extends TrustPresenters<LoginView> implements OnLoginFinushedInterface,LoginPresenterInterface{
     private LoginModelInterface loginMpde;
 
-    public LoginPresenter(LoginView loginView) {
-        this.loginView = loginView;
+    public LoginPresenter() {
         this.loginMpde = new LoginMpde();
     }
 
@@ -22,11 +20,11 @@ public class LoginPresenter extends TrustPresenter<LoginView> implements OnLogin
 
     @Override
     public void resultLogin(String msg) {
-        loginView.logingStatus(msg);
+        getView().logingStatus(msg);
     }
 
     @Override
     public void error(String msg) {
-        loginView.logingStatus(msg);
+        getView().logingStatus(msg);
     }
 }

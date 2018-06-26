@@ -3,6 +3,7 @@ package com.trust.demo.trusttool.mvptest
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.trust.demo.basis.base.TrustMVPActivtiy
 import com.trust.demo.trusttool.R
@@ -16,16 +17,18 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
     }
 
     override fun initData() {
-        getPresent().login("lhh","11111")
+
     }
 
     override fun createPresenter(): LoginPresenter {
-        return LoginPresenter(this)
+        return LoginPresenter()
     }
 
 
 
-
+    fun startLogin(v: View){
+        getPresent().login("lhh","12312312")
+    }
 
 
 

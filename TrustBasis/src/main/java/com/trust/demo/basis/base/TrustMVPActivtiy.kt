@@ -5,13 +5,14 @@ import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.trust.demo.basis.base.presenter.TrustPresenter
+import com.trust.demo.basis.base.presenter.TrustPresenters
 import com.trust.demo.basis.base.veiw.TrustView
 
 /**
  * Created by Trust on 2018/6/25.
  * MVP Activity
  */
-open abstract class TrustMVPActivtiy <V : TrustView ,P : TrustPresenter<V>>: AppCompatActivity(),TrustView {
+open abstract class TrustMVPActivtiy <V : TrustView ,P : TrustPresenters<V>>: AppCompatActivity(),TrustView {
     protected var mActivity:Activity? = null
     protected var mContext:Context? = null
     protected abstract fun getLayoutId():Int
