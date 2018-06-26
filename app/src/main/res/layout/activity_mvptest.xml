@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.trust.demo.trusttool.mvptest.MVPTestActivity">
 
     <Button
+        android:id="@+id/test_btn"
         android:onClick="startLogin"
         android:text="startLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:ignore="OnClick" />
-</android.support.constraint.ConstraintLayout>
+
+
+    <fragment
+        android:id="@+id/test_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.trust.demo.trusttool.mvptest.TestFragment"/>
+</LinearLayout>

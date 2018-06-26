@@ -15,25 +15,29 @@ import com.trust.demo.basis.base.veiw.TrustView
  * Created by Trust on 2018/6/26.
  * MvpFragment
  */
-abstract class TrustMVPFragment <V : TrustView,P : TrustPresenters<V>>:Fragment() {
+abstract class TrustMVPFragment <V : TrustView,P : TrustPresenters<V>>:Fragment() ,TrustView{
     protected var mActivity: Activity? = null
     protected var mContext: Context? = null
     protected abstract fun getLayoutId():Int
-    protected abstract fun initView(view:View,savedInstanceState: Bundle?)
+    protected abstract fun initView(view:View?,savedInstanceState: Bundle?)
     protected abstract fun initData()
     protected var presenter:P? = null
     protected abstract fun createPresenter():P
 
     fun getPresent():P{return presenter!!}
 
+
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater!!.inflate(getLayoutId(), container, false)
+        return inflater!!.inflate(getLayoutId(), null)
+    }
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         init()
         initView(view,savedInstanceState)
         initData()
-        return view
     }
-
 
     private fun init(){
         if (this.presenter == null) {
@@ -47,6 +51,8 @@ abstract class TrustMVPFragment <V : TrustView,P : TrustPresenters<V>>:Fragment(
 
     override fun onDestroyView() {
         super.onDestroyView()
-        this.presenter!!.detachView()
+        if (this.presenter != null) {
+            this.presenter!!.detachView()
+        }
     }
 }

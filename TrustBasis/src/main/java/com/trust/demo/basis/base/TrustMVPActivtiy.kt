@@ -51,6 +51,8 @@ open abstract class TrustMVPActivtiy <V : TrustView ,P : TrustPresenters<V>>: Ap
     //解绑
     override fun onDestroy() {
         super.onDestroy()
-        this.presenter!!.detachView()
+        if (this.presenter != null) {
+            this.presenter!!.detachView()
+        }
     }
 }

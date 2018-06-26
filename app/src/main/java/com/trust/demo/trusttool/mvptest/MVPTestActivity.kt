@@ -1,6 +1,5 @@
 package com.trust.demo.trusttool.mvptest
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -14,6 +13,7 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+
     }
 
     override fun initData() {
@@ -27,7 +27,7 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
 
 
     fun startLogin(v: View){
-        getPresent().login("lhh","12312312")
+        getPresent().login("我是activity","12312312")
     }
 
 
@@ -38,3 +38,4 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
     }
 
 }
+
