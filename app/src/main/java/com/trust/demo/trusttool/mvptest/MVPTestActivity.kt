@@ -17,19 +17,12 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
     }
 
     override fun initData() {
-
     }
+
 
     override fun createPresenter(): LoginPresenter {
         return LoginPresenter()
     }
-
-
-
-    fun startLogin(v: View){
-        getPresent().login("我是activity","12312312")
-    }
-
 
 
     override fun logingStatus(status: String?) {
@@ -37,5 +30,8 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
         Log.d("lhh,", "logingStatus:$status")
     }
 
+    fun startLogin(v:View){
+        getPresenter()?.login("动态代理后的mvp来自activitiy",null)
+    }
 }
 

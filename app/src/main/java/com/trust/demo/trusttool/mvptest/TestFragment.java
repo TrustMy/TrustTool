@@ -27,7 +27,7 @@ public class TestFragment extends TrustMVPFragment<LoginView,LoginPresenter> imp
         view.findViewById(R.id.test_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getPresent().login("我是fragmnet","11111");
+                getPresenter().login("我是fragmnet","11111");
             }
         });
     }
@@ -37,15 +37,15 @@ public class TestFragment extends TrustMVPFragment<LoginView,LoginPresenter> imp
 
     }
 
-    @NotNull
-    @Override
-    protected LoginPresenter createPresenter() {
-        return new LoginPresenter();
-    }
-
     @Override
     public void logingStatus(String status) {
         Toast.makeText(getContext(),status,Toast.LENGTH_SHORT).show();
-        TrustLogUtils.d("这事fragment返回时的"+status);
+        TrustLogUtils.d("这是优化后的 来自fragment"+status);
+    }
+
+    @NotNull
+    @Override
+    public LoginPresenter createPresenter() {
+        return new LoginPresenter();
     }
 }
