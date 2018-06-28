@@ -14,7 +14,7 @@ import android.widget.ListView
 import android.widget.ProgressBar
 import android.widget.Toast
 import com.trust.trustbluetooth.R
-import com.trust.trustbluetooth.ble.central.MyAdapter
+import com.trust.trustbluetooth.ble.central.MyAdapters
 import kotlinx.android.synthetic.main.activity_tradition.*
 import java.util.ArrayList
 
@@ -72,7 +72,7 @@ class TraditionActivity : AppCompatActivity() ,View.OnClickListener , BluetoothF
     override fun onFoundSuccessBlueDevice(bluetoothDevice: BluetoothDevice) {
         runOnUiThread({
             foundDevices!!.add(bluetoothDevice)
-            foundList!!.adapter = MyAdapter(mContext, foundDevices)
+            foundList!!.adapter = MyAdapters(mContext, foundDevices)
         })
     }
 
@@ -150,10 +150,10 @@ class TraditionActivity : AppCompatActivity() ,View.OnClickListener , BluetoothF
                 bondedDevices.add(device)
             }
         }
-        bondedList.adapter = MyAdapter(mContext!!,bondedDevices)
+        bondedList.adapter = MyAdapters(mContext!!,bondedDevices)
 
         foundDevices = ArrayList()
-        foundList!!.adapter = MyAdapter(mContext, foundDevices)
+        foundList!!.adapter = MyAdapters(mContext, foundDevices)
 
         bondedList.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
             var device = bondedDevices[position]

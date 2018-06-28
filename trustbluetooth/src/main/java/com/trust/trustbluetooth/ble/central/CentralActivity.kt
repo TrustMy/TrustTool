@@ -88,10 +88,10 @@ class CentralActivity : AppCompatActivity() ,View.OnClickListener , CentralBluet
                 bondedDevices.add(device)
             }
         }
-        bondedList.adapter =MyAdapter(mContext!!,bondedDevices)
+        bondedList.adapter =MyAdapters(mContext!!,bondedDevices)
 
         foundDevices = ArrayList()
-        foundList!!.adapter = MyAdapter(mContext, foundDevices)
+        foundList!!.adapter = MyAdapters(mContext, foundDevices)
 
         bondedList.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
             var device = bondedDevices[position]
@@ -156,7 +156,7 @@ class CentralActivity : AppCompatActivity() ,View.OnClickListener , CentralBluet
         LogUtils.e(TAG, "onFoundSuccessBlueDevice:"+bluetoothDevice.name)
         runOnUiThread({
             foundDevices!!.add(bluetoothDevice)
-            foundList!!.adapter = MyAdapter(mContext, foundDevices)
+            foundList!!.adapter = MyAdapters(mContext, foundDevices)
         })
     }
 
