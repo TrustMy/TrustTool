@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/maplibrary/maplibrary.iml" filepath="$PROJECT_DIR$/maplibrary/maplibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/splashactivity/splashactivity.iml" filepath="$PROJECT_DIR$/splashactivity/splashactivity.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trustRetrofit/trustRetrofit.iml" filepath="$PROJECT_DIR$/trustRetrofit/trustRetrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/trustbluetooth/trustbluetooth.iml" filepath="$PROJECT_DIR$/trustbluetooth/trustbluetooth.iml" />
     </modules>
   </component>

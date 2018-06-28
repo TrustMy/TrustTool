@@ -43,6 +43,7 @@ dependencies {
     implementation project(':maplibrary')
     implementation project(':TrustStatusBarLibrary')
     implementation project(':TrustViewLibrary')
+    implementation project(':trustRetrofit')
 }
 
 apply plugin: 'kotlin-android'
