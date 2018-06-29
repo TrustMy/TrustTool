@@ -44,7 +44,7 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
     }
 
     fun startLogin(v:View){
-       /* //getPresenter()?.login("动态代理后的mvp来自activitiy",null)
+       /*
         val create = TrustRetrofit.create(this, "https://www.jianshu.com/")
         create.connection(create!!.getmRetrofit(ApiServer::class.java).login(HashMap<String, String>()),object :TrustRetrofitCallBack<ResponseBody>(){
             override fun failure(error: ResponseBody) {
@@ -64,32 +64,7 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
         ProjectInit.init(this).setApiHost("https://www.jianshu.com/")
                 .configure()
 
-        TrustRetrofitUtils
-                .create()
-                .params(HashMap<String, Any>())
-                .url("subscriptions#/subscriptions/12070983/user")
-                .build()
-                .get()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(object : Observer<String> {
-                    override fun onSubscribe(@NonNull d: Disposable) {
-
-                    }
-
-                    override fun onNext(@NonNull s: String) {
-                        //响应结果
-                        Toast.makeText(this@MVPTestActivity, s, Toast.LENGTH_SHORT).show()
-                    }
-
-                    override fun onError(@NonNull e: Throwable) {
-
-                    }
-
-                    override fun onComplete() {
-
-                    }
-                })
+        getPresenter()?.login("动态代理后的mvp来自activitiy",null)
     }
 }
 

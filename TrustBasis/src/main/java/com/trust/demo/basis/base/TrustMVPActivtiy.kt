@@ -40,12 +40,7 @@ open abstract class TrustMVPActivtiy <V : TrustView ,P : TrustPresenters<V>>:
         }
         return delegateImpl!!
     }
- /*   //每个页面中间媒介
-    protected var presenter:P? = null
-    //交给子类实现返回子类自己的媒介
-    protected abstract fun createPresenter():P
 
-    fun getPresent():P{return presenter!!}*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

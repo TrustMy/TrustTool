@@ -25,7 +25,7 @@ class TrustProxyMvpCallback <V : TrustView,P : TrustPresenters<V>> :TrustMvpCall
         }
 
         if (presenter == null){
-            throw NullPointerException("prensenter 不能为空")
+            throw NullPointerException("prensenter 不能为空") as Throwable
         }
         mTrustMvpCallback!!.setPresenter(presenter)
         return presenter

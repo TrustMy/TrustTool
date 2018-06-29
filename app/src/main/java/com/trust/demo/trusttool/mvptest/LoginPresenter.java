@@ -1,6 +1,7 @@
 package com.trust.demo.trusttool.mvptest;
 
 import com.trust.demo.basis.base.presenter.TrustPresenters;
+import com.trust.demo.trusttool.mvptest.testrequest.RetrofitModuleTest;
 
 /**
  * Created by Trust on 2018/6/25.
@@ -10,7 +11,7 @@ public class LoginPresenter extends TrustPresenters<LoginView> implements OnLogi
     private LoginModelInterface loginMpde;
 
     public LoginPresenter() {
-        this.loginMpde = new LoginMpde();
+        this.loginMpde = new RetrofitModuleTest();
     }
 
     @Override
