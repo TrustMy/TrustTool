@@ -1,6 +1,5 @@
 package com.trust.demo.trusttool.mvptest.testrequest;
 
-import com.trust.demo.basis.base.model.RequetResultListener;
 import com.trust.demo.basis.base.model.TrustModel;
 import com.trust.demo.basis.trust.utils.TrustLogUtils;
 import com.trust.demo.trusttool.mvptest.LoginModelInterface;
@@ -27,23 +26,9 @@ public class RetrofitModuleTest extends TrustModel<TestRequest> implements Login
     }
 
     @Override
-    public void login(String name, String pwd, final OnLoginFinushedInterface onLoginFinushedInterface) {
-        getRequestModule().requestGet("subscriptions#/subscriptions/12070983/user",
-                null, new RequetResultListener<String>() {
-                    @Override
-                    public void resultSuccess(String bean) {
-                        onLoginFinushedInterface.resultLogin(bean);
-                    }
-
-                    @Override
-                    public void resultError(Throwable throwable) {
-                        onLoginFinushedInterface.error(throwable.getMessage());
-                    }
-                },String.class
-        );
+    public void login(String name, String pwd, OnLoginFinushedInterface onLoginFinushedInterface) {
+        getRequestModule().requestGet("subscriptions#/subscriptions/12070983/user",null);
+        TrustLogUtils.d("你点击了登陆:"+name+"|pwd:"+pwd);
+        onLoginFinushedInterface.resultLogin("你点击了登陆o,在TestModule");
     }
-
-
-
-
 }

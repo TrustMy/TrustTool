@@ -2,7 +2,6 @@ package com.trust.demo.trusttool.mvptest.testrequest;
 
 import android.support.annotation.NonNull;
 
-import com.trust.demo.basis.base.model.RequetResultListener;
 import com.trust.demo.basis.base.model.TrustHttpRequestModel;
 import com.trust.demo.basis.trust.utils.TrustLogUtils;
 import com.trust.retrofit.net.TrustRetrofitUtils;
@@ -22,32 +21,33 @@ import io.reactivex.schedulers.Schedulers;
 public class TestRequest extends TrustHttpRequestModel {
 
     @Override
-    public <T> void requestGet(String url, HashMap<String, Object> params, RequetResultListener<T> requetResultListener, Class<T> t) {
+    public  void requestGet(String url, HashMap<String, Object> params) {
         Observable<String> observable = getBuild(url, params).get();
-        request(observable,requetResultListener,t);
+        request(observable);
+
     }
 
     @Override
-    public void requestPost(String url, HashMap<String,Object> params,RequetResultListener requetResultListener) {
+    public void requestPost(String url, HashMap<String,Object> params) {
         Observable<String> observable = getBuild(url, params).post();
-//        request(observable,requetResultListener);
+        request(observable);
     }
 
     @Override
-    public void requestPut(String url, HashMap<String,Object> params,RequetResultListener requetResultListener) {
+    public void requestPut(String url, HashMap<String,Object> params) {
         Observable<String> observable = getBuild(url, params).put();
-//        request(observable,requetResultListener);
+        request(observable);
     }
 
     @Override
-    public void requestDelete(String url, HashMap<String,Object> params,RequetResultListener requetResultListener) {
+    public void requestDelete(String url, HashMap<String,Object> params) {
         Observable<String> observable = getBuild(url, params).delete();
-//        request(observable,requetResultListener);
+        request(observable);
     }
 
 
 
-    private <T> void request(Observable<String> observable, final RequetResultListener<T> requetResultListener, final Class<T> t) {
+    private void request(Observable<String> observable) {
         observable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -59,13 +59,12 @@ public class TestRequest extends TrustHttpRequestModel {
 
                     @Override
                     public void onNext(String s) {
-                        requetResultListener.resultSuccess((T) TrustAnalysis(s,t));
                         TrustLogUtils.d("这事返回得结果"+s);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        requetResultListener.resultError(e);
+
                     }
 
                     @Override
