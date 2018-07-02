@@ -1,5 +1,7 @@
 package com.trust.demo.basis.base.model
 
+import com.google.gson.Gson
+import com.trust.demo.basis.trust.utils.TrustAnalysis
 
 
 /**
@@ -33,5 +35,9 @@ abstract class TrustModel  <M :TrustHttpRequestModel>:TrustModelListener ,TrustH
     override fun setRequestMidule(model: M) {
         this.module = model
     }
+
+
+
+
 
 }
