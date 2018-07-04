@@ -1,5 +1,6 @@
 package com.trust.retrofit.net;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import io.reactivex.Observable;
@@ -16,6 +17,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.PartMap;
 import retrofit2.http.QueryMap;
 import retrofit2.http.Streaming;
 import retrofit2.http.Url;
@@ -41,15 +43,15 @@ public interface TrustService {
     @DELETE
     Observable<String> delete(@Url String url, @QueryMap Map<String,Object> params);
 
+    //上传
+    @POST
+    @Multipart
+    Observable<String> upload(@Url String url, @Part MultipartBody.Part file);
+
     //下载直接到内存 需要@Streaming
     @Streaming
     @GET
     Observable<ResponseBody> download(@Url String url, @QueryMap Map<String,Object> params);
-
-    //上传
-    @Multipart
-    @POST
-    Observable<String> upload(@Url String url, @Part MultipartBody.Part file);
 
     //原始数据
     @POST
@@ -57,4 +59,7 @@ public interface TrustService {
 
     @PUT
     Observable<String> putRaw(@Url String url, @Body RequestBody body);
+
+    @DELETE
+    Observable<String> deleteRaw(@Url String url, @Body RequestBody body);
 }

@@ -2,6 +2,8 @@ package com.trust.retrofit.config;
 
 import android.content.Context;
 
+import com.trust.retrofit.net.TrustRetrofitCreator;
+
 /**
  * Created by Trust on 2018/6/28.
  */
@@ -24,4 +26,6 @@ public class ProjectInit {
     public static Context getApplicationContext(){
         return getConfigurator(ConfigKeys.APPLICATION_CONTEXT.name());
     }
+
+
 }

@@ -6,6 +6,8 @@ import java.util.HashMap;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 
+import static com.trust.retrofit.net.TrustRetrofitUtils.TRUST_RETROFIT;
+
 /**
  * Created by Trust on 2018/6/28.
  */
@@ -30,9 +32,15 @@ public class RetrofitBuilder {
         return this;
     }
 
-    public final RetrofitBuilder raw(String raw){
+    public final RetrofitBuilder body(String raw){
         this.mBody=RequestBody.create(
                 MediaType.parse("application/json;charset=UTF-8"),raw);
+        return this;
+    }
+
+    public final RetrofitBuilder body(String header,String raw){
+        this.mBody=RequestBody.create(
+                MediaType.parse(header),raw);
         return this;
     }
     //上传
@@ -46,6 +54,10 @@ public class RetrofitBuilder {
     }
 
     public final TrustRetrofitUtils build(){
-        return new TrustRetrofitUtils(mParams,mUrl,mBody,mFile);
+        return new TrustRetrofitUtils(mParams,mUrl,mBody,mFile,TRUST_RETROFIT);
+    }
+
+    public final TrustRetrofitUtils build(int type){
+        return new TrustRetrofitUtils(mParams,mUrl,mBody,mFile,type);
     }
 }

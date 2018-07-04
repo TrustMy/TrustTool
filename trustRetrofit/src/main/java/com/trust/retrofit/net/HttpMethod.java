@@ -11,6 +11,7 @@ package com.trust.retrofit.net;
     PUT,
     PUT_RAW,
     DELETE,
+    DELETE_RAW,
     UPLOAD,
     DOWNLOAD
 }

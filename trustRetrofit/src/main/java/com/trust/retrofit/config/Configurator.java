@@ -2,6 +2,8 @@ package com.trust.retrofit.config;
 
 import android.text.style.TtsSpan;
 
+import com.trust.retrofit.net.TrustRetrofitCreator;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -68,7 +70,10 @@ public class Configurator {
         CONFIGS.put(ConfigKeys.CONFIG_READY.name(),true);
     }
 
-
+    public  Configurator setSSL(String fileName,String pwd){
+        TrustRetrofitCreator.setSSL(fileName,pwd);
+        return this;
+    }
 
 
 }

@@ -1,6 +1,7 @@
 package com.trust.demo.basis.base.model;
 
 
+import com.trust.demo.basis.trust.utils.TrustAnalysis;
 import com.trust.demo.basis.trust.utils.TrustLogUtils;
 
 /**
@@ -20,7 +21,7 @@ public class TrustHttpRequestDelegate <M extends TrustHttpRequestModel>  {
             requestModule = trustHttpRequestListener.createRequestModule();
         }
         trustHttpRequestListener.setRequestMidule(requestModule);
-        TrustLogUtils.d("onCreate");
-
     }
+
+
 }

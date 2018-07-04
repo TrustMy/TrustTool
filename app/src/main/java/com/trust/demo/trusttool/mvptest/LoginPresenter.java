@@ -3,6 +3,8 @@ package com.trust.demo.trusttool.mvptest;
 import com.trust.demo.basis.base.presenter.TrustPresenters;
 import com.trust.demo.trusttool.mvptest.testrequest.RetrofitModuleTest;
 
+import java.util.HashMap;
+
 /**
  * Created by Trust on 2018/6/25.
  */
@@ -17,6 +19,11 @@ public class LoginPresenter extends TrustPresenters<LoginView> implements OnLogi
     @Override
     public void login(String name, String pwd) {
         loginMpde.login(name,pwd,this);
+    }
+
+    @Override
+    public void checkStatus(HashMap<String, Object> map) {
+        loginMpde.check(map,this);
     }
 
     @Override

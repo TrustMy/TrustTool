@@ -2,6 +2,8 @@ package com.trust.demo.trusttool.mvptest;
 
 import com.trust.modular.TrustRetrofit;
 
+import java.util.HashMap;
+
 /**
  * Created by Trust on 2018/6/25.
  */
@@ -17,6 +19,11 @@ public class LoginMpde implements LoginModelInterface {
         }else{
             onLoginFinushedInterface.error("登陆失败 用户名或密码错误");
         }
+
+    }
+
+    @Override
+    public void check(HashMap<String, Object> map, OnLoginFinushedInterface onLoginFinushedInterface) {
 
     }
 }

@@ -7,17 +7,14 @@ import android.widget.Toast
 import com.trust.demo.basis.base.TrustMVPActivtiy
 import com.trust.demo.basis.trust.utils.TrustLogUtils
 import com.trust.demo.trusttool.R
-import com.trust.modular.TrustRetrofit
-import com.trust.modular.TrustRetrofitCallBack
 import com.trust.retrofit.config.ProjectInit
-import com.trust.retrofit.net.TrustRetrofitUtils
+
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.annotations.NonNull
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import okhttp3.ResponseBody
-import java.util.HashMap
+import java.util.*
 
 class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
 
@@ -61,10 +58,17 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
         })
 */
 
-        ProjectInit.init(this).setApiHost("https://www.jianshu.com/")
+        ProjectInit.init(this).setApiHost("https://syvehicle.cn/tomcat/")
+                .setSSL("cacerts_sy.bks","changeit")
                 .configure()
 
         getPresenter()?.login("动态代理后的mvp来自activitiy",null)
+    }
+
+    public fun checkStatus(v:View){
+        val map = HashMap<String, Any>(2)
+        map["cellPhone"] = "13892929789"
+        getPresenter()?.checkStatus(map)
     }
 }
 
