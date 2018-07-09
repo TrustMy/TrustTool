@@ -18,6 +18,7 @@ public class LoginPresenter extends TrustPresenters<LoginView> implements OnLogi
 
     @Override
     public void login(String name, String pwd) {
+        getView().showWaitDialog(null,false,null);
         loginMpde.login(name,pwd,this);
     }
 
@@ -28,7 +29,9 @@ public class LoginPresenter extends TrustPresenters<LoginView> implements OnLogi
 
     @Override
     public void resultLogin(String msg) {
+        getView().diassDialog();
         getView().logingStatus(msg);
+        getView().showToast("");
     }
 
     @Override

@@ -73,6 +73,7 @@ public class RetrofitModuleTest extends TrustModel<TrustRetrofitModel> implement
 
     @Override
     public void check(HashMap<String, Object> map, final OnLoginFinushedInterface onLoginFinushedInterface) {
+
         getRequestModule().requestGet("rest/vehicleLocation",
                 map,
                 new RequestResultListener<String>() {

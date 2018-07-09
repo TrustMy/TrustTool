@@ -48,4 +48,19 @@ public class TestFragment extends TrustMVPFragment<LoginView,LoginPresenter> imp
     public LoginPresenter createPresenter() {
         return new LoginPresenter();
     }
+
+    @Override
+    public void showWaitDialog(@Nullable String msg, boolean isShow, @Nullable String tag) {
+
+    }
+
+    @Override
+    public void diassDialog() {
+
+    }
+
+    @Override
+    public void showToast(@NotNull String msg) {
+
+    }
 }

@@ -26,7 +26,9 @@
         </activity>
         <activity android:name=".TBSActivity" />
         <activity android:name=".activity.TrustViewActivity" />
-        <activity android:name=".mvptest.MVPTestActivity"></activity>
+        <activity android:name=".mvptest.MVPTestActivity" />
+        <activity android:name=".eventdistribution.EventDistributionActivity" />
+        <activity android:name=".activity.RecyclerViewActivity"></activity>
     </application>
 
 </manifest>

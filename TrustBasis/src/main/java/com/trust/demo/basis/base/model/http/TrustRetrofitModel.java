@@ -11,7 +11,6 @@ import com.trust.retrofit.net.TrustRetrofitUtils;
 
 import org.json.JSONObject;
 
-import java.io.File;
 import java.util.HashMap;
 
 import io.reactivex.Observable;
@@ -124,9 +123,9 @@ public class TrustRetrofitModel extends TrustHttpRequestModel {
 
     /**
      * https表单请求
-     * @param url
-     * @param params
-     * @return
+     * @param url 地址
+     * @param params  参数
+     *
      */
     @NonNull
     private TrustRetrofitUtils getBuild(String url, HashMap<String, Object> params,int type) {
@@ -141,11 +140,11 @@ public class TrustRetrofitModel extends TrustHttpRequestModel {
 
     /**
      * 可选 http 或者https 指定请求头  请求
-     * @param url
-     * @param headler
-     * @param params
-     * @param type
-     * @return
+     * @param url 地址
+     * @param headler  请求头
+     * @param params  参数
+     * @param type  请求类型
+     *
      */
     @NonNull
     private TrustRetrofitUtils getBuild(String url, String headler, HashMap<String, Object> params , int type) {
@@ -165,9 +164,9 @@ public class TrustRetrofitModel extends TrustHttpRequestModel {
 
     /**
      * https  上传请求
-     * @param url
-     * @param filePath
-     * @return
+     * @param url 地址
+     * @param filePath 文件路径
+     *
      */
     @NonNull
     private TrustRetrofitUtils getBuild(String url, String filePath,int type) {

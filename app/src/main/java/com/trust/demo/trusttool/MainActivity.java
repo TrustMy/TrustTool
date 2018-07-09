@@ -19,7 +19,9 @@ import android.widget.Toast;
 
 import com.trust.demo.basis.trust.utils.TrustLogUtils;
 import com.trust.demo.basis.trust.utils.TrustHttpUtils;
+import com.trust.demo.trusttool.activity.RecyclerViewActivity;
 import com.trust.demo.trusttool.activity.TrustViewActivity;
+import com.trust.demo.trusttool.eventdistribution.EventDistributionActivity;
 import com.trust.demo.trusttool.mvptest.MVPTestActivity;
 import com.trust.live.TrustLiveActivity;
 import com.trust.maplibrary.MapUtils;
@@ -114,6 +116,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(context, MVPTestActivity.class));
+            }
+        });
+
+        findViewById(R.id.event_distribution_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, EventDistributionActivity.class));
+            }
+        });
+
+
+        findViewById(R.id.recyclerview_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, RecyclerViewActivity.class));
             }
         });
     }

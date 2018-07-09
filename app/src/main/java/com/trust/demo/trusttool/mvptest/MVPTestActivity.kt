@@ -17,6 +17,17 @@ import io.reactivex.schedulers.Schedulers
 import java.util.*
 
 class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
+    override fun showWaitDialog(msg: String?, isShow: Boolean, tag: String?) {
+        showta("showWaitDialog：$isShow")
+    }
+
+    override fun diassDialog() {
+        showta("diassDialog")
+    }
+
+    override fun showToast(msg: String) {
+        showta("showToast")
+    }
 
     override fun getLayoutId(): Int {
         return  R.layout.activity_mvptest
@@ -69,6 +80,11 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
         val map = HashMap<String, Any>(2)
         map["cellPhone"] = "13892929789"
         getPresenter()?.checkStatus(map)
+    }
+
+
+    fun showta(msg:String){
+        Toast.makeText(mContext,msg,Toast.LENGTH_LONG).show()
     }
 }
 

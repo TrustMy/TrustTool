@@ -1,14 +1,10 @@
 package com.trust.demo.basis.base.model;
 
 import com.trust.demo.basis.trust.utils.TrustAnalysis;
-import com.trust.retrofit.net.TrustRetrofitCreator;
 
-import java.io.File;
 import java.util.HashMap;
 
-import static com.trust.retrofit.net.TrustRetrofitUtils.TRUST_RETROFIT;
 import static com.trust.retrofit.net.TrustRetrofitUtils.TRUST_RETROFIT_SSL;
-import static com.trust.retrofit.net.TrustRetrofitUtils.TRUST_RETROFIT_SSL_TRUST_ALL;
 
 /**
  * Created by Trust on 2018/6/29.

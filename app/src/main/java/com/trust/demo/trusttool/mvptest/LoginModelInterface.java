@@ -1,5 +1,7 @@
 package com.trust.demo.trusttool.mvptest;
 
+import com.trust.demo.basis.base.veiw.TrustView;
+
 import java.util.HashMap;
 
 /**
