@@ -25,9 +25,9 @@
 
 
 
-    <!--  <fragment
+      <fragment
           android:id="@+id/test_framelayout"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:name="com.trust.demo.trusttool.mvptest.TestFragment"/>-->
+          android:name="com.trust.demo.trusttool.mvptest.TestFragment"/>
 </LinearLayout>

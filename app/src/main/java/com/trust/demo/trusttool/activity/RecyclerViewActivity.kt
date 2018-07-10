@@ -1,5 +1,6 @@
 package com.trust.demo.trusttool.activity
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -13,6 +14,9 @@ import com.trust.demo.trusttool.mvptest.LoginView
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
 class RecyclerViewActivity : TrustMVPActivtiy<TrustView,TrustPresenters<TrustView>>(), TrustView {
+    override fun onTrustViewActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    }
+
     override fun showWaitDialog(msg: String?, isShow: Boolean, tag: String?) {
     }
 
@@ -45,6 +49,10 @@ class RecyclerViewActivity : TrustMVPActivtiy<TrustView,TrustPresenters<TrustVie
         }
         recyclerAdapter.setMl(list)
         recyclerAdapter.notifyDataSetChanged()
+        val intent = Intent()
+        intent.putExtra("test","我是返回得数据")
+        setResult(5,intent)
+        finish()
     }
 
     override fun createPresenter(): TrustPresenters<TrustView> {

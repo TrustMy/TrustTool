@@ -18,12 +18,13 @@ public class LoginPresenter extends TrustPresenters<LoginView> implements OnLogi
 
     @Override
     public void login(String name, String pwd) {
-        getView().showWaitDialog(null,false,null);
+        getView().showWaitDialog(null,true,"我是需要显示得tag");
         loginMpde.login(name,pwd,this);
     }
 
     @Override
     public void checkStatus(HashMap<String, Object> map) {
+        getView().showWaitDialog("no msg",false,"我是不需要显示得tag");
         loginMpde.check(map,this);
     }
 
@@ -31,7 +32,7 @@ public class LoginPresenter extends TrustPresenters<LoginView> implements OnLogi
     public void resultLogin(String msg) {
         getView().diassDialog();
         getView().logingStatus(msg);
-        getView().showToast("");
+        getView().showToast("resultLogin  结果已经返回");
     }
 
     @Override

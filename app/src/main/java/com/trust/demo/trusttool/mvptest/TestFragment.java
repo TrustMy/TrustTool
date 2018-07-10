@@ -1,5 +1,6 @@
 package com.trust.demo.trusttool.mvptest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Toast;
 import com.trust.demo.basis.base.TrustMVPFragment;
 import com.trust.demo.basis.trust.utils.TrustLogUtils;
 import com.trust.demo.trusttool.R;
+import com.trust.demo.trusttool.activity.RecyclerViewActivity;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -34,7 +36,7 @@ public class TestFragment extends TrustMVPFragment<LoginView,LoginPresenter> imp
 
     @Override
     protected void initData() {
-
+        startActivityResult(getActivity(), RecyclerViewActivity.class,1);
     }
 
     @Override
@@ -62,5 +64,10 @@ public class TestFragment extends TrustMVPFragment<LoginView,LoginPresenter> imp
     @Override
     public void showToast(@NotNull String msg) {
 
+    }
+
+    @Override
+    public void onTrustViewActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        TrustLogUtils.d("onTrustViewActivityResult:"+requestCode+"|resu"+resultCode+"|数据"+data.getStringExtra("test"));
     }
 }

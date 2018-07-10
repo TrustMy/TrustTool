@@ -1,5 +1,6 @@
 package com.trust.demo.trusttool.mvptest
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -7,6 +8,7 @@ import android.widget.Toast
 import com.trust.demo.basis.base.TrustMVPActivtiy
 import com.trust.demo.basis.trust.utils.TrustLogUtils
 import com.trust.demo.trusttool.R
+import com.trust.demo.trusttool.activity.RecyclerViewActivity
 import com.trust.retrofit.config.ProjectInit
 
 import io.reactivex.Observer
@@ -14,11 +16,21 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.annotations.NonNull
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_mvptest.*
 import java.util.*
 
 class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
+    override fun onTrustViewActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        test_framelayout.onActivityResult(requestCode,resultCode,data)
+        showta("onTrustViewActivityResult：$requestCode  resultCode : $resultCode test ${data?.getStringExtra("test")} ")
+    }
+
     override fun showWaitDialog(msg: String?, isShow: Boolean, tag: String?) {
-        showta("showWaitDialog：$isShow")
+        if (msg != null) {
+            showta("showWaitDialog：$isShow  tag : $tag   msg: $msg")
+        }else{
+            showta("showWaitDialog：$isShow  tag : $tag")
+        }
     }
 
     override fun diassDialog() {
@@ -26,7 +38,7 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
     }
 
     override fun showToast(msg: String) {
-        showta("showToast")
+        showta("showToast  $msg")
     }
 
     override fun getLayoutId(): Int {
@@ -38,6 +50,7 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
     }
 
     override fun initData() {
+
     }
 
 

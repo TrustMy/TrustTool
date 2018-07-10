@@ -2,6 +2,7 @@ package com.trust.demo.basis.base
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.trust.demo.basis.base.delegate.TrustMvpActivityDelegate
@@ -100,6 +101,17 @@ open abstract class TrustMVPActivtiy <V : TrustView ,P : TrustPresenters<V>>:
 
     override fun setPresenter(prensent: P) {
         this.mPresenter = prensent
+    }
+
+    protected fun startActivityResult(activity: Activity,clasz:Class<*>,code:Int){
+        val intent:Intent = Intent(activity,clasz)
+        activity.startActivityForResult(intent,code)
+    }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        onTrustViewActivityResult(requestCode, resultCode, data)
     }
 
 }

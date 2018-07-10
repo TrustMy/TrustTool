@@ -2,6 +2,7 @@ package com.trust.demo.basis.base
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -97,5 +98,15 @@ abstract class TrustMVPFragment <V : TrustView,P : TrustPresenters<V>>:Fragment(
 
     override fun setPresenter(prensent: P) {
         this.mPresenter = prensent
+    }
+
+    protected fun startActivityResult(activity: Activity,clasz:Class<*>,code:Int){
+        val intent:Intent = Intent(activity,clasz)
+        startActivityForResult(intent,code)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        onTrustViewActivityResult(requestCode, resultCode, data)
     }
 }

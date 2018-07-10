@@ -1,5 +1,7 @@
 package com.trust.demo.basis.base.veiw
 
+import android.content.Intent
+
 /**
  * Created by Trust on 2018/6/25.
  */
@@ -15,4 +17,5 @@ interface TrustView {
 
     fun showToast(msg:String)
 
+    fun onTrustViewActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
 }
