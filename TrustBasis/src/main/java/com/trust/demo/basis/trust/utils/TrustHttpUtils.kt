@@ -53,7 +53,7 @@ class TrustHttpUtils(context: Context) {
      * @return one of TYPE_NONE, TYPE_MOBILE, TYPE_WIFI
      * @permission android.permission.ACCESS_NETWORK_STATE
      */
-    fun getNetWorkStates(): Int {
+    fun getNetWorkStatesType(): Int {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetworkInfo = connectivityManager.activeNetworkInfo
         if (activeNetworkInfo == null || !activeNetworkInfo.isConnected) {
@@ -69,6 +69,34 @@ class TrustHttpUtils(context: Context) {
         }
         return -1000
     }
+
+
+    @SuppressLint("MissingPermission")
+            /**
+     * 获取网络状态
+     *
+     * @param context
+     * @return one of TYPE_NONE, TYPE_MOBILE, TYPE_WIFI
+     * @permission android.permission.ACCESS_NETWORK_STATE
+     */
+    fun getNetWorkStatesString(): String {
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetworkInfo = connectivityManager.activeNetworkInfo
+        if (activeNetworkInfo == null || !activeNetworkInfo.isConnected) {
+            return "网络异常"//没网
+        }
+
+        val type = activeNetworkInfo.type
+        when (type) {
+            ConnectivityManager.TYPE_MOBILE -> return "移动数据"//移动数据
+            ConnectivityManager.TYPE_WIFI -> return "WIFI"//WIFI
+            else -> {
+            }
+        }
+        return "网络异常"
+    }
+
+
 
 
 

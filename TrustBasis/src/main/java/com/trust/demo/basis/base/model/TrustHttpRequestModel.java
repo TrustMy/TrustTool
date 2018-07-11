@@ -30,5 +30,4 @@ public abstract class TrustHttpRequestModel {
         this.type  = type;
     }
 
-
 }

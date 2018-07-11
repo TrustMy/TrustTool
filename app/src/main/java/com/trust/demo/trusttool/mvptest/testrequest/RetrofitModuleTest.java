@@ -68,7 +68,12 @@ public class RetrofitModuleTest extends TrustModel<TrustRetrofitModel> implement
          public void resultError(Throwable e) {
              onLoginFinushedInterface.error(e.toString());
          }
-     },String.class);
+
+                 @Override
+                 public void netWorkError(String msg) {
+                     onLoginFinushedInterface.error(msg);
+                 }
+             },String.class);
     }
 
     @Override
@@ -85,6 +90,11 @@ public class RetrofitModuleTest extends TrustModel<TrustRetrofitModel> implement
                     @Override
                     public void resultError(Throwable e) {
                         onLoginFinushedInterface.error(e.toString());
+                    }
+
+                    @Override
+                    public void netWorkError(String msg) {
+                        onLoginFinushedInterface.error(msg.toString());
                     }
                 },String.class);
     }

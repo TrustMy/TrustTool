@@ -78,6 +78,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp" />
 
+
+            <com.trust.demo.trusttool.TestPaintView
+                android:layout_width="match_parent"
+                android:layout_height="230dp" />
+
         </com.trust.viewlibrary.Flowlayoutsss>
     </LinearLayout>
 

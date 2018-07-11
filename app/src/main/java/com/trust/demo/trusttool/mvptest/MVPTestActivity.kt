@@ -46,7 +46,9 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-
+        ProjectInit.init(this).setApiHost("https://syvehicle.cn/tomcat/")
+                .setSSL("cacerts_sy.bks","changeit")
+                .configure()
     }
 
     override fun initData() {
@@ -82,9 +84,7 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
         })
 */
 
-        ProjectInit.init(this).setApiHost("https://syvehicle.cn/tomcat/")
-                .setSSL("cacerts_sy.bks","changeit")
-                .configure()
+
 
         getPresenter()?.login("动态代理后的mvp来自activitiy",null)
     }

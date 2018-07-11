@@ -7,4 +7,5 @@ package com.trust.demo.basis.base.model;
 public interface RequestResultListener <T>{
     void resultSuccess(T bean);
     void resultError(Throwable e);
+    void netWorkError(String msg);
 }

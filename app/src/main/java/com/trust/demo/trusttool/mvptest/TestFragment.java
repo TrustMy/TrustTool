@@ -53,17 +53,17 @@ public class TestFragment extends TrustMVPFragment<LoginView,LoginPresenter> imp
 
     @Override
     public void showWaitDialog(@Nullable String msg, boolean isShow, @Nullable String tag) {
-
+        TrustLogUtils.d("showWaitDialog:"+isShow+tag);
     }
 
     @Override
     public void diassDialog() {
-
+        TrustLogUtils.d("diassDialog:");
     }
 
     @Override
     public void showToast(@NotNull String msg) {
-
+        TrustLogUtils.d("showToast:"+msg);
     }
 
     @Override

@@ -10,6 +10,7 @@ import static com.trust.retrofit.net.TrustRetrofitUtils.TRUST_RETROFIT;
 
 /**
  * Created by Trust on 2018/6/28.
+ *
  */
 
 public class RetrofitBuilder {

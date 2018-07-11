@@ -4,7 +4,9 @@ import android.support.annotation.NonNull;
 
 import com.trust.demo.basis.base.model.RequestResultListener;
 import com.trust.demo.basis.base.model.TrustHttpRequestModel;
+import com.trust.demo.basis.trust.utils.TrustHttpUtils;
 import com.trust.demo.basis.trust.utils.TrustLogUtils;
+import com.trust.retrofit.config.ProjectInit;
 import com.trust.retrofit.net.RetrofitBuilder;
 import com.trust.retrofit.net.TrustRetrofitUtils;
 
@@ -94,31 +96,37 @@ public class TrustRetrofitModel extends TrustHttpRequestModel {
 
 
     private <T> void request(Observable<String> observable, final RequestResultListener<T> requestResultListener, final Class<T> clasz) {
-        observable
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<String>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
+        TrustHttpUtils singleton = TrustHttpUtils.Companion.getSingleton(ProjectInit.getApplicationContext());
+        if (singleton.isNetworkAvailable()) {
+            TrustLogUtils.d("singleton.getNetWorkStates():"+singleton.getNetWorkStatesString());
+            observable
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Observer<String>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
 
-                    }
+                        }
 
-                    @Override
-                    public void onNext(String s) {
-                        requestResultListener.resultSuccess((T) getTrustAnalysis(s,clasz));
-                        TrustLogUtils.d("这事返回得结果"+s);
-                    }
+                        @Override
+                        public void onNext(String s) {
+                            requestResultListener.resultSuccess((T) getTrustAnalysis(s,clasz));
+                        }
 
-                    @Override
-                    public void onError(Throwable e) {
-                        requestResultListener.resultError(e);
-                    }
+                        @Override
+                        public void onError(Throwable e) {
+                            requestResultListener.resultError(e);
+                        }
 
-                    @Override
-                    public void onComplete() {
+                        @Override
+                        public void onComplete() {
 
-                    }
-                });
+                        }
+                    });
+        }else{
+            requestResultListener.netWorkError("没网");
+        }
+
     }
 
     /**

@@ -3,6 +3,8 @@ package com.trust.demo.basis.base
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
+import android.os.Handler
+import android.os.Process
 import com.trust.demo.basis.trust.utils.TrustLogUtils
 
 /**
@@ -10,25 +12,33 @@ import com.trust.demo.basis.trust.utils.TrustLogUtils
  *
  */
 open class TrustApplication : Application(){
-    protected var context:Context?=null
+
     companion object {
-        @SuppressLint("StaticFieldLeak")
+        private var context:Context?=null
+        private var handler: Handler?= null
+        private var mainThreadId:Int = 0
         private var trustApplication: TrustApplication?=null
 
         @Synchronized
          fun  getInstance() : TrustApplication {
             return trustApplication!!
         }
-    }
 
+        fun getContexts():Context{ return context!! }
+
+        fun getHandlers():Handler{return handler!!}
+
+        fun getMainThreadIds():Int{return mainThreadId}
+    }
 
     override fun onCreate() {
         super.onCreate()
         context = applicationContext
+        handler = Handler()
+        mainThreadId = Process.myTid()
         TrustLogUtils.configLog("onCreate ---------SUCCESS---------")
     }
 
-    fun getContexts():Context{ return context!! }
 
 
 }

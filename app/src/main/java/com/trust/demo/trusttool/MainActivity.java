@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
         TrustHttpUtils httpCheckTool = new TrustHttpUtils(this);
         TrustLogUtils.d("网络状态:"+httpCheckTool.isNetworkAvailable());
-        TrustLogUtils.d("网络类型:"+httpCheckTool.getNetWorkStates());
+        TrustLogUtils.d("网络类型:"+httpCheckTool.getNetWorkStatesString());
 
         final TrustStatusBarView view = findViewById(R.id.test_trust_bar);
 
