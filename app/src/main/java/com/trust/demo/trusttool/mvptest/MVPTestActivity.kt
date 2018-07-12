@@ -1,10 +1,13 @@
 package com.trust.demo.trusttool.mvptest
 
+import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.dn.tim.lib_permission.annotation.Permission
+import com.dn.tim.lib_permission.annotation.PermissionCanceled
 import com.trust.demo.basis.base.TrustMVPActivtiy
 import com.trust.demo.basis.trust.utils.TrustLogUtils
 import com.trust.demo.trusttool.R
@@ -66,6 +69,8 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
         Log.d("lhh,", "logingStatus:$status")
     }
 
+
+
     fun startLogin(v:View){
        /*
         val create = TrustRetrofit.create(this, "https://www.jianshu.com/")
@@ -85,9 +90,11 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
 */
 
 
-
-        getPresenter()?.login("动态代理后的mvp来自activitiy",null)
+//        getPresenter()?.login("动态代理后的mvp来自activitiy",null)
+        startActivity(Intent(this,PermissActivity::class.java))
     }
+
+
 
     public fun checkStatus(v:View){
         val map = HashMap<String, Any>(2)

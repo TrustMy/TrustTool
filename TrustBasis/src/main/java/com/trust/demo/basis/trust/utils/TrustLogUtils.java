@@ -429,6 +429,7 @@ public class TrustLogUtils {
     }
 
     private static final ThreadLocal<ReusableFormatter> thread_local_formatter = new ThreadLocal<ReusableFormatter>() {
+        @Override
         protected ReusableFormatter initialValue() {
             return new ReusableFormatter();
         }

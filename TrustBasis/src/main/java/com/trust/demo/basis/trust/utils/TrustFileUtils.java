@@ -89,8 +89,9 @@ public class TrustFileUtils {
      * 兼容了file:///开头的 和 content://开头的情况
      */
     public static String getRealFilePathFromUri(final Context context, final Uri uri) {
-        if (null == uri)
+        if (null == uri) {
             return null;
+        }
         final String scheme = uri.getScheme();
         String data = null;
         if (scheme == null) {
@@ -150,14 +151,18 @@ public class TrustFileUtils {
         } catch (Exception ex) {
         } finally {
             try {
-                if (inbuff != null)
+                if (inbuff != null) {
                     inbuff.close();
-                if (outbuff != null)
+                }
+                if (outbuff != null) {
                     outbuff.close();
-                if (out != null)
+                }
+                if (out != null) {
                     out.close();
-                if (input != null)
+                }
+                if (input != null) {
                     input.close();
+                }
             } catch (Exception ex) {
 
             }

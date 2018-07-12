@@ -9,8 +9,9 @@ public class LogUtils {
 	
 	
 	public static void e(String TAG,String msg){
-		if(open)
-		Log.e(TAG, msg);
+		if(open) {
+			Log.e(TAG, msg);
+		}
 	}
 	
 }

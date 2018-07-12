@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-aspectjx'
 def sdkVersion = rootProject.ext.androidVersion
 def appid = rootProject.ext.appid
 def supporCompiles = rootProject.ext.supporCompiles
@@ -25,6 +26,7 @@ android {
     }
 
 
+
     buildToolsVersion '26.0.2'
 }
 
@@ -45,6 +47,7 @@ dependencies {
     implementation project(':TrustStatusBarLibrary')
     implementation project(':TrustViewLibrary')
     implementation project(':trustRetrofit')
+    implementation project(':TrustPermission-library')
 }
 
 apply plugin: 'kotlin-android'
