@@ -1,9 +1,8 @@
-package com.trust.loginregisterlibrary
+package com.trust.loginregisterlibrary.ui.activity
 
 import android.Manifest
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.dn.tim.lib_permission.annotation.Permission
@@ -12,9 +11,9 @@ import com.dn.tim.lib_permission.annotation.PermissionDenied
 import com.trust.demo.basis.base.TrustMVPActivtiy
 import com.trust.demo.basis.trust.utils.TrustAppUtils
 import com.trust.demo.basis.trust.utils.TrustLogUtils
+import com.trust.loginregisterlibrary.R
 import com.trust.loginregisterlibrary.mvpview.LoginView
 import com.trust.loginregisterlibrary.presenter.LoginPresenter
-import com.trust.retrofit.config.ProjectInit
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.HashMap
 
@@ -48,9 +47,9 @@ class LoginActivity : TrustMVPActivtiy<LoginView,LoginPresenter>() , LoginView{
 
     override fun baseResultOnClick(v: View) {
         when(v.id){
-            R.id.btn_login->{submintLogin()}
-            R.id.btn_login_forget_pwd->{Toast.makeText(mContext,"点击了忘记密码",Toast.LENGTH_LONG).show()}
-            R.id.btn_login_registered->{Toast.makeText(mContext,"点击了注册",Toast.LENGTH_LONG).show()}
+            R.id.btn_login ->{submintLogin()}
+            R.id.btn_login_forget_pwd ->{Toast.makeText(mContext,"点击了忘记密码",Toast.LENGTH_LONG).show()}
+            R.id.btn_login_registered ->{Toast.makeText(mContext,"点击了注册",Toast.LENGTH_LONG).show()}
         }
     }
 

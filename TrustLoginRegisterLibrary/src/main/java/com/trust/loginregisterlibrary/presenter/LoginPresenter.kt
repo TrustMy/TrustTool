@@ -1,9 +1,9 @@
 package com.trust.loginregisterlibrary.presenter
 
 import com.trust.demo.basis.base.presenter.TrustPresenters
-import com.trust.loginregisterlibrary.module.LoginModel
-import com.trust.loginregisterlibrary.module.LoginModuleInterface
-import com.trust.loginregisterlibrary.module.LoginResultInterface
+import com.trust.loginregisterlibrary.module.login.LoginModel
+import com.trust.loginregisterlibrary.module.login.LoginModuleInterface
+import com.trust.loginregisterlibrary.module.login.LoginResultInterface
 import com.trust.loginregisterlibrary.mvpview.LoginView
 
 /**
@@ -20,7 +20,7 @@ class LoginPresenter :TrustPresenters<LoginView>() ,LoginPresenterInterface{
 
     override fun login(map: HashMap<String, Any>) {
         view.showWaitDialog("",false,"")
-        loginModule!!.login(map,object : LoginResultInterface{
+        loginModule!!.login(map,object : LoginResultInterface {
             override fun resultData(msg: String) {
                 view.diassDialog()
                 view.resultSuccess(msg)

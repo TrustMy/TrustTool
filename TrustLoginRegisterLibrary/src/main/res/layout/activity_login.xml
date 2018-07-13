@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context="com.trust.loginregisterlibrary.LoginActivity">
+    tools:context="com.trust.loginregisterlibrary.ui.activity.LoginActivity">
 
     <ImageView
         android:id="@+id/img_login_logo"
