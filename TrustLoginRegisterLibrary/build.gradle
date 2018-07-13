@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 def sdkVersion = rootProject.ext.androidVersion
 def appid = rootProject.ext.appid
 def supporCompiles = rootProject.ext.supporCompiles
+
 android {
     compileSdkVersion sdkVersion.compileSdkVersion
     buildToolsVersion supportLibraryVersion
@@ -15,33 +15,27 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     buildToolsVersion '26.0.2'
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    api supporCompiles["v7"]
-    testCompile 'junit:junit:4.12'
-    implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    api 'com.google.code.gson:gson:2.8.2'
-    api project(':trustRetrofit')
-    api project(':TrustPermission-library')
-    api project(':trustbluetooth')
-    api project(':TrustLive')
-    api project(':maplibrary')
-    api project(':TrustStatusBarLibrary')
-    api project(':TrustViewLibrary')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(':TrustBasis')
 }
-repositories {
-    mavenCentral()
-}
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'

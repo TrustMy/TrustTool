@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.helper.ItemTouchHelper
+import android.view.View
 import com.trust.demo.basis.base.TrustMVPActivtiy
 import com.trust.demo.basis.base.presenter.TrustPresenters
 import com.trust.demo.basis.base.veiw.TrustView
@@ -14,6 +15,9 @@ import com.trust.demo.trusttool.mvptest.LoginView
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
 class RecyclerViewActivity : TrustMVPActivtiy<TrustView,TrustPresenters<TrustView>>(), TrustView {
+    override fun baseResultOnClick(v: View) {
+    }
+
     override fun onTrustViewActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
     }
 

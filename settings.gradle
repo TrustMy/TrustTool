@@ -1,1 +1,1 @@
-include ':app', ':TrustBasis', ':TrustAlgorithm', ':TrustTBSlibrary', ':trustbluetooth', ':test', ':TrustLive', ':splashactivity', ':maplibrary', ':TrustStatusBarLibrary', ':TrustViewLibrary', ':trustRetrofit', ':TrustPermission-library'
+include ':app', ':TrustBasis', ':TrustAlgorithm', ':TrustTBSlibrary', ':trustbluetooth', ':test', ':TrustLive', ':splashactivity', ':maplibrary', ':TrustStatusBarLibrary', ':TrustViewLibrary', ':trustRetrofit', ':TrustPermission-library', ':TrustLoginRegisterLibrary'

@@ -35,10 +35,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation supporCompiles["recyclerview"]
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testCompile 'junit:junit:4.12'
     implementation files('libs/tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar')
     implementation project(':TrustBasis')
+    implementation project(':TrustLoginRegisterLibrary')
 }
 
 apply plugin: 'kotlin-android'

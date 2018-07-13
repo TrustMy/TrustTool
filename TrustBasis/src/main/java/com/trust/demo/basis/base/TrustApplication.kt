@@ -6,6 +6,7 @@ import android.content.Context
 import android.os.Handler
 import android.os.Process
 import com.trust.demo.basis.trust.utils.TrustLogUtils
+import com.trust.retrofit.config.ProjectInit
 
 /**
  * Created by Trust on 2018/5/28.
@@ -37,6 +38,7 @@ open class TrustApplication : Application(){
         handler = Handler()
         mainThreadId = Process.myTid()
         TrustLogUtils.configLog("onCreate ---------SUCCESS---------")
+
     }
 
 

@@ -55,7 +55,7 @@ public class RetrofitModuleTest extends TrustModel<TrustRetrofitModel> implement
         map.put("appPlatform", "Android");
         map.put("appVersion", "1.0.0");
 
-     getRequestModule().requestJsonParams(
+        getRequestModule().requestJsonParams(
              "rest/user/login",
              TrustRetrofitUtils.POST_RAW,
              map, new RequestResultListener<String>() {

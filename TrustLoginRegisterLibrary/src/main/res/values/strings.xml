@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TrustLoginRegisterLibrary</string>
+    <string name="registered">点击注册</string>
+    <string name="forgetPassword">忘记密码?</string>
+    <string name="login">登陆</string>
+    <string name="pwd">密码:</string>
+    <string name="phone">手机号:</string>
+    <string name="logo">logo</string>
+</resources>

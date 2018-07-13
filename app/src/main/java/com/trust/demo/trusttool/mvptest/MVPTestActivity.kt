@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.dn.tim.lib_permission.annotation.Permission
+import com.dn.tim.lib_permission.annotation.PermissionCanceled
+import com.dn.tim.lib_permission.annotation.PermissionDenied
 
 import com.trust.demo.basis.base.TrustMVPActivtiy
 import com.trust.demo.basis.trust.utils.TrustLogUtils
@@ -13,15 +16,13 @@ import com.trust.demo.trusttool.R
 import com.trust.demo.trusttool.activity.RecyclerViewActivity
 import com.trust.retrofit.config.ProjectInit
 
-import io.reactivex.Observer
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.annotations.NonNull
-import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_mvptest.*
+
 import java.util.*
 
 class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
+    override fun baseResultOnClick(v: View) {
+    }
+
     override fun onTrustViewActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 //        test_framelayout.onActivityResult(requestCode,resultCode,data)
         showta("onTrustViewActivityResult：$requestCode  resultCode : $resultCode test ${data?.getStringExtra("test")} ")
@@ -89,7 +90,27 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
 */
 
 //        getPresenter()?.login("动态代理后的mvp来自activitiy",null)
-        startActivity(Intent(this,PermissActivity::class.java))
+//        startActivity(Intent(this,PermissActivity::class.java))
+        testPermission()
+    }
+
+    @Permission(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
+    fun testPermission(){
+        Toast.makeText(this, "请求两个权限成功（写和相机）", Toast.LENGTH_SHORT).show()
+    }
+
+
+    @PermissionCanceled
+    private fun cancel() {
+        Log.i("lhh", "writeCancel: ")
+        Toast.makeText(this, "PermissionCanceled", Toast.LENGTH_SHORT).show()
+    }
+
+
+    @PermissionDenied
+    private fun cancels() {
+        Log.i("lhh", "PermissionDenied: ")
+        Toast.makeText(this, "PermissionDenied", Toast.LENGTH_SHORT).show()
     }
 
 

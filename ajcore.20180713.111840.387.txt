@@ -1,0 +1,379 @@
+---- AspectJ Properties ---
+AspectJ Compiler 1.8.9 built on Monday Mar 14, 2016 at 21:18:16 GMT
+---- Dump Properties ---
+Dump file: ajcore.20180713.111840.387.txt
+Dump reason: java.lang.OutOfMemoryError
+Dump on exception: true
+Dump at exit condition: abort
+---- Exception Information ---
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at java.util.zip.InflaterInputStream.<init>(InflaterInputStream.java:88)
+	at java.util.zip.ZipFile$ZipFileInflaterInputStream.<init>(ZipFile.java:393)
+	at java.util.zip.ZipFile.getInputStream(ZipFile.java:374)
+	at java.util.jar.JarFile.getInputStream(JarFile.java:447)
+	at org.aspectj.weaver.bcel.BcelWeaver.addJarFile(BcelWeaver.java:391)
+	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.initBcelWorld(AjBuildManager.java:896)
+	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performBuild(AjBuildManager.java:249)
+	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:185)
+	at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:112)
+	at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+	at org.aspectj.tools.ajc.Main.run(Main.java:371)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSite.invoke(PojoMetaMethodSite.java:192)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+	at com.hujiang.gradle.plugin.android.aspectjx.AspectWork.doWork(AspectWork.groovy:104)
+	at com.hujiang.gradle.plugin.android.aspectjx.AspectWork$doWork$0.call(Unknown Source)
+	at com.hujiang.gradle.plugin.android.aspectjx.AspectTransform.doAspectTransform(AspectTransform.groovy:201)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:174)
+	at com.hujiang.gradle.plugin.android.aspectjx.AspectTransform.transform(AspectTransform.groovy:127)
+	at com.android.build.api.transform.Transform.transform(Transform.java:288)
+---- System Properties ---
+java.vendor=JetBrains s.r.o
+sun.java.launcher=SUN_STANDARD
+sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+idea.paths.selector=AndroidStudio3.0
+jnidispatch.path=C:\Users\Administrator\.AndroidStudio3.0\system\tmp\jna1150550315107026881.dll
+winp.unpack.dll.to.parent.dir=false
+os.name=Windows 10
+sun.boot.class.path=D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\resources.jar;D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\rt.jar;D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\sunrsasign.jar;D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\jsse.jar;D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\jce.jar;D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\charsets.jar;D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\jfr.jar;D:\WorkTool\AndroidTool\Android Stuido\jre\jre\classes
+sun.desktop=windows
+java.vm.specification.vendor=Oracle Corporation
+java.runtime.version=1.8.0_152-release-915-b01
+jb.vmOptionsFile=D:\WorkTool\AndroidTool\Android Stuido\bin\studio64.exe.vmoptions
+jna.loaded=true
+io.netty.serviceThreadPrefix=Netty 
+user.name=Administrator
+java.rmi.server.disableHttp=true
+svnkit.http.methods=Basic,Digest,NTLM
+user.language=zh
+sun.boot.library.path=D:\WorkTool\AndroidTool\Android Stuido\jre\jre\bin
+jna.nosys=true
+idea.fatal.error.notification=disabled
+swing.bufferPerWindow=true
+java.version=1.8.0_152-release
+java.net.preferIPv4Stack=true
+user.timezone=Asia/Shanghai
+sun.arch.data.model=64
+java.util.concurrent.ForkJoinPool.common.threadFactory=com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory
+jna.tmpdir=C:\Users\Administrator\.AndroidStudio3.0\system\tmp
+java.endorsed.dirs=D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\endorsed
+sun.cpu.isalist=amd64
+sun.jnu.encoding=GBK
+file.encoding.pkg=sun.io
+file.separator=\
+java.specification.name=Java Platform API Specification
+java.class.version=52.0
+user.country=CN
+jna.boot.library.path=
+java.home=D:\WorkTool\AndroidTool\Android Stuido\jre\jre
+java.util.concurrent.ForkJoinPool.common.parallelism=4
+java.vm.info=mixed mode
+os.version=10.0
+path.separator=;
+java.vm.version=25.152-b01
+idea.no.launcher=false
+user.variant=
+idea.max.content.load.filesize=20000
+java.awt.printerjob=sun.awt.windows.WPrinterJob
+sun.io.unicode.encoding=UnicodeLittle
+idea.cycle.buffer.size=1024
+awt.toolkit=sun.awt.windows.WToolkit
+ide.new.welcome.screen.force=true
+log4j.defaultInitOverride=true
+io.netty.processId=23297
+user.script=
+idea.platform.prefix=AndroidStudio
+idea.dynamic.classpath=false
+user.home=C:\Users\Administrator
+__idea.mac.env.lock=unlocked
+java.specification.vendor=Oracle Corporation
+library.jansi.path=C:\Users\Administrator\.gradle\native\jansi\1.14\windows64
+java.library.path=D:\WorkTool\AndroidTool\Android Stuido\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\TrustSystemTool\JavaJdk\Java\jdk1.8.0_91\bin;D:\TrustSystemTool\JavaJdk\Java\jre1.8.0_91\bin;D:\TrustSystemTool\Config\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\WorkTool\AndroidTool\Sdk\tools;C:\Program Files (x86)\Skype\Phone\;C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.6;C:\WINDOWS\System32\OpenSSH\;D:\WorkTool\Python\Scripts;D:\WorkTool\Python;D:\WorkTool\Python\Scripts\;D:\WorkTool\Python\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.
+java.vendor.url=https://www.jetbrains.com/
+java.vm.vendor=JetBrains s.r.o
+kotlin.environment.keepalive=true
+external.system.remote.process.idle.ttl.ms=-1
+java.runtime.name=OpenJDK Runtime Environment
+sun.java.command=org.gradle.launcher.daemon.bootstrap.GradleDaemon 4.1
+java.class.path=C:\Users\Administrator\.gradle\wrapper\dists\gradle-4.1-all\bzyivzo6n839fup2jbap0tjew\gradle-4.1\lib\gradle-launcher-4.1.jar
+io.netty.machineId=28:f0:76:ff:fe:16:65:0e
+java.vm.specification.name=Java Virtual Machine Specification
+idea.xdebug.key=-Xdebug
+java.vm.specification.version=1.8
+idea.popup.weight=heavy
+sun.cpu.endian=little
+sun.os.patch.level=
+java.awt.headless=true
+java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+java.vendor.url.bug=https://youtrack.jetbrains.com
+svnkit.log.native.calls=true
+java.rmi.server.hostname=localhost
+os.arch=amd64
+java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
+idea.max.intellisense.filesize=2500
+java.ext.dirs=D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext
+idea.jre.check=true
+user.dir=D:\Demo\Trust
+line.separator=
+
+java.vm.name=OpenJDK 64-Bit Server VM
+java.util.Arrays.useLegacyMergeSort=true
+file.encoding=GBK
+studio.record.file=C:\Users\Administrator\.AndroidStudio3.0\system\tmp\AndroidStudio.9d1b64e3-6036-4d40-9745-5bec3effea3b
+java.specification.version=1.8
+---- Command Line ---
+-showWeaveInfo
+-encoding
+UTF-8
+-source
+1.7
+-target
+1.7
+-d
+D:\Demo\Trust\app\build\intermediates\transforms\AspectTransform\debug\0
+-classpath
+D:\Demo\Trust\app\libs\tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.9\87372d9e2323313bec24b09a325bfea8ae0eb867\aspectjrt-1.8.9.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0.aar\a821e8c0ac1340b5414fbbc5bfa39b76\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\9bfedf93f15fc08ed53b56fec01076be\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\verticalseekbar-0.7.2.aar\5beb65e395b98283ba796133f7d69eef\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\paintview-1.17.aar\660713ab2a88ac1a78e8bbe9e1702f42\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\1590de1ff1bd86760476806867104996\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8b8f56e24e5b7634630b2fc0ed80b34a\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\f3adf556389a3d3fd870c15e3a0e6ec0\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\735a166e82dabdc0577615364f5b2e33\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\3bfa7c71a9be9e39427dbe62bbb0bc9c\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\9c43a6aa51a00fb5beff7d4e14db6dcb\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\95fb7ab1ba872b0c58b96f49eb342415\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\fbd22ced60793a23ed82de681cb98eb3\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\ee5e98445f657e940f7f69bc5b324a74\jars\classes.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.0.0\db09a97f4f0db8892c1a0111a4b966f97920d082\support-annotations-26.0.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.1.2\bfc967828daffc35ba01c9ee204d98b664930a0f\constraint-layout-solver-1.1.2.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.2.21\88bfff5aa470143a83b0bc5ec00c0be8cabd7cad\kotlin-stdlib-jdk7-1.2.21.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.3.0\9e09011e9767bb76b5e27c9b8223476b93b14631\converter-gson-2.3.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jre7\1.2.21\3beb08c67673033183c8652572680587876e64b5\kotlin-stdlib-jre7-1.2.21.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.2.21\d64187eb2d9d1521be3421aa8c6774a8625cdde8\kotlin-stdlib-1.2.21.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava2\2.3.0\f436637f9500ab5b8bc32afe556373180894b4a5\adapter-rxjava2-2.3.0.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.1.aar\09fcd478f46e68d74a7ed6ed1c9351db\jars\classes.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex.rxjava2\rxjava\2.1.3\c6a633c63607f09f77f424b5c52522a7607cedae\rxjava-2.1.3.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-scalars\2.3.0\1eaa5762cb25c31b1905e2bfdfef70a2e0495ea6\converter-scalars-2.3.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.3.0\bcacde6a8ccedcc56c127403d26b76072fe6214d\retrofit-2.3.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.9.0\3bf7f8d6a20c90ffe9fc3f3c9118193c7720ecf1\logging-interceptor-3.9.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.9.0\1b6c10b5120995a7542c1a31b7828fb8593c8ba\okhttp-3.9.0.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\fresco-1.4.0.aar\93330605654b42d04815a2992bf8c6c8\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-gif-1.4.0.aar\e7e39a24e4ac1c4255062e784365af02\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-webp-1.4.0.aar\34305263ee02b6341c5411e83e179f2d\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-java-3.0.0.aar\de965e6af03f9c9b7cf3e08a5e436870\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-java-3.0.0.aar\de965e6af03f9c9b7cf3e08a5e436870\jars\libs\ksylive.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-armv7a-3.0.0.aar\bd21d1e98579f33d2a627afa00cede6d\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-arm64-3.0.0.aar\1bf5bfe3c0ab19b746869c4468db69e6\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-x86-3.0.0.aar\b033346491f26e014e27ee5b8badcc79\jars\classes.jar;D:\WorkTool\AndroidTool\Android Stuido\gradle\m2repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.reactivestreams\reactive-streams\1.0.1\1b1c911686eb40179219466e6a59b634b9d7a748\reactive-streams-1.0.1.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-base-1.4.0.aar\fa112c7b711e59b4421e1c5d7f9d06fe\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-drawable-1.4.0.aar\dec50df50c72c537adaf4318c969217e\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\drawee-1.4.0.aar\0f01abc74fc2bef66d973f871ef4a2b5\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.4.0.aar\bdf0d7df4abdc0fc27d5180f36a61639\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\webpsupport-1.4.0.aar\36488291e53d6de3e9a9498152b802b7\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.4.0.aar\b3cc1bea288d0765b33df147ea5993a6\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\fbcore-1.4.0.aar\33c9f475802316681fa04672e8405f63\jars\classes.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar;D:\Demo\Trust\TrustLoginRegisterLibrary\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustBasis\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustPermission-library\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\trustbluetooth\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustLive\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\trustRetrofit\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\maplibrary\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustStatusBarLibrary\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustViewLibrary\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\app\build\intermediates\classes\debug;D:\Demo\Trust\app\build\tmp\kotlin-classes\debug
+-bootclasspath
+D:\WorkTool\AndroidTool\Sdk\platforms\android-26\android.jar
+-inpath
+D:\Demo\Trust\app\libs\tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.9\87372d9e2323313bec24b09a325bfea8ae0eb867\aspectjrt-1.8.9.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0.aar\a821e8c0ac1340b5414fbbc5bfa39b76\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\9bfedf93f15fc08ed53b56fec01076be\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\verticalseekbar-0.7.2.aar\5beb65e395b98283ba796133f7d69eef\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\paintview-1.17.aar\660713ab2a88ac1a78e8bbe9e1702f42\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\1590de1ff1bd86760476806867104996\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8b8f56e24e5b7634630b2fc0ed80b34a\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\f3adf556389a3d3fd870c15e3a0e6ec0\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\735a166e82dabdc0577615364f5b2e33\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\3bfa7c71a9be9e39427dbe62bbb0bc9c\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\9c43a6aa51a00fb5beff7d4e14db6dcb\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\95fb7ab1ba872b0c58b96f49eb342415\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\fbd22ced60793a23ed82de681cb98eb3\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\ee5e98445f657e940f7f69bc5b324a74\jars\classes.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.0.0\db09a97f4f0db8892c1a0111a4b966f97920d082\support-annotations-26.0.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.1.2\bfc967828daffc35ba01c9ee204d98b664930a0f\constraint-layout-solver-1.1.2.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.2.21\88bfff5aa470143a83b0bc5ec00c0be8cabd7cad\kotlin-stdlib-jdk7-1.2.21.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.3.0\9e09011e9767bb76b5e27c9b8223476b93b14631\converter-gson-2.3.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jre7\1.2.21\3beb08c67673033183c8652572680587876e64b5\kotlin-stdlib-jre7-1.2.21.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.2.21\d64187eb2d9d1521be3421aa8c6774a8625cdde8\kotlin-stdlib-1.2.21.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava2\2.3.0\f436637f9500ab5b8bc32afe556373180894b4a5\adapter-rxjava2-2.3.0.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.1.aar\09fcd478f46e68d74a7ed6ed1c9351db\jars\classes.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex.rxjava2\rxjava\2.1.3\c6a633c63607f09f77f424b5c52522a7607cedae\rxjava-2.1.3.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-scalars\2.3.0\1eaa5762cb25c31b1905e2bfdfef70a2e0495ea6\converter-scalars-2.3.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.3.0\bcacde6a8ccedcc56c127403d26b76072fe6214d\retrofit-2.3.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.9.0\3bf7f8d6a20c90ffe9fc3f3c9118193c7720ecf1\logging-interceptor-3.9.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.9.0\1b6c10b5120995a7542c1a31b7828fb8593c8ba\okhttp-3.9.0.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\fresco-1.4.0.aar\93330605654b42d04815a2992bf8c6c8\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-gif-1.4.0.aar\e7e39a24e4ac1c4255062e784365af02\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-webp-1.4.0.aar\34305263ee02b6341c5411e83e179f2d\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-java-3.0.0.aar\de965e6af03f9c9b7cf3e08a5e436870\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-java-3.0.0.aar\de965e6af03f9c9b7cf3e08a5e436870\jars\libs\ksylive.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-armv7a-3.0.0.aar\bd21d1e98579f33d2a627afa00cede6d\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-arm64-3.0.0.aar\1bf5bfe3c0ab19b746869c4468db69e6\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-x86-3.0.0.aar\b033346491f26e014e27ee5b8badcc79\jars\classes.jar;D:\WorkTool\AndroidTool\Android Stuido\gradle\m2repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.reactivestreams\reactive-streams\1.0.1\1b1c911686eb40179219466e6a59b634b9d7a748\reactive-streams-1.0.1.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-base-1.4.0.aar\fa112c7b711e59b4421e1c5d7f9d06fe\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-drawable-1.4.0.aar\dec50df50c72c537adaf4318c969217e\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\drawee-1.4.0.aar\0f01abc74fc2bef66d973f871ef4a2b5\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.4.0.aar\bdf0d7df4abdc0fc27d5180f36a61639\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\webpsupport-1.4.0.aar\36488291e53d6de3e9a9498152b802b7\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.4.0.aar\b3cc1bea288d0765b33df147ea5993a6\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\fbcore-1.4.0.aar\33c9f475802316681fa04672e8405f63\jars\classes.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar;D:\Demo\Trust\TrustLoginRegisterLibrary\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustBasis\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustPermission-library\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\trustbluetooth\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustLive\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\trustRetrofit\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\maplibrary\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustStatusBarLibrary\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustViewLibrary\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\app\build\intermediates\classes\debug;D:\Demo\Trust\app\build\tmp\kotlin-classes\debug
+-aspectpath
+D:\Demo\Trust\app\libs\tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.9\87372d9e2323313bec24b09a325bfea8ae0eb867\aspectjrt-1.8.9.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0.aar\a821e8c0ac1340b5414fbbc5bfa39b76\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\9bfedf93f15fc08ed53b56fec01076be\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\verticalseekbar-0.7.2.aar\5beb65e395b98283ba796133f7d69eef\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\paintview-1.17.aar\660713ab2a88ac1a78e8bbe9e1702f42\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\1590de1ff1bd86760476806867104996\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8b8f56e24e5b7634630b2fc0ed80b34a\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\f3adf556389a3d3fd870c15e3a0e6ec0\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\735a166e82dabdc0577615364f5b2e33\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\3bfa7c71a9be9e39427dbe62bbb0bc9c\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\9c43a6aa51a00fb5beff7d4e14db6dcb\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\95fb7ab1ba872b0c58b96f49eb342415\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\fbd22ced60793a23ed82de681cb98eb3\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\ee5e98445f657e940f7f69bc5b324a74\jars\classes.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.0.0\db09a97f4f0db8892c1a0111a4b966f97920d082\support-annotations-26.0.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.1.2\bfc967828daffc35ba01c9ee204d98b664930a0f\constraint-layout-solver-1.1.2.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.2.21\88bfff5aa470143a83b0bc5ec00c0be8cabd7cad\kotlin-stdlib-jdk7-1.2.21.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.3.0\9e09011e9767bb76b5e27c9b8223476b93b14631\converter-gson-2.3.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jre7\1.2.21\3beb08c67673033183c8652572680587876e64b5\kotlin-stdlib-jre7-1.2.21.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.2.21\d64187eb2d9d1521be3421aa8c6774a8625cdde8\kotlin-stdlib-1.2.21.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava2\2.3.0\f436637f9500ab5b8bc32afe556373180894b4a5\adapter-rxjava2-2.3.0.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.1.aar\09fcd478f46e68d74a7ed6ed1c9351db\jars\classes.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex.rxjava2\rxjava\2.1.3\c6a633c63607f09f77f424b5c52522a7607cedae\rxjava-2.1.3.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-scalars\2.3.0\1eaa5762cb25c31b1905e2bfdfef70a2e0495ea6\converter-scalars-2.3.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.3.0\bcacde6a8ccedcc56c127403d26b76072fe6214d\retrofit-2.3.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.9.0\3bf7f8d6a20c90ffe9fc3f3c9118193c7720ecf1\logging-interceptor-3.9.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.9.0\1b6c10b5120995a7542c1a31b7828fb8593c8ba\okhttp-3.9.0.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\fresco-1.4.0.aar\93330605654b42d04815a2992bf8c6c8\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-gif-1.4.0.aar\e7e39a24e4ac1c4255062e784365af02\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-webp-1.4.0.aar\34305263ee02b6341c5411e83e179f2d\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-java-3.0.0.aar\de965e6af03f9c9b7cf3e08a5e436870\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-java-3.0.0.aar\de965e6af03f9c9b7cf3e08a5e436870\jars\libs\ksylive.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-armv7a-3.0.0.aar\bd21d1e98579f33d2a627afa00cede6d\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-arm64-3.0.0.aar\1bf5bfe3c0ab19b746869c4468db69e6\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-x86-3.0.0.aar\b033346491f26e014e27ee5b8badcc79\jars\classes.jar;D:\WorkTool\AndroidTool\Android Stuido\gradle\m2repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.reactivestreams\reactive-streams\1.0.1\1b1c911686eb40179219466e6a59b634b9d7a748\reactive-streams-1.0.1.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-base-1.4.0.aar\fa112c7b711e59b4421e1c5d7f9d06fe\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-drawable-1.4.0.aar\dec50df50c72c537adaf4318c969217e\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\drawee-1.4.0.aar\0f01abc74fc2bef66d973f871ef4a2b5\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.4.0.aar\bdf0d7df4abdc0fc27d5180f36a61639\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\webpsupport-1.4.0.aar\36488291e53d6de3e9a9498152b802b7\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.4.0.aar\b3cc1bea288d0765b33df147ea5993a6\jars\classes.jar;C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\fbcore-1.4.0.aar\33c9f475802316681fa04672e8405f63\jars\classes.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar;D:\Demo\Trust\TrustLoginRegisterLibrary\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustBasis\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustPermission-library\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\trustbluetooth\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustLive\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\trustRetrofit\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\maplibrary\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustStatusBarLibrary\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\TrustViewLibrary\build\intermediates\intermediate-jars\debug\classes.jar;D:\Demo\Trust\app\build\intermediates\classes\debug;D:\Demo\Trust\app\build\tmp\kotlin-classes\debug
+-Xlint:ignore
+-warn:none
+---- Full Classpath ---
+D:\WorkTool\AndroidTool\Sdk\platforms\android-26\android.jar(26467929 bytes)
+D:\Demo\Trust\app\libs\tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar(336957 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.9\87372d9e2323313bec24b09a325bfea8ae0eb867\aspectjrt-1.8.9.jar(117528 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0.aar\a821e8c0ac1340b5414fbbc5bfa39b76\jars\classes.jar(368368 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b2fb972923bcf50ae99116c002fd61b2\jars\classes.jar(35566 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\verticalseekbar-0.7.2.aar\5beb65e395b98283ba796133f7d69eef\jars\classes.jar(8436 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\paintview-1.17.aar\660713ab2a88ac1a78e8bbe9e1702f42\jars\classes.jar(23653 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\1590de1ff1bd86760476806867104996\jars\classes.jar(702573 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8b8f56e24e5b7634630b2fc0ed80b34a\jars\classes.jar(589 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\f3adf556389a3d3fd870c15e3a0e6ec0\jars\classes.jar(35141 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\735a166e82dabdc0577615364f5b2e33\jars\classes.jar(174525 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\3bfa7c71a9be9e39427dbe62bbb0bc9c\jars\classes.jar(251322 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\9c43a6aa51a00fb5beff7d4e14db6dcb\jars\classes.jar(31171 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\95fb7ab1ba872b0c58b96f49eb342415\jars\classes.jar(340914 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\fbd22ced60793a23ed82de681cb98eb3\jars\classes.jar(95185 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\ee5e98445f657e940f7f69bc5b324a74\jars\classes.jar(672247 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.0.0\db09a97f4f0db8892c1a0111a4b966f97920d082\support-annotations-26.0.0.jar(24712 bytes)
+D:\WorkTool\AndroidTool\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar(95560 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.2.21\88bfff5aa470143a83b0bc5ec00c0be8cabd7cad\kotlin-stdlib-jdk7-1.2.21.jar(3135 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.3.0\9e09011e9767bb76b5e27c9b8223476b93b14631\converter-gson-2.3.0.jar(5852 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar(232932 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jre7\1.2.21\3beb08c67673033183c8652572680587876e64b5\kotlin-stdlib-jre7-1.2.21.jar(2859 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.2.21\d64187eb2d9d1521be3421aa8c6774a8625cdde8\kotlin-stdlib-1.2.21.jar(932477 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava2\2.3.0\f436637f9500ab5b8bc32afe556373180894b4a5\adapter-rxjava2-2.3.0.jar(15564 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.1.aar\09fcd478f46e68d74a7ed6ed1c9351db\jars\classes.jar(9539 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex.rxjava2\rxjava\2.1.3\c6a633c63607f09f77f424b5c52522a7607cedae\rxjava-2.1.3.jar(2161303 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-scalars\2.3.0\1eaa5762cb25c31b1905e2bfdfef70a2e0495ea6\converter-scalars-2.3.0.jar(13161 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.3.0\bcacde6a8ccedcc56c127403d26b76072fe6214d\retrofit-2.3.0.jar(90692 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.9.0\3bf7f8d6a20c90ffe9fc3f3c9118193c7720ecf1\logging-interceptor-3.9.0.jar(8289 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.9.0\1b6c10b5120995a7542c1a31b7828fb8593c8ba\okhttp-3.9.0.jar(405733 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\fresco-1.4.0.aar\93330605654b42d04815a2992bf8c6c8\jars\classes.jar(18831 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-gif-1.4.0.aar\e7e39a24e4ac1c4255062e784365af02\jars\classes.jar(4089 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-webp-1.4.0.aar\34305263ee02b6341c5411e83e179f2d\jars\classes.jar(3832 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-java-3.0.0.aar\de965e6af03f9c9b7cf3e08a5e436870\jars\classes.jar(1052 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-java-3.0.0.aar\de965e6af03f9c9b7cf3e08a5e436870\jars\libs\ksylive.jar(700957 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-armv7a-3.0.0.aar\bd21d1e98579f33d2a627afa00cede6d\jars\classes.jar(1081 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-arm64-3.0.0.aar\1bf5bfe3c0ab19b746869c4468db69e6\jars\classes.jar(1077 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-x86-3.0.0.aar\b033346491f26e014e27ee5b8badcc79\jars\classes.jar(1065 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\gradle\m2repository\org\jetbrains\annotations\13.0\annotations-13.0.jar(17536 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.reactivestreams\reactive-streams\1.0.1\1b1c911686eb40179219466e6a59b634b9d7a748\reactive-streams-1.0.1.jar(2086 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-base-1.4.0.aar\fa112c7b711e59b4421e1c5d7f9d06fe\jars\classes.jar(52260 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-drawable-1.4.0.aar\dec50df50c72c537adaf4318c969217e\jars\classes.jar(35461 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\drawee-1.4.0.aar\0f01abc74fc2bef66d973f871ef4a2b5\jars\classes.jar(125863 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.4.0.aar\bdf0d7df4abdc0fc27d5180f36a61639\jars\classes.jar(393002 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\webpsupport-1.4.0.aar\36488291e53d6de3e9a9498152b802b7\jars\classes.jar(8653 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.4.0.aar\b3cc1bea288d0765b33df147ea5993a6\jars\classes.jar(132824 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\fbcore-1.4.0.aar\33c9f475802316681fa04672e8405f63\jars\classes.jar(128411 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar(38092 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar(81811 bytes)
+D:\Demo\Trust\TrustBasis\build\intermediates\intermediate-jars\debug\classes.jar(93063 bytes)
+D:\Demo\Trust\TrustPermission-library\build\intermediates\intermediate-jars\debug\classes.jar(12899 bytes)
+D:\Demo\Trust\trustbluetooth\build\intermediates\intermediate-jars\debug\classes.jar(97174 bytes)
+D:\Demo\Trust\TrustLive\build\intermediates\intermediate-jars\debug\classes.jar(18249 bytes)
+D:\Demo\Trust\trustRetrofit\build\intermediates\intermediate-jars\debug\classes.jar(38091 bytes)
+D:\Demo\Trust\maplibrary\build\intermediates\intermediate-jars\debug\classes.jar(14750 bytes)
+D:\Demo\Trust\TrustStatusBarLibrary\build\intermediates\intermediate-jars\debug\classes.jar(8142 bytes)
+D:\Demo\Trust\TrustViewLibrary\build\intermediates\intermediate-jars\debug\classes.jar(15649 bytes)
+D:\Demo\Trust\app\build\intermediates\classes\debug(3 entries)
+D:\Demo\Trust\app\build\tmp\kotlin-classes\debug(1 entries)
+D:\Demo\Trust\app\libs\tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar(336957 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.9\87372d9e2323313bec24b09a325bfea8ae0eb867\aspectjrt-1.8.9.jar(117528 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0.aar\a821e8c0ac1340b5414fbbc5bfa39b76\jars\classes.jar(368368 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b2fb972923bcf50ae99116c002fd61b2\jars\classes.jar(35566 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\verticalseekbar-0.7.2.aar\5beb65e395b98283ba796133f7d69eef\jars\classes.jar(8436 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\paintview-1.17.aar\660713ab2a88ac1a78e8bbe9e1702f42\jars\classes.jar(23653 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\1590de1ff1bd86760476806867104996\jars\classes.jar(702573 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8b8f56e24e5b7634630b2fc0ed80b34a\jars\classes.jar(589 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\f3adf556389a3d3fd870c15e3a0e6ec0\jars\classes.jar(35141 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\735a166e82dabdc0577615364f5b2e33\jars\classes.jar(174525 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\3bfa7c71a9be9e39427dbe62bbb0bc9c\jars\classes.jar(251322 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\9c43a6aa51a00fb5beff7d4e14db6dcb\jars\classes.jar(31171 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\95fb7ab1ba872b0c58b96f49eb342415\jars\classes.jar(340914 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\fbd22ced60793a23ed82de681cb98eb3\jars\classes.jar(95185 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\ee5e98445f657e940f7f69bc5b324a74\jars\classes.jar(672247 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.0.0\db09a97f4f0db8892c1a0111a4b966f97920d082\support-annotations-26.0.0.jar(24712 bytes)
+D:\WorkTool\AndroidTool\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar(95560 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.2.21\88bfff5aa470143a83b0bc5ec00c0be8cabd7cad\kotlin-stdlib-jdk7-1.2.21.jar(3135 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.3.0\9e09011e9767bb76b5e27c9b8223476b93b14631\converter-gson-2.3.0.jar(5852 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar(232932 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jre7\1.2.21\3beb08c67673033183c8652572680587876e64b5\kotlin-stdlib-jre7-1.2.21.jar(2859 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.2.21\d64187eb2d9d1521be3421aa8c6774a8625cdde8\kotlin-stdlib-1.2.21.jar(932477 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava2\2.3.0\f436637f9500ab5b8bc32afe556373180894b4a5\adapter-rxjava2-2.3.0.jar(15564 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.1.aar\09fcd478f46e68d74a7ed6ed1c9351db\jars\classes.jar(9539 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex.rxjava2\rxjava\2.1.3\c6a633c63607f09f77f424b5c52522a7607cedae\rxjava-2.1.3.jar(2161303 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-scalars\2.3.0\1eaa5762cb25c31b1905e2bfdfef70a2e0495ea6\converter-scalars-2.3.0.jar(13161 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.3.0\bcacde6a8ccedcc56c127403d26b76072fe6214d\retrofit-2.3.0.jar(90692 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.9.0\3bf7f8d6a20c90ffe9fc3f3c9118193c7720ecf1\logging-interceptor-3.9.0.jar(8289 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.9.0\1b6c10b5120995a7542c1a31b7828fb8593c8ba\okhttp-3.9.0.jar(405733 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\fresco-1.4.0.aar\93330605654b42d04815a2992bf8c6c8\jars\classes.jar(18831 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-gif-1.4.0.aar\e7e39a24e4ac1c4255062e784365af02\jars\classes.jar(4089 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-webp-1.4.0.aar\34305263ee02b6341c5411e83e179f2d\jars\classes.jar(3832 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-java-3.0.0.aar\de965e6af03f9c9b7cf3e08a5e436870\jars\classes.jar(1052 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-java-3.0.0.aar\de965e6af03f9c9b7cf3e08a5e436870\jars\libs\ksylive.jar(700957 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-armv7a-3.0.0.aar\bd21d1e98579f33d2a627afa00cede6d\jars\classes.jar(1081 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-arm64-3.0.0.aar\1bf5bfe3c0ab19b746869c4468db69e6\jars\classes.jar(1077 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-x86-3.0.0.aar\b033346491f26e014e27ee5b8badcc79\jars\classes.jar(1065 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\gradle\m2repository\org\jetbrains\annotations\13.0\annotations-13.0.jar(17536 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.reactivestreams\reactive-streams\1.0.1\1b1c911686eb40179219466e6a59b634b9d7a748\reactive-streams-1.0.1.jar(2086 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-base-1.4.0.aar\fa112c7b711e59b4421e1c5d7f9d06fe\jars\classes.jar(52260 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-drawable-1.4.0.aar\dec50df50c72c537adaf4318c969217e\jars\classes.jar(35461 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\drawee-1.4.0.aar\0f01abc74fc2bef66d973f871ef4a2b5\jars\classes.jar(125863 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.4.0.aar\bdf0d7df4abdc0fc27d5180f36a61639\jars\classes.jar(393002 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\webpsupport-1.4.0.aar\36488291e53d6de3e9a9498152b802b7\jars\classes.jar(8653 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.4.0.aar\b3cc1bea288d0765b33df147ea5993a6\jars\classes.jar(132824 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\fbcore-1.4.0.aar\33c9f475802316681fa04672e8405f63\jars\classes.jar(128411 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar(38092 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar(81811 bytes)
+D:\Demo\Trust\TrustBasis\build\intermediates\intermediate-jars\debug\classes.jar(93063 bytes)
+D:\Demo\Trust\TrustPermission-library\build\intermediates\intermediate-jars\debug\classes.jar(12899 bytes)
+D:\Demo\Trust\trustbluetooth\build\intermediates\intermediate-jars\debug\classes.jar(97174 bytes)
+D:\Demo\Trust\TrustLive\build\intermediates\intermediate-jars\debug\classes.jar(18249 bytes)
+D:\Demo\Trust\trustRetrofit\build\intermediates\intermediate-jars\debug\classes.jar(38091 bytes)
+D:\Demo\Trust\maplibrary\build\intermediates\intermediate-jars\debug\classes.jar(14750 bytes)
+D:\Demo\Trust\TrustStatusBarLibrary\build\intermediates\intermediate-jars\debug\classes.jar(8142 bytes)
+D:\Demo\Trust\TrustViewLibrary\build\intermediates\intermediate-jars\debug\classes.jar(15649 bytes)
+D:\Demo\Trust\app\build\intermediates\classes\debug(3 entries)
+D:\Demo\Trust\app\build\tmp\kotlin-classes\debug(1 entries)
+D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\ext\access-bridge-64.jar(196869 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\ext\cldrdata.jar(3860502 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\ext\dnsns.jar(8286 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\ext\jaccess.jar(44516 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\ext\localedata.jar(1179101 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\ext\nashorn.jar(2033194 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\ext\sunec.jar(38260 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\ext\sunjce_provider.jar(261554 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\ext\sunmscapi.jar(29490 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\ext\sunpkcs11.jar(239017 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\jre\jre\lib\ext\zipfs.jar(68932 bytes)
+D:\Demo\Trust\app\libs\tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar(336957 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.9\87372d9e2323313bec24b09a325bfea8ae0eb867\aspectjrt-1.8.9.jar(117528 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0.aar\a821e8c0ac1340b5414fbbc5bfa39b76\jars\classes.jar(368368 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b2fb972923bcf50ae99116c002fd61b2\jars\classes.jar(35566 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\verticalseekbar-0.7.2.aar\5beb65e395b98283ba796133f7d69eef\jars\classes.jar(8436 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\paintview-1.17.aar\660713ab2a88ac1a78e8bbe9e1702f42\jars\classes.jar(23653 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\1590de1ff1bd86760476806867104996\jars\classes.jar(702573 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8b8f56e24e5b7634630b2fc0ed80b34a\jars\classes.jar(589 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\f3adf556389a3d3fd870c15e3a0e6ec0\jars\classes.jar(35141 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\735a166e82dabdc0577615364f5b2e33\jars\classes.jar(174525 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\3bfa7c71a9be9e39427dbe62bbb0bc9c\jars\classes.jar(251322 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\9c43a6aa51a00fb5beff7d4e14db6dcb\jars\classes.jar(31171 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\95fb7ab1ba872b0c58b96f49eb342415\jars\classes.jar(340914 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\fbd22ced60793a23ed82de681cb98eb3\jars\classes.jar(95185 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\ee5e98445f657e940f7f69bc5b324a74\jars\classes.jar(672247 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.0.0\db09a97f4f0db8892c1a0111a4b966f97920d082\support-annotations-26.0.0.jar(24712 bytes)
+D:\WorkTool\AndroidTool\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar(95560 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.2.21\88bfff5aa470143a83b0bc5ec00c0be8cabd7cad\kotlin-stdlib-jdk7-1.2.21.jar(3135 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.3.0\9e09011e9767bb76b5e27c9b8223476b93b14631\converter-gson-2.3.0.jar(5852 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar(232932 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jre7\1.2.21\3beb08c67673033183c8652572680587876e64b5\kotlin-stdlib-jre7-1.2.21.jar(2859 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.2.21\d64187eb2d9d1521be3421aa8c6774a8625cdde8\kotlin-stdlib-1.2.21.jar(932477 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava2\2.3.0\f436637f9500ab5b8bc32afe556373180894b4a5\adapter-rxjava2-2.3.0.jar(15564 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.1.aar\09fcd478f46e68d74a7ed6ed1c9351db\jars\classes.jar(9539 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex.rxjava2\rxjava\2.1.3\c6a633c63607f09f77f424b5c52522a7607cedae\rxjava-2.1.3.jar(2161303 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-scalars\2.3.0\1eaa5762cb25c31b1905e2bfdfef70a2e0495ea6\converter-scalars-2.3.0.jar(13161 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.3.0\bcacde6a8ccedcc56c127403d26b76072fe6214d\retrofit-2.3.0.jar(90692 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.9.0\3bf7f8d6a20c90ffe9fc3f3c9118193c7720ecf1\logging-interceptor-3.9.0.jar(8289 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.9.0\1b6c10b5120995a7542c1a31b7828fb8593c8ba\okhttp-3.9.0.jar(405733 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\fresco-1.4.0.aar\93330605654b42d04815a2992bf8c6c8\jars\classes.jar(18831 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-gif-1.4.0.aar\e7e39a24e4ac1c4255062e784365af02\jars\classes.jar(4089 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-webp-1.4.0.aar\34305263ee02b6341c5411e83e179f2d\jars\classes.jar(3832 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-java-3.0.0.aar\de965e6af03f9c9b7cf3e08a5e436870\jars\classes.jar(1052 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-java-3.0.0.aar\de965e6af03f9c9b7cf3e08a5e436870\jars\libs\ksylive.jar(700957 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-armv7a-3.0.0.aar\bd21d1e98579f33d2a627afa00cede6d\jars\classes.jar(1081 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-arm64-3.0.0.aar\1bf5bfe3c0ab19b746869c4468db69e6\jars\classes.jar(1077 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\libksylive-x86-3.0.0.aar\b033346491f26e014e27ee5b8badcc79\jars\classes.jar(1065 bytes)
+D:\WorkTool\AndroidTool\Android Stuido\gradle\m2repository\org\jetbrains\annotations\13.0\annotations-13.0.jar(17536 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.reactivestreams\reactive-streams\1.0.1\1b1c911686eb40179219466e6a59b634b9d7a748\reactive-streams-1.0.1.jar(2086 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-base-1.4.0.aar\fa112c7b711e59b4421e1c5d7f9d06fe\jars\classes.jar(52260 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-drawable-1.4.0.aar\dec50df50c72c537adaf4318c969217e\jars\classes.jar(35461 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\drawee-1.4.0.aar\0f01abc74fc2bef66d973f871ef4a2b5\jars\classes.jar(125863 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.4.0.aar\bdf0d7df4abdc0fc27d5180f36a61639\jars\classes.jar(393002 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\webpsupport-1.4.0.aar\36488291e53d6de3e9a9498152b802b7\jars\classes.jar(8653 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.4.0.aar\b3cc1bea288d0765b33df147ea5993a6\jars\classes.jar(132824 bytes)
+C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\fbcore-1.4.0.aar\33c9f475802316681fa04672e8405f63\jars\classes.jar(128411 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar(38092 bytes)
+C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar(81811 bytes)
+D:\Demo\Trust\TrustBasis\build\intermediates\intermediate-jars\debug\classes.jar(93063 bytes)
+D:\Demo\Trust\TrustPermission-library\build\intermediates\intermediate-jars\debug\classes.jar(12899 bytes)
+D:\Demo\Trust\trustbluetooth\build\intermediates\intermediate-jars\debug\classes.jar(97174 bytes)
+D:\Demo\Trust\TrustLive\build\intermediates\intermediate-jars\debug\classes.jar(18249 bytes)
+D:\Demo\Trust\trustRetrofit\build\intermediates\intermediate-jars\debug\classes.jar(38091 bytes)
+D:\Demo\Trust\maplibrary\build\intermediates\intermediate-jars\debug\classes.jar(14750 bytes)
+D:\Demo\Trust\TrustStatusBarLibrary\build\intermediates\intermediate-jars\debug\classes.jar(8142 bytes)
+D:\Demo\Trust\TrustViewLibrary\build\intermediates\intermediate-jars\debug\classes.jar(15649 bytes)
+D:\Demo\Trust\app\build\intermediates\classes\debug(3 entries)
+D:\Demo\Trust\app\build\tmp\kotlin-classes\debug(1 entries)
+---- Compiler Messages ---
+abort ABORT -- (OutOfMemoryError) GC overhead limit exceeded
+GC overhead limit exceeded
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at java.util.zip.InflaterInputStream.<init>(InflaterInputStream.java:88)
+	at java.util.zip.ZipFile$ZipFileInflaterInputStream.<init>(ZipFile.java:393)
+	at java.util.zip.ZipFile.getInputStream(ZipFile.java:374)
+	at java.util.jar.JarFile.getInputStream(JarFile.java:447)
+	at org.aspectj.weaver.bcel.BcelWeaver.addJarFile(BcelWeaver.java:391)
+	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.initBcelWorld(AjBuildManager.java:896)
+	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performBuild(AjBuildManager.java:249)
+	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:185)
+	at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:112)
+	at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+	at org.aspectj.tools.ajc.Main.run(Main.java:371)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSite.invoke(PojoMetaMethodSite.java:192)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+	at com.hujiang.gradle.plugin.android.aspectjx.AspectWork.doWork(AspectWork.groovy:104)
+	at com.hujiang.gradle.plugin.android.aspectjx.AspectWork$doWork$0.call(Unknown Source)
+	at com.hujiang.gradle.plugin.android.aspectjx.AspectTransform.doAspectTransform(AspectTransform.groovy:201)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:174)
+	at com.hujiang.gradle.plugin.android.aspectjx.AspectTransform.transform(AspectTransform.groovy:127)
+	at com.android.build.api.transform.Transform.transform(Transform.java:288)
+

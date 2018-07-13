@@ -6,11 +6,13 @@
       <module fileurl="file://$PROJECT_DIR$/TrustAlgorithm/TrustAlgorithm.iml" filepath="$PROJECT_DIR$/TrustAlgorithm/TrustAlgorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrustBasis/TrustBasis.iml" filepath="$PROJECT_DIR$/TrustBasis/TrustBasis.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrustLive/TrustLive.iml" filepath="$PROJECT_DIR$/TrustLive/TrustLive.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TrustPermission-library/lib-permission.iml" filepath="$PROJECT_DIR$/TrustPermission-library/lib-permission.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrustLoginRegisterLibrary/TrustLoginRegisterLibrary.iml" filepath="$PROJECT_DIR$/TrustLoginRegisterLibrary/TrustLoginRegisterLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrustPermission-library/TrustPermission-library.iml" filepath="$PROJECT_DIR$/TrustPermission-library/TrustPermission-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrustStatusBarLibrary/TrustStatusBarLibrary.iml" filepath="$PROJECT_DIR$/TrustStatusBarLibrary/TrustStatusBarLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrustTBSlibrary/TrustTBSlibrary.iml" filepath="$PROJECT_DIR$/TrustTBSlibrary/TrustTBSlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrustViewLibrary/TrustViewLibrary.iml" filepath="$PROJECT_DIR$/TrustViewLibrary/TrustViewLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Demo\Trust\TrustPermission-library\lib-permission.iml" filepath="D:\Demo\Trust\TrustPermission-library\lib-permission.iml" />
       <module fileurl="file://$PROJECT_DIR$/maplibrary/maplibrary.iml" filepath="$PROJECT_DIR$/maplibrary/maplibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/splashactivity/splashactivity.iml" filepath="$PROJECT_DIR$/splashactivity/splashactivity.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />

@@ -5,12 +5,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.trust.demo.basis.base.delegate.TrustMvpActivityDelegate
+import android.view.View
+import com.jakewharton.rxbinding2.view.RxView
 import com.trust.demo.basis.base.delegate.TrustMvpActivityDelegateImpl
 import com.trust.demo.basis.base.delegate.TrustMvpCallback
-import com.trust.demo.basis.base.presenter.TrustPresenter
 import com.trust.demo.basis.base.presenter.TrustPresenters
 import com.trust.demo.basis.base.veiw.TrustView
+import java.util.concurrent.TimeUnit
 
 /**
  * Created by Trust on 2018/6/25.
@@ -23,7 +24,7 @@ import com.trust.demo.basis.base.veiw.TrustView
  * 第二重代理：目标对象
  * 实现目标接口
  */
-open abstract class TrustMVPActivtiy <V : TrustView ,P : TrustPresenters<V>>:
+ abstract class TrustMVPActivtiy <V : TrustView ,P : TrustPresenters<V>>:
         AppCompatActivity(),TrustView ,TrustMvpCallback<V,P>{
     protected var mActivity:Activity? = null
     protected var mContext:Context? = null
@@ -114,4 +115,12 @@ open abstract class TrustMVPActivtiy <V : TrustView ,P : TrustPresenters<V>>:
         onTrustViewActivityResult(requestCode, resultCode, data)
     }
 
+    protected fun baseSetOnClick(v:View,seconds:Long){
+        RxView
+                .clicks(v)
+                .throttleFirst(seconds,TimeUnit.SECONDS)
+                .subscribe { baseResultOnClick(v) }
+    }
+
+    abstract fun baseResultOnClick(v:View)
 }

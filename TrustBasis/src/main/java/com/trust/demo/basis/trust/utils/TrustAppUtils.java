@@ -1,6 +1,7 @@
 package com.trust.demo.basis.trust.utils;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -8,8 +9,10 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -89,6 +92,7 @@ public class TrustAppUtils {
         return versioncode;
     }
 
+    @SuppressLint("NewApi")
     public static String getIMEI(Context context) {
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Context
                 .TELEPHONY_SERVICE);
@@ -103,7 +107,7 @@ public class TrustAppUtils {
             // for ActivityCompat#requestPermissions for more details.
             return "todo";
         }
-        return tm.getDeviceId();
+        return tm.getImei();
     }
 
     /**
