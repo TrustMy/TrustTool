@@ -15,6 +15,12 @@ import com.trust.demo.trusttool.mvptest.LoginView
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
 class RecyclerViewActivity : TrustMVPActivtiy<TrustView,TrustPresenters<TrustView>>(), TrustView {
+    override fun resultSuccess(msg: String) {
+    }
+
+    override fun resultError(msg: String) {
+    }
+
     override fun baseResultOnClick(v: View) {
     }
 

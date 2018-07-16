@@ -7,7 +7,7 @@
 
     <application>
         <activity android:name=".ui.activity.LoginActivity" />
-        <activity android:name=".ui.activity.RegisteredActivity"></activity>
+        <activity android:name=".ui.activity.RegisteredActivity"/>
     </application>
 
 </manifest>

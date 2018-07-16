@@ -11,7 +11,6 @@
     <ImageView
         android:id="@+id/img_login_logo"
         android:layout_marginTop="60dp"
-        android:src="@drawable/grile"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:contentDescription="@string/logo" />
@@ -28,17 +27,15 @@
         <TextView
             android:drawablePadding="5dp"
             android:gravity="center_vertical"
-            android:drawableLeft="@drawable/bluetooth"
             android:text="@string/phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/bluetooth" />
+             />
 
         <EditText
+            style="@style/UserInfoLinearEd"
+            android:maxLength="11"
             android:id="@+id/ed_login_phone"
-            android:background="@null"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:inputType="phone" />
 
     </LinearLayout>
@@ -56,18 +53,16 @@
         <TextView
             android:drawablePadding="5dp"
             android:gravity="center_vertical"
-            android:drawableLeft="@drawable/bluetooth"
             android:text="@string/pwd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/bluetooth" />
+            />
 
         <EditText
+            style="@style/UserInfoLinearEd"
+            android:maxLength="11"
             android:inputType="text"
-            android:id="@+id/ed_login_pwd"
-            android:background="@null"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:id="@+id/ed_login_pwd" />
 
     </LinearLayout>
 

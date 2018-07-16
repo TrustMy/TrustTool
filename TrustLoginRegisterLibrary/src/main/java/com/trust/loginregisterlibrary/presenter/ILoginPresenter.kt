@@ -3,15 +3,15 @@ package com.trust.loginregisterlibrary.presenter
 import com.trust.demo.basis.base.presenter.TrustPresenters
 import com.trust.loginregisterlibrary.module.login.LoginModel
 import com.trust.loginregisterlibrary.module.login.LoginModuleInterface
-import com.trust.loginregisterlibrary.module.login.LoginResultInterface
-import com.trust.loginregisterlibrary.mvpview.LoginView
+import com.trust.loginregisterlibrary.module.login.ModuleResultInterface
+import com.trust.loginregisterlibrary.mvpview.ILoginView
 
 /**
  * Created by Trust on 2018/7/13.
  * 123
  */
-class LoginPresenter :TrustPresenters<LoginView>() ,LoginPresenterInterface{
-    private var loginModule: LoginModuleInterface? = null
+class ILoginPresenter :TrustPresenters<ILoginView>() ,LoginPresenterInterface{
+    private var loginModule: LoginModuleInterface<String>? = null
 
     init {
         loginModule = LoginModel()
@@ -20,7 +20,7 @@ class LoginPresenter :TrustPresenters<LoginView>() ,LoginPresenterInterface{
 
     override fun login(map: HashMap<String, Any>) {
         view.showWaitDialog("",false,"")
-        loginModule!!.login(map,object : LoginResultInterface {
+        loginModule!!.login(map,object : ModuleResultInterface<String> {
             override fun resultData(msg: String) {
                 view.diassDialog()
                 view.resultSuccess(msg)

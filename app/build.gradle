@@ -40,6 +40,12 @@ dependencies {
     implementation files('libs/tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar')
     implementation project(':TrustBasis')
     implementation project(':TrustLoginRegisterLibrary')
+    api project(':TrustPermission-library')
+    api project(':trustbluetooth')
+    api project(':TrustLive')
+    api project(':maplibrary')
+    api project(':TrustStatusBarLibrary')
+    api project(':TrustViewLibrary')
 }
 
 apply plugin: 'kotlin-android'

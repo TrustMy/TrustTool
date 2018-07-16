@@ -18,4 +18,7 @@ interface TrustView {
     fun showToast(msg:String)
 
     fun onTrustViewActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
+
+    fun resultSuccess(msg:String)
+    fun resultError(msg:String)
 }

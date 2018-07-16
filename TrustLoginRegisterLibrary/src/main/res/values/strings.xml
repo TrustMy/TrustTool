@@ -6,4 +6,14 @@
     <string name="pwd">密码:</string>
     <string name="phone">手机号:</string>
     <string name="logo">logo</string>
+    <string name="register">注册</string>
+    <string name="error_user_pwd">用户名或密码输入有误!</string>
+    <string name="id_car_name">请输入身份证姓名</string>
+    <string name="id_card_num">请输入身份证号码</string>
+    <string name="car_vin">请输入车辆vin码</string>
+    <string name="authorization_code">请输入授权码</string>
+    <string name="user_phone">请输入手机号</string>
+    <string name="register_next">下一步</string>
+    <string name="error_register_info">输入信息有误!</string>
+    <string name="back_login"><Data><![CDATA[<font color="#7c7d7e">%1$s</font><font color="#ffffff">%2$s</font>]]></Data></string>
 </resources>

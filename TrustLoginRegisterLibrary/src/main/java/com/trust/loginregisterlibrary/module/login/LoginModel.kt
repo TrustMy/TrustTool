@@ -9,14 +9,14 @@ import com.trust.retrofit.net.TrustRetrofitUtils
  * Created by Trust on 2018/7/13.
  * 登录页面业务处理模块
  */
-class LoginModel :TrustModel<TrustRetrofitModel>(), LoginModuleInterface {
+class LoginModel :TrustModel<TrustRetrofitModel>(), LoginModuleInterface <String>{
 
 
     override fun createRequestModule(): TrustRetrofitModel {
         return TrustRetrofitModel()
     }
 
-    override fun login(map: HashMap<String, Any>, loginResultInterface: LoginResultInterface) {
+    override fun login(map: HashMap<String, Any>, loginResultInterface: ModuleResultInterface<String>) {
 
         requestModule
                 ?.requestJsonParams("rest/user/login"

@@ -193,4 +193,16 @@ public class TrustAppUtils {
             getHandler().post(r);
         }
     }
+
+
+    public static String getResourcesString(Context context , int stringId){
+        return context.getResources().getString(stringId);
+    }
+
+    public static String getEdString(EditText editText){
+        if (editText != null) {
+            return editText.getText().toString().trim();
+        }
+        return null;
+    }
 }

@@ -7,7 +7,6 @@ android {
     compileSdkVersion sdkVersion.compileSdkVersion
     buildToolsVersion supportLibraryVersion
 
-
     defaultConfig {
         minSdkVersion sdkVersion.minSdkVersion
         targetSdkVersion sdkVersion.targetSdkVersion

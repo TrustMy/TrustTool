@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context="com.trust.loginregisterlibrary.ui.activity.LoginActivity">
+
+    <ImageView
+        android:id="@+id/img_registered_logo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:contentDescription="@string/logo" />
+
+
+    <LinearLayout
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+
+        <EditText
+            android:id="@+id/ed_registered_user_name"
+            android:hint="@string/id_car_name"
+            style="@style/UserInfoLinearEd"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/ed_registered_id_card_num"
+            android:maxLength="18"
+            android:hint="@string/id_card_num"
+            style="@style/UserInfoLinearEd"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/ed_registered_car_vin"
+            android:hint="@string/car_vin"
+            style="@style/UserInfoLinearEd"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:maxLength="6"
+            android:id="@+id/ed_registered_authorizat_code"
+            android:hint="@string/authorization_code"
+            style="@style/UserInfoLinearEd"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:maxLength="11"
+            android:id="@+id/ed_registered_phone"
+            android:hint="@string/user_phone"
+            style="@style/UserInfoLinearEd"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+
+
+
+    <Button
+        android:id="@+id/btn_registered"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/register_next"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:id="@+id/btn_back"
+        android:layout_marginTop="30dp"
+        android:text="@string/back_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

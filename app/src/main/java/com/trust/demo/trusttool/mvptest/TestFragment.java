@@ -70,4 +70,14 @@ public class TestFragment extends TrustMVPFragment<LoginView,LoginPresenter> imp
     public void onTrustViewActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         TrustLogUtils.d("onTrustViewActivityResult:"+requestCode+"|resu"+resultCode+"|数据"+data.getStringExtra("test"));
     }
+
+    @Override
+    public void resultSuccess(@NotNull String msg) {
+
+    }
+
+    @Override
+    public void resultError(@NotNull String msg) {
+
+    }
 }

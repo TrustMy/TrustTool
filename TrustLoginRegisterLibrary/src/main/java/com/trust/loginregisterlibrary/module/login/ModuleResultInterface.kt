@@ -3,7 +3,7 @@ package com.trust.loginregisterlibrary.module.login
 /**
  * Created by Trust on 2018/7/13.
  */
-interface LoginResultInterface {
-    fun resultData(msg:String)
-    fun resultError(msg:String)
+interface ModuleResultInterface <T>{
+    fun resultData(msg:T)
+    fun resultError(msg:T)
 }

@@ -20,6 +20,12 @@ import com.trust.retrofit.config.ProjectInit
 import java.util.*
 
 class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
+    override fun resultSuccess(msg: String) {
+    }
+
+    override fun resultError(msg: String) {
+    }
+
     override fun baseResultOnClick(v: View) {
     }
 
