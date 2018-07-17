@@ -17,6 +17,13 @@ android {
         ndk {
             abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
         }
+
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
     }
     buildTypes {
         release {
@@ -40,12 +47,14 @@ dependencies {
     implementation files('libs/tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar')
     implementation project(':TrustBasis')
     implementation project(':TrustLoginRegisterLibrary')
-    api project(':TrustPermission-library')
-    api project(':trustbluetooth')
-    api project(':TrustLive')
-    api project(':maplibrary')
-    api project(':TrustStatusBarLibrary')
-    api project(':TrustViewLibrary')
+    implementation project(':TrustPermission-library')
+    implementation project(':trustbluetooth')
+    implementation project(':TrustLive')
+    implementation project(':maplibrary')
+    implementation project(':TrustStatusBarLibrary')
+    implementation project(':TrustViewLibrary')
+    implementation 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
 }
 
 apply plugin: 'kotlin-android'

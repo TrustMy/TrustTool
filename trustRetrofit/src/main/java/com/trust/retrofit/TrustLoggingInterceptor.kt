@@ -55,7 +55,7 @@ class TrustLoggingInterceptor (trustRetrofit :TrustRetrofit): Interceptor {
 
     private fun addToken(headers: Headers){
         if (headers.get("Token") != null) {
-            mTrustRetrofit.addToken("Token", headers.get("Token")!!)
+            TrustRetrofit.addToken("Token", headers.get("Token")!!)
         }
     }
 

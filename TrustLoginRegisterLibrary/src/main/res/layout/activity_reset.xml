@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.trust.loginregisterlibrary.ui.activity.ResetActivity">
+
+    <LinearLayout
+        style="@style/UserInfoLinearLayout">
+
+        <TextView
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="@string/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            style="@style/UserInfoLinearEd"
+            android:maxLength="11"
+            android:id="@+id/ed_reset_phone"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/UserInfoLinearLayout">
+
+        <TextView
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="@string/verification_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:gravity="center_vertical"
+            android:background="@null"
+            android:id="@+id/ed_reset_verification_code"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:maxLength="11"
+            android:inputType="phone"
+            android:layout_weight="4"/>
+
+        <Button
+            android:id="@+id/btn_reset_verification_code"
+            android:background="#00000000"
+            android:text="@string/get_verififcation_code"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/UserInfoLinearLayout">
+
+        <TextView
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="@string/new_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/ed_reset_pwd"
+            style="@style/UserInfoLinearEd"
+            android:maxLength="11"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/UserInfoLinearLayout">
+
+        <TextView
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="@string/new_pwd2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/ed_reset_pwd2"
+            style="@style/UserInfoLinearEd"
+            android:maxLength="11"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_reset_submint"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/submint"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+</LinearLayout>

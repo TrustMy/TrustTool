@@ -40,6 +40,23 @@ class RegisteredModule : TrustModel<TrustRetrofitModel>(),RegisteredModuleInterf
     }
 
     override fun registered(param: HashMap<String, Any>?, loginResultInterface: ModuleResultInterface<String>) {
+        requestModule
+                ?.requestJsonParams("register/applySmsCode/"
+                        ,1
+                        ,param
+                        ,object :RequestResultListener<String>{
+                    override fun resultSuccess(bean: String) {
+                        loginResultInterface.resultData(bean)
+                    }
+
+                    override fun resultError(e: Throwable?) {
+                        loginResultInterface.resultError(e.toString())
+                    }
+
+                    override fun netWorkError(msg: String?) {
+                    }
+
+                },String::class.java)
     }
 
 

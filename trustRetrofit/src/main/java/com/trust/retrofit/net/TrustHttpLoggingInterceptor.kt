@@ -56,6 +56,7 @@ class TrustHttpLoggingInterceptor : Interceptor {
     public fun addToken(headers: Headers){
         if (headers.get("Token") != null) {
             TrustRetrofitCreator.addToken(headers.get("Token"))
+            TrustRetrofit.addToken("Token", headers.get("Token")!!)
         }
     }
 

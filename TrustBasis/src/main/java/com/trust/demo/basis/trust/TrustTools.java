@@ -81,7 +81,7 @@ public class TrustTools<T extends View> implements Serializable {
     /**
      * 倒计时显示
      */
-    public  void  Countdown(Activity activity,final T value , final int time){
+    public  void  Countdown(Activity activity, final T value , final int time, final String msg){
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -117,7 +117,7 @@ public class TrustTools<T extends View> implements Serializable {
                             @Override
                             public void onComplete() {
                                 value.setEnabled(true);//不可点击
-                                checkT(value,"获取验证码");
+                                checkT(value,msg);
                             }
                         });
             }

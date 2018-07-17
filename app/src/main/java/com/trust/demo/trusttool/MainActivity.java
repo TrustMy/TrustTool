@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.trust.demo.basis.trust.utils.TrustLogUtils;
 import com.trust.demo.basis.trust.utils.TrustHttpUtils;
 import com.trust.demo.trusttool.activity.RecyclerViewActivity;
@@ -34,7 +35,7 @@ import com.trust.trustbluetooth.BlueActivity;
 
 import org.jetbrains.annotations.NotNull;
 
-
+@Route(path = "/app/main")
 public class MainActivity extends AppCompatActivity {
     public static Context context ;
     public static Activity activity ;

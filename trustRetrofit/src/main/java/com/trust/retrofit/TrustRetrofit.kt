@@ -37,13 +37,13 @@ class TrustRetrofit (context: Context ,isSSL :Boolean , baseUrl: String){
     private var mTimeOut : Long = 15
     private var mRequestBody:RequestBody? = null
     private var mToken:String? = null
-    private var mHandlers :Headers.Builder=Headers.Builder()
 
     private val SERVER_ERROR = 500
     private val mTrustLoggingInterceptor :TrustLoggingInterceptor = TrustLoggingInterceptor(this)
     companion  object {
         @SuppressLint("StaticFieldLeak")
         var trustRetrofit:TrustRetrofit? = null
+        var mHandlers :Headers.Builder=Headers.Builder()
 
         fun create(context:Context,baseUrl: String) :TrustRetrofit{
             if (trustRetrofit == null) {
@@ -62,6 +62,15 @@ class TrustRetrofit (context: Context ,isSSL :Boolean , baseUrl: String){
             trustRetrofit!!.pwd = pwd
             trustRetrofit!!.initRetrofit()
             return trustRetrofit as TrustRetrofit
+        }
+
+
+        /**
+         *  添加token
+         */
+        fun addToken(name:String,value:String){
+                mHandlers.removeAll("Token")
+                mHandlers.add(name,value)
         }
     }
 
@@ -230,14 +239,7 @@ class TrustRetrofit (context: Context ,isSSL :Boolean , baseUrl: String){
             chain.proceed(authorised!!)
     }
 
-    /**
-     *  添加token
-     */
-    fun addToken(name:String,value:String){
-        if (mHandlers.get("Token")==null) {
-            mHandlers.add(name,value)
-        }
-    }
+
 
     /**
      * 添加

@@ -6,13 +6,14 @@ import android.content.Context
 import android.os.Handler
 import android.os.Process
 import com.trust.demo.basis.trust.utils.TrustLogUtils
+import com.trust.modular.TrustRetrofit
 import com.trust.retrofit.config.ProjectInit
 
 /**
  * Created by Trust on 2018/5/28.
  *
  */
-open class TrustApplication : Application(){
+ open class TrustApplication : Application(){
 
     companion object {
         private var context:Context?=null

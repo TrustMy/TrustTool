@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
+import com.alibaba.android.arouter.launcher.ARouter
 import com.dn.tim.lib_permission.annotation.Permission
 import com.dn.tim.lib_permission.annotation.PermissionCanceled
 import com.dn.tim.lib_permission.annotation.PermissionDenied
@@ -15,20 +16,21 @@ import com.trust.demo.basis.trust.utils.TrustAppUtils
 import com.trust.demo.basis.trust.utils.TrustLogUtils
 import com.trust.demo.basis.trust.utils.TrustStringUtils
 import com.trust.loginregisterlibrary.R
+import com.trust.loginregisterlibrary.bean.ResultBean
+import com.trust.loginregisterlibrary.bean.ResultUserInfoBean
 import com.trust.loginregisterlibrary.mvpview.ILoginView
 import com.trust.loginregisterlibrary.presenter.ILoginPresenter
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.HashMap
 
 class LoginActivity : TrustMVPActivtiy<ILoginView,ILoginPresenter>() , ILoginView{
+    private var userName:String? = null
 
     override fun showWaitDialog(msg: String?, isShow: Boolean, tag: String?) {
-        Toast.makeText(this, "正在请求，请稍后...", Toast.LENGTH_SHORT).show()
         TrustLogUtils.d("正在请求，请稍后...")
     }
 
     override fun diassDialog() {
-        Toast.makeText(this, "请求成功", Toast.LENGTH_SHORT).show()
         TrustLogUtils.d("请求成功.")
     }
 
@@ -52,7 +54,9 @@ class LoginActivity : TrustMVPActivtiy<ILoginView,ILoginPresenter>() , ILoginVie
     override fun baseResultOnClick(v: View) {
         when(v.id){
             R.id.btn_login ->{submintLogin()}
-            R.id.btn_login_forget_pwd ->{Toast.makeText(mContext,"点击了忘记密码",Toast.LENGTH_LONG).show()}
+            R.id.btn_login_forget_pwd ->{
+                startActivity(Intent(mContext,ResetActivity::class.java))
+            }
             R.id.btn_login_registered ->{
                 startActivity(Intent(mContext,RegisteredActivity::class.java))
             }
@@ -75,21 +79,19 @@ class LoginActivity : TrustMVPActivtiy<ILoginView,ILoginPresenter>() , ILoginVie
     }
 
     override fun resultError(msg: String) {
-
-        TrustLogUtils.d("登录失败了")
         Toast.makeText(mContext,msg,Toast.LENGTH_LONG).show()
     }
 
     @Permission(Manifest.permission.READ_PHONE_STATE)
     private fun submintLogin(){
-        val userName = ed_login_phone.text.trim().toString()
+        userName = ed_login_phone.text.trim().toString()
         val passWord = ed_login_pwd.text.trim().toString()
 
         if (!TrustStringUtils.isEmpty(userName) && !TrustStringUtils.isEmpty(passWord)
-        && userName.length == 11
+        && userName!!.length == 11
         && TrustStringUtils.isPhoneNumberValid(userName)) {
             val map = HashMap<String, Any>()
-            map["userName"] = userName
+            map["userName"] = userName!!
             map["password"] = passWord
             map["userType"] = 1
             map["imsi"] = TrustAppUtils.getIMEI(this)
@@ -99,6 +101,13 @@ class LoginActivity : TrustMVPActivtiy<ILoginView,ILoginPresenter>() , ILoginVie
         }else{
             showToast(TrustAppUtils.getResourcesString(this,R.string.error_user_pwd))
         }
+    }
+
+
+    fun getUserInfo(){
+        val map = HashMap<String, Any>()
+        map["phone"] = userName!!
+        getPresenter()?.userInfo(map)
     }
 
     @PermissionCanceled
@@ -112,5 +121,24 @@ class LoginActivity : TrustMVPActivtiy<ILoginView,ILoginPresenter>() , ILoginVie
     }
 
 
+    override fun resultLogin(bean: ResultBean) {
+        if (bean.status == 1) {
+            getUserInfo()
+        }else{
+            showToast(bean.info!!)
+        }
+    }
+
+    override fun resultUpdate(bean: String) {
+    }
+
+    override fun resultUserInfo(bean: ResultUserInfoBean) {
+        if (bean.status ==1) {
+            ARouter.getInstance().build("/app/main").navigation()
+            finish()
+        }else{
+            showToast(bean.info!!)
+        }
+    }
 
 }

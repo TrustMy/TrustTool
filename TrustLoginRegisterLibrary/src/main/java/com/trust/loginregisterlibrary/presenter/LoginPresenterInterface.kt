@@ -5,4 +5,6 @@ package com.trust.loginregisterlibrary.presenter
  */
 interface LoginPresenterInterface {
     fun login(map:HashMap<String,Any>)
+    fun updataApp()
+    fun userInfo(map:HashMap<String,Any>)
 }

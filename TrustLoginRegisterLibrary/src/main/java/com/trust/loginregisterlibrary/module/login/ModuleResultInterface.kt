@@ -5,5 +5,5 @@ package com.trust.loginregisterlibrary.module.login
  */
 interface ModuleResultInterface <T>{
     fun resultData(msg:T)
-    fun resultError(msg:T)
+    fun resultError(msg:String)
 }
