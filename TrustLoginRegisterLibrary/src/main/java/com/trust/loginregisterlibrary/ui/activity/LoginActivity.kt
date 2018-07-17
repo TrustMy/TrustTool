@@ -130,6 +130,7 @@ class LoginActivity : TrustMVPActivtiy<ILoginView,ILoginPresenter>() , ILoginVie
     }
 
     override fun resultUpdate(bean: String) {
+
     }
 
     override fun resultUserInfo(bean: ResultUserInfoBean) {

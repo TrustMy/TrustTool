@@ -41,12 +41,15 @@ class ILoginPresenter :TrustPresenters<ILoginView>() ,LoginPresenterInterface{
     }
 
     override fun userInfo(map: HashMap<String, Any>) {
+        view.showWaitDialog("",false,"")
         loginModule!!.userInfo(map,object :ModuleResultInterface<ResultUserInfoBean>{
             override fun resultData(msg: ResultUserInfoBean) {
+                view.diassDialog()
                 view.resultUserInfo(msg)
             }
 
             override fun resultError(msg: String) {
+                view.diassDialog()
                 view.resultError(msg)
             }
 

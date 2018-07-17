@@ -8,6 +8,7 @@ import com.trust.loginregisterlibrary.mvpview.IResetPwdView
 
 /**
  * Created by Trust on 2018/7/17.
+ * 重置密码 Presenter
  */
 class IResetPwdPresenter :TrustPresenters<IResetPwdView>(),IResetPwdPresenterInterface{
 
