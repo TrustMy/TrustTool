@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.dn.tim.lib_permission.annotation.Permission
 import com.dn.tim.lib_permission.annotation.PermissionCanceled
@@ -23,6 +24,7 @@ import com.trust.loginregisterlibrary.presenter.ILoginPresenter
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.HashMap
 
+@Route(path = "/login/login")
 class LoginActivity : TrustMVPActivtiy<ILoginView,ILoginPresenter>() , ILoginView{
     private var userName:String? = null
 
@@ -112,12 +114,12 @@ class LoginActivity : TrustMVPActivtiy<ILoginView,ILoginPresenter>() , ILoginVie
 
     @PermissionCanceled
     private fun cancel() {
-        Toast.makeText(this, "你拒绝了这个权限", Toast.LENGTH_SHORT).show()
+        showToast("你拒绝了这个权限")
     }
 
     @PermissionDenied
     private fun denied() {
-        Toast.makeText(this, "没有这个权限手机无法正常使用", Toast.LENGTH_SHORT).show()
+        showToast("没有这个权限手机无法正常使用")
     }
 
 
@@ -135,7 +137,7 @@ class LoginActivity : TrustMVPActivtiy<ILoginView,ILoginPresenter>() , ILoginVie
 
     override fun resultUserInfo(bean: ResultUserInfoBean) {
         if (bean.status ==1) {
-            ARouter.getInstance().build("/app/main").navigation()
+            ARouter.getInstance().build("/map/activity/trajectory").navigation()
             finish()
         }else{
             showToast(bean.info!!)

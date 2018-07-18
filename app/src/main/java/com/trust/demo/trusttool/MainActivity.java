@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.trust.demo.basis.trust.utils.TrustLogUtils;
 import com.trust.demo.basis.trust.utils.TrustHttpUtils;
 import com.trust.demo.trusttool.activity.RecyclerViewActivity;
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.mvp_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context, MVPTestActivity.class));
+                ARouter.getInstance().build("/login/login").navigation();
             }
         });
 

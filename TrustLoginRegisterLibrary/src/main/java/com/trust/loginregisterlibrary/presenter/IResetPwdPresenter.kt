@@ -1,6 +1,7 @@
 package com.trust.loginregisterlibrary.presenter
 
 import com.trust.demo.basis.base.presenter.TrustPresenters
+import com.trust.loginregisterlibrary.bean.ResultBean
 import com.trust.loginregisterlibrary.module.login.ModuleResultInterface
 import com.trust.loginregisterlibrary.module.resetpwd.ResetPwdModule
 import com.trust.loginregisterlibrary.module.resetpwd.ResetPwdModuleInterface
@@ -12,9 +13,7 @@ import com.trust.loginregisterlibrary.mvpview.IResetPwdView
  */
 class IResetPwdPresenter :TrustPresenters<IResetPwdView>(),IResetPwdPresenterInterface{
 
-
-
-    private var resetPwdModuleInterface:ResetPwdModuleInterface<String>? = null
+    private var resetPwdModuleInterface:ResetPwdModuleInterface<ResultBean>? = null
 
     init {
         resetPwdModuleInterface = ResetPwdModule()
@@ -22,9 +21,9 @@ class IResetPwdPresenter :TrustPresenters<IResetPwdView>(),IResetPwdPresenterInt
 
 
     override fun getVerificationCode(params: HashMap<String, Any>?) {
-        resetPwdModuleInterface!!.getVerificationCode(params,object :ModuleResultInterface<String>{
-            override fun resultData(msg: String) {
-                view.verififcationCodeCallBack(msg)
+        resetPwdModuleInterface!!.getVerificationCode(params,object :ModuleResultInterface<ResultBean>{
+            override fun resultData(bean: ResultBean) {
+                view.verififcationCodeCallBack(bean)
             }
 
             override fun resultError(msg: String) {
@@ -35,9 +34,9 @@ class IResetPwdPresenter :TrustPresenters<IResetPwdView>(),IResetPwdPresenterInt
     }
 
     override fun resetPwd(params: HashMap<String, Any>?) {
-        resetPwdModuleInterface!!.resetPwd(params,object :ModuleResultInterface<String>{
-            override fun resultData(msg: String) {
-                view.resetPwdCallBack(msg)
+        resetPwdModuleInterface!!.resetPwd(params,object :ModuleResultInterface<ResultBean>{
+            override fun resultData(bean: ResultBean) {
+                view.resetPwdCallBack(bean)
             }
 
             override fun resultError(msg: String) {

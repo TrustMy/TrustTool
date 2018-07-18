@@ -1,5 +1,6 @@
 package com.trust.loginregisterlibrary.callback
 
+import com.trust.loginregisterlibrary.bean.ResultBean
 import com.trust.loginregisterlibrary.bean.ResultUserInfoBean
 import io.reactivex.Observable
 import okhttp3.ResponseBody
@@ -12,7 +13,7 @@ import retrofit2.http.Url
  */
 interface AppServer {
     @GET("register/applySmsCode/{Phone}")
-    fun getVerificationCode(@Path("Phone") phone:String): Observable<ResponseBody>
+    fun getVerificationCode(@Path("Phone") phone:String): Observable<ResultBean>
     @GET("rest/customer/{Phone}")
     fun getUserInfo(@Path("Phone") phone:String): Observable<ResultUserInfoBean>
 

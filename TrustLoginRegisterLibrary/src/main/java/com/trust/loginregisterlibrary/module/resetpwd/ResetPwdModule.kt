@@ -3,6 +3,7 @@ package com.trust.loginregisterlibrary.module.resetpwd
 import com.trust.demo.basis.base.model.RequestResultListener
 import com.trust.demo.basis.base.model.TrustModel
 import com.trust.demo.basis.base.model.http.TrustRetrofitModel
+import com.trust.loginregisterlibrary.bean.ResultBean
 import com.trust.loginregisterlibrary.callback.AppServer
 import com.trust.loginregisterlibrary.module.login.ModuleResultInterface
 import com.trust.modular.TrustRetrofit
@@ -15,7 +16,7 @@ import okhttp3.ResponseBody
  * Created by Trust on 2018/7/17.
  *
  */
-class ResetPwdModule :TrustModel<TrustRetrofitModel>() ,ResetPwdModuleInterface<String>{
+class ResetPwdModule :TrustModel<TrustRetrofitModel>() ,ResetPwdModuleInterface<ResultBean>{
     private var mTrustRetrofit: TrustRetrofit? = null
     private var mRetrofit: AppServer? = null
     override fun createRequestModule(): TrustRetrofitModel {
@@ -25,15 +26,15 @@ class ResetPwdModule :TrustModel<TrustRetrofitModel>() ,ResetPwdModuleInterface<
         return TrustRetrofitModel()
     }
 
-    override fun getVerificationCode(params: HashMap<String, Any>?, loginResultInterface: ModuleResultInterface<String>) {
+    override fun getVerificationCode(params: HashMap<String, Any>?, loginResultInterface: ModuleResultInterface<ResultBean>) {
         mTrustRetrofit!!
                 .connection(
                         mRetrofit!!
                                 .getVerificationCode(
                                         params!!["phone"].toString()),
-                        object :TrustRetrofitCallBack<ResponseBody>(){
-                            override fun accept(t: ResponseBody) {
-                                loginResultInterface.resultData(t.string().toString())
+                        object :TrustRetrofitCallBack<ResultBean>(){
+                            override fun accept(t: ResultBean) {
+                                loginResultInterface.resultData(t)
                             }
 
                             override fun failure(error: Throwable) {
@@ -47,12 +48,12 @@ class ResetPwdModule :TrustModel<TrustRetrofitModel>() ,ResetPwdModuleInterface<
                 )
     }
 
-    override fun resetPwd(params: HashMap<String, Any>?, loginResultInterface: ModuleResultInterface<String>) {
+    override fun resetPwd(params: HashMap<String, Any>?, loginResultInterface: ModuleResultInterface<ResultBean>) {
         requestModule!!.requestJsonParams("register/retrievePassword",
                 TrustRetrofitUtils.PUT_RAW,
                 params,
-                object : RequestResultListener<String>{
-                    override fun resultSuccess(bean: String) {
+                object : RequestResultListener<ResultBean>{
+                    override fun resultSuccess(bean: ResultBean) {
                         loginResultInterface.resultData(bean)
                     }
 
@@ -63,6 +64,6 @@ class ResetPwdModule :TrustModel<TrustRetrofitModel>() ,ResetPwdModuleInterface<
                     override fun netWorkError(msg: String?) {
                     }
 
-                },String::class.java)
+                },ResultBean::class.java)
     }
 }

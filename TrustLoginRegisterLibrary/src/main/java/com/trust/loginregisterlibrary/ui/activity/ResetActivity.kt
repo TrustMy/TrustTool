@@ -9,19 +9,23 @@ import com.trust.demo.basis.trust.TrustTools
 import com.trust.demo.basis.trust.utils.TrustAppUtils
 import com.trust.demo.basis.trust.utils.TrustStringUtils
 import com.trust.loginregisterlibrary.R
+import com.trust.loginregisterlibrary.bean.ResultBean
 import com.trust.loginregisterlibrary.mvpview.IResetPwdView
 import com.trust.loginregisterlibrary.presenter.IResetPwdPresenter
 import kotlinx.android.synthetic.main.activity_reset.*
 
 class ResetActivity : TrustMVPActivtiy<IResetPwdView, IResetPwdPresenter>() ,IResetPwdView{
-    override fun verififcationCodeCallBack(msg: String) {
-        TrustTools<View>().Countdown(mActivity,btn_reset_verification_code,60,TrustAppUtils.getResourcesString(this,
-                R.string.get_verififcation_code))
-        showToast(msg)
+    override fun verififcationCodeCallBack(bean: ResultBean) {
+        if (bean.status ==1) {
+            TrustTools<View>().Countdown(mActivity,btn_reset_verification_code,60,TrustAppUtils.getResourcesString(this,
+                    R.string.get_verififcation_code))
+        }else{
+            showToast(bean.info!!)
+        }
     }
 
-    override fun resetPwdCallBack(msg: String) {
-        showToast(msg)
+    override fun resetPwdCallBack(bean: ResultBean) {
+        showToast(bean.info!!)
     }
 
     override fun showWaitDialog(msg: String?, isShow: Boolean, tag: String?) {
