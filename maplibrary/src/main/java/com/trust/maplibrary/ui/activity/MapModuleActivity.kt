@@ -40,6 +40,7 @@ class MapModuleActivity : BaseMapActivity<TrustView,TrustPresenters<TrustView>>(
     override fun initView(savedInstanceState: Bundle?) {
         setStatusBar(Color.YELLOW)
         baseSetOnClick(btn_map_trajectory,0)
+        baseSetOnClick(btn_map_route_plan,0)
     }
 
     override fun initData() {
@@ -55,7 +56,10 @@ class MapModuleActivity : BaseMapActivity<TrustView,TrustPresenters<TrustView>>(
                         .withString("phone","15021570474")
                         .navigation()
             }
-            else -> {
+            R.id.btn_map_route_plan -> {
+                ARouter.getInstance()
+                        .build("/map/activity/route_plan")
+                        .navigation()
             }
         }
     }
