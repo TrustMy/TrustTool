@@ -1,9 +1,8 @@
 package com.trust.loginregisterlibrary.presenter
 
-import android.net.nsd.NsdManager
 import com.trust.demo.basis.base.presenter.TrustPresenters
 import com.trust.demo.basis.base.veiw.TrustView
-import com.trust.loginregisterlibrary.module.login.ModuleResultInterface
+import com.trust.demo.basis.base.ModuleResultInterface
 import com.trust.loginregisterlibrary.module.registered.RegisteredModule
 import com.trust.loginregisterlibrary.module.registered.RegisteredModuleInterface
 
@@ -20,7 +19,7 @@ class IRegisteredPresenter :TrustPresenters<TrustView>(),IRegisteredPresenterInt
     }
 
     override fun checkUserInfo(parameter: HashMap<String, Any>?) {
-        registeredModuleInterface!!.checkUserInfo(parameter,object :ModuleResultInterface<String>{
+        registeredModuleInterface!!.checkUserInfo(parameter,object : ModuleResultInterface<String> {
             override fun resultData(msg: String) {
                 view.resultSuccess(msg)
             }
@@ -33,7 +32,7 @@ class IRegisteredPresenter :TrustPresenters<TrustView>(),IRegisteredPresenterInt
     }
 
     override fun registered(param: HashMap<String, Any>?) {
-        registeredModuleInterface!!.registered(param,object :ModuleResultInterface<String>{
+        registeredModuleInterface!!.registered(param,object : ModuleResultInterface<String> {
             override fun resultData(msg: String) {
             }
 

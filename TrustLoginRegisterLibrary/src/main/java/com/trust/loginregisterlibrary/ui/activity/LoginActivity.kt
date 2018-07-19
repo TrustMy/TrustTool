@@ -137,7 +137,7 @@ class LoginActivity : TrustMVPActivtiy<ILoginView,ILoginPresenter>() , ILoginVie
 
     override fun resultUserInfo(bean: ResultUserInfoBean) {
         if (bean.status ==1) {
-            ARouter.getInstance().build("/map/activity/trajectory").navigation()
+            ARouter.getInstance().build("/map/controll").navigation()
             finish()
         }else{
             showToast(bean.info!!)

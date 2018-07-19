@@ -1,10 +1,9 @@
 package com.trust.loginregisterlibrary.module.registered
 
-import android.util.Log
 import com.trust.demo.basis.base.model.RequestResultListener
 import com.trust.demo.basis.base.model.TrustModel
 import com.trust.demo.basis.base.model.http.TrustRetrofitModel
-import com.trust.loginregisterlibrary.module.login.ModuleResultInterface
+import com.trust.demo.basis.base.ModuleResultInterface
 import com.trust.retrofit.net.TrustRetrofitUtils
 
 /**

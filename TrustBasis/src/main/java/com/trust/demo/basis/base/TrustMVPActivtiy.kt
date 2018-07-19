@@ -3,6 +3,7 @@ package com.trust.demo.basis.base
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -11,6 +12,7 @@ import com.trust.demo.basis.base.delegate.TrustMvpActivityDelegateImpl
 import com.trust.demo.basis.base.delegate.TrustMvpCallback
 import com.trust.demo.basis.base.presenter.TrustPresenters
 import com.trust.demo.basis.base.veiw.TrustView
+import com.trust.statusbarlibrary.TrustStatusBarUtils
 import java.util.concurrent.TimeUnit
 
 /**
@@ -123,4 +125,8 @@ import java.util.concurrent.TimeUnit
     }
 
     abstract fun baseResultOnClick(v:View)
+
+    fun setStatusBar(color:Int){
+        TrustStatusBarUtils.getSingleton(this).setStatusBarColor(this, color)
+    }
 }

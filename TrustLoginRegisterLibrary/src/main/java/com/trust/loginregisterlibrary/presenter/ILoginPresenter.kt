@@ -5,7 +5,7 @@ import com.trust.loginregisterlibrary.bean.ResultBean
 import com.trust.loginregisterlibrary.bean.ResultUserInfoBean
 import com.trust.loginregisterlibrary.module.login.LoginModel
 import com.trust.loginregisterlibrary.module.login.LoginModuleInterface
-import com.trust.loginregisterlibrary.module.login.ModuleResultInterface
+import com.trust.demo.basis.base.ModuleResultInterface
 import com.trust.loginregisterlibrary.mvpview.ILoginView
 
 /**
@@ -42,7 +42,7 @@ class ILoginPresenter :TrustPresenters<ILoginView>() ,LoginPresenterInterface{
 
     override fun userInfo(map: HashMap<String, Any>) {
         view.showWaitDialog("",false,"")
-        loginModule!!.userInfo(map,object :ModuleResultInterface<ResultUserInfoBean>{
+        loginModule!!.userInfo(map,object : ModuleResultInterface<ResultUserInfoBean> {
             override fun resultData(msg: ResultUserInfoBean) {
                 view.diassDialog()
                 view.resultUserInfo(msg)

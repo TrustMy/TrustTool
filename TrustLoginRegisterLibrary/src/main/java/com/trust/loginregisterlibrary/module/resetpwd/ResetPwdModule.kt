@@ -5,7 +5,7 @@ import com.trust.demo.basis.base.model.TrustModel
 import com.trust.demo.basis.base.model.http.TrustRetrofitModel
 import com.trust.loginregisterlibrary.bean.ResultBean
 import com.trust.loginregisterlibrary.callback.AppServer
-import com.trust.loginregisterlibrary.module.login.ModuleResultInterface
+import com.trust.demo.basis.base.ModuleResultInterface
 import com.trust.modular.TrustRetrofit
 import com.trust.modular.TrustRetrofitCallBack
 import com.trust.retrofit.config.ProjectInit

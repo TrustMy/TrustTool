@@ -2,7 +2,7 @@ package com.trust.loginregisterlibrary.presenter
 
 import com.trust.demo.basis.base.presenter.TrustPresenters
 import com.trust.loginregisterlibrary.bean.ResultBean
-import com.trust.loginregisterlibrary.module.login.ModuleResultInterface
+import com.trust.demo.basis.base.ModuleResultInterface
 import com.trust.loginregisterlibrary.module.resetpwd.ResetPwdModule
 import com.trust.loginregisterlibrary.module.resetpwd.ResetPwdModuleInterface
 import com.trust.loginregisterlibrary.mvpview.IResetPwdView
@@ -21,7 +21,7 @@ class IResetPwdPresenter :TrustPresenters<IResetPwdView>(),IResetPwdPresenterInt
 
 
     override fun getVerificationCode(params: HashMap<String, Any>?) {
-        resetPwdModuleInterface!!.getVerificationCode(params,object :ModuleResultInterface<ResultBean>{
+        resetPwdModuleInterface!!.getVerificationCode(params,object : ModuleResultInterface<ResultBean> {
             override fun resultData(bean: ResultBean) {
                 view.verififcationCodeCallBack(bean)
             }
@@ -34,7 +34,7 @@ class IResetPwdPresenter :TrustPresenters<IResetPwdView>(),IResetPwdPresenterInt
     }
 
     override fun resetPwd(params: HashMap<String, Any>?) {
-        resetPwdModuleInterface!!.resetPwd(params,object :ModuleResultInterface<ResultBean>{
+        resetPwdModuleInterface!!.resetPwd(params,object : ModuleResultInterface<ResultBean> {
             override fun resultData(bean: ResultBean) {
                 view.resetPwdCallBack(bean)
             }

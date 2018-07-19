@@ -27,7 +27,7 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
+                arguments = [moduleName: project.getName()]
             }
         }
     }
@@ -44,6 +44,8 @@ android {
             jniLibs.srcDirs = ['libs']//将so文件目录指向libs目录
         }
     }
+
+
 }
 
 dependencies {

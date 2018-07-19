@@ -1,5 +1,6 @@
 package com.trust.loginregisterlibrary.module.login
 
+import com.trust.demo.basis.base.ModuleResultInterface
 import com.trust.loginregisterlibrary.bean.ResultBean
 import com.trust.loginregisterlibrary.bean.ResultUserInfoBean
 

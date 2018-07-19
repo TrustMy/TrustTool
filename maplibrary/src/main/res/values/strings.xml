@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MapLibrary</string>
+    <string name="error_time">"选择时间有误!"</string>
 </resources>

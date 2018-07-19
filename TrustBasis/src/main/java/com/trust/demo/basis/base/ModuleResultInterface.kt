@@ -1,4 +1,4 @@
-package com.trust.loginregisterlibrary.module.login
+package com.trust.demo.basis.base
 
 /**
  * Created by Trust on 2018/7/13.

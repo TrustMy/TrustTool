@@ -35,7 +35,7 @@ dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     api 'com.google.code.gson:gson:2.8.2'
     api project(':trustRetrofit')
-
+    api project(':TrustStatusBarLibrary')
 }
 repositories {
     mavenCentral()

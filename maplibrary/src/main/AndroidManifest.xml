@@ -3,7 +3,8 @@
     package="com.trust.maplibrary">
 
     <application>
-        <activity android:name=".ui.activity.MapTrajectoryActivity"></activity>
+        <activity android:name=".ui.activity.MapTrajectoryActivity" />
+        <activity android:name=".ui.activity.MapModuleActivity"></activity>
     </application>
 
 </manifest>
