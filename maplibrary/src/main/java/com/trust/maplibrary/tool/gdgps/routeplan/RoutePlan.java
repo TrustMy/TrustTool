@@ -161,6 +161,7 @@ public class RoutePlan implements RouteSearch.OnRouteSearchListener {
         }else
         {
             isSuccess = true;
+            mAmap.clear();
             WalkPath walkPath = walkRouteResult.getPaths().get(0);
 
             WalkRouteOverlay walkRouteOverlay = new WalkRouteOverlay(mContext,
@@ -181,8 +182,6 @@ public class RoutePlan implements RouteSearch.OnRouteSearchListener {
         if (routePlanListener != null) {
             routePlanListener.walkCallBack(isSuccess,info);
         }
-
-
     }
 
     @Override

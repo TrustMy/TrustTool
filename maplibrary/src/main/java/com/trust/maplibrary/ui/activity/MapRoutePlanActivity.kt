@@ -2,14 +2,13 @@ package com.trust.maplibrary.ui.activity
 
 import android.Manifest
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.amap.api.location.AMapLocation
-import com.amap.api.location.AMapLocationListener
 import com.amap.api.maps.AMap
 import com.amap.api.maps.model.LatLng
+import com.amap.api.services.core.LatLonPoint
 import com.dn.tim.lib_permission.annotation.Permission
 import com.trust.maplibrary.BaseMapActivity
 import com.trust.maplibrary.R
@@ -17,11 +16,13 @@ import com.trust.maplibrary.ipresenter.IRoutePlanPresenter
 import com.trust.maplibrary.iview.IRoutePlanView
 import com.trust.maplibrary.tool.gdgps.Maker
 import com.trust.maplibrary.tool.gdgps.Positioning
+import com.trust.maplibrary.tool.gdgps.routeplan.RoutePlan
 import kotlinx.android.synthetic.main.activity_maproute_plan.*
 
 @Route(path = "/map/activity/route_plan")
 class MapRoutePlanActivity : BaseMapActivity<IRoutePlanView,IRoutePlanPresenter>(),IRoutePlanView {
     private var mapType:Int = 1
+    private var routePlanType = 0
     //单次定位
     private var positioning:Positioning? = null
 
@@ -56,6 +57,7 @@ class MapRoutePlanActivity : BaseMapActivity<IRoutePlanView,IRoutePlanPresenter>
 
         baseSetOnClick(btn_route_plan_map_type,0)
         baseSetOnClick(btn_route_plan_positioning,0)
+        baseSetOnClick(btn_route_planning,0)
     }
 
     override fun initData() {
@@ -87,7 +89,23 @@ class MapRoutePlanActivity : BaseMapActivity<IRoutePlanView,IRoutePlanPresenter>
             R.id.btn_route_plan_positioning -> {
                 positioning()
             }
+            R.id.btn_route_planning->{
+                routePlan()
+            }
         }
+    }
+
+    private fun routePlan() {
+        val routePlan = RoutePlan(aMap, this)
+
+        if (routePlanType ==routePlan.WALK_TYPE) {
+            routePlanType = routePlan.DRIVER_TYPE
+        }else{
+            routePlanType =routePlan.WALK_TYPE
+        }
+
+        routePlan.searchRouteResult(routePlanType, LatLonPoint(31.229413,121.416629),
+                LatLonPoint(31.287843,121.307121),true)
     }
 
 
