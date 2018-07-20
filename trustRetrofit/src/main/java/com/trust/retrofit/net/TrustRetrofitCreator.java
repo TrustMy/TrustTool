@@ -183,9 +183,21 @@ public class TrustRetrofitCreator {
    public static final void addToken(String token){
        if (token != null) {
            if (headers.get("token") != null) {
+               headers.removeAll("token");
                headers.set("token",token);
            }else{
                headers.add("token",token);
+           }
+       }
+   }
+
+   public static final void addHeader(String name,String value){
+       if (value != null) {
+           if (headers.get(name) != null) {
+               headers.removeAll(name);
+               headers.set(name,value);
+           }else{
+               headers.add("name",value);
            }
        }
    }

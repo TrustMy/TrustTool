@@ -27,5 +27,12 @@ public class ProjectInit {
         return getConfigurator(ConfigKeys.APPLICATION_CONTEXT.name());
     }
 
+    public static void setHeader(String name,String value){
+        TrustRetrofitCreator.addHeader(name,value);
+    }
+
+    public static void addToken(String value){
+        TrustRetrofitCreator.addToken(value);
+    }
 
 }

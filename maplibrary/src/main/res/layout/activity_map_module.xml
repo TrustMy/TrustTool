@@ -19,4 +19,10 @@
         android:text="路径规划"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_map_pay"
+        android:text="跳转支付"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+
 def sdkVersion = rootProject.ext.androidVersion
 def appid = rootProject.ext.appid
 def supporCompiles = rootProject.ext.supporCompiles
@@ -10,22 +11,20 @@ kapt {
         arg("moduleName", project.getName())
     }
 }
-
 android {
     compileSdkVersion sdkVersion.compileSdkVersion
-    buildToolsVersion supportLibraryVersion
+
+
 
     defaultConfig {
         minSdkVersion sdkVersion.minSdkVersion
         targetSdkVersion sdkVersion.targetSdkVersion
         versionCode sdkVersion.versionCode
         versionName sdkVersion.versionName
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-
-
     }
-
 
     buildTypes {
         release {
@@ -34,22 +33,17 @@ android {
         }
     }
 
-    buildToolsVersion '26.0.2'
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation supporCompiles["v7"]
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':TrustBasis')
-    implementation project(':TrustPermission-library')
-
 
     implementation 'com.alibaba:arouter-api:1.3.1'
     kapt 'com.alibaba:arouter-compiler:1.1.4'
 }
-

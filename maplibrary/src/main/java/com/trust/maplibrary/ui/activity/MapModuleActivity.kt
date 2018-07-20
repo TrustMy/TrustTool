@@ -41,6 +41,7 @@ class MapModuleActivity : BaseMapActivity<TrustView,TrustPresenters<TrustView>>(
         setStatusBar(Color.YELLOW)
         baseSetOnClick(btn_map_trajectory,0)
         baseSetOnClick(btn_map_route_plan,0)
+        baseSetOnClick(btn_map_pay,0)
     }
 
     override fun initData() {
@@ -59,6 +60,11 @@ class MapModuleActivity : BaseMapActivity<TrustView,TrustPresenters<TrustView>>(
             R.id.btn_map_route_plan -> {
                 ARouter.getInstance()
                         .build("/map/activity/route_plan")
+                        .navigation()
+            }
+            R.id.btn_map_pay->{
+                ARouter.getInstance()
+                        .build("/pay/controll")
                         .navigation()
             }
         }
