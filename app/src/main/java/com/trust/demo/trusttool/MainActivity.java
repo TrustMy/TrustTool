@@ -30,6 +30,7 @@ import com.trust.maplibrary.MapUtils;
 import com.trust.maplibrary.bean.LocationBean;
 import com.trust.maplibrary.callback.MapUtilsCallBack;
 import com.trust.maplibrary.dialog.MapDialog;
+import com.trust.paylibrary.ui.activity.TrustPayActivity;
 import com.trust.statusbarlibrary.TrustStatusBarUtils;
 import com.trust.statusbarlibrary.view.TrustStatusBarView;
 import com.trust.trustbluetooth.BlueActivity;
@@ -133,6 +134,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(context, RecyclerViewActivity.class));
+            }
+        });
+
+        findViewById(R.id.pay_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, TrustPayActivity.class));
             }
         });
     }

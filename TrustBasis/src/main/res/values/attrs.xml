@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PullRefreshRecyclerView">
+        <attr name="refresh_header_view" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="PullScrollRefreshView">
+        <attr name="scroll_refresh_header_view" format="reference" />
+        <attr name="content_view" format="reference" />
+    </declare-styleable>
+
+</resources>
+

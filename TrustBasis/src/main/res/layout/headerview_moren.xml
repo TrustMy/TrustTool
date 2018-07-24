@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:background="#f0f098"
+              android:orientation="horizontal"
+              android:gravity="center">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#f00"
+        android:visibility="gone"
+        android:id="@+id/tv"
+        android:gravity="center"
+        android:text="继续下拉"
+        android:textSize="21sp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/refresh111"
+        android:id="@+id/iv"
+        />
+
+</LinearLayout>

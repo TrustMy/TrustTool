@@ -54,8 +54,7 @@ class TrustPayActivity : TrustMVPActivtiy<IPayView,IPayPresenter>() ,IPayView{
                 params["total_fee"] = "0.01"
                 params["cellPhone"] = "13391315718"
                 getPresenter()?.getPayDate(params)
-            }
-            else -> {
+            }else -> {
             }
         }
     }

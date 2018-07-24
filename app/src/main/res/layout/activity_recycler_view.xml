@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.trust.demo.trusttool.activity.RecyclerViewActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/test_recyclerview"
+    <com.trust.demo.basis.trust.weight.TrustRecyclerView
+        android:id="@+id/test_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </android.support.constraint.ConstraintLayout>

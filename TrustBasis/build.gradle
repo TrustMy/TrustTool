@@ -25,11 +25,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     api supporCompiles["v7"]
+    implementation supporCompiles["recyclerview"]
     testCompile 'junit:junit:4.12'
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
