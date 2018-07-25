@@ -16,9 +16,7 @@ import com.trust.maplibrary.bean.TrajectoryBean
 import com.trust.maplibrary.ipresenter.ITrajectoryPresenter
 import com.trust.maplibrary.iview.ITrajectoryView
 import com.trust.maplibrary.tool.gdgps.DrawLiner
-import com.trust.statusbarlibrary.TrustStatusBarUtils
 import io.reactivex.Observable
-import io.reactivex.ObservableEmitter
 import io.reactivex.ObservableOnSubscribe
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers

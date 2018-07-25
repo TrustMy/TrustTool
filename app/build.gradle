@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-aspectjx'
 def sdkVersion = rootProject.ext.androidVersion
 def appid = rootProject.ext.appid
 def supporCompiles = rootProject.ext.supporCompiles
@@ -52,7 +51,7 @@ dependencies {
     implementation files('libs/tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar')
     implementation project(':TrustBasis')
     implementation project(':TrustLoginRegisterLibrary')
-    implementation project(':TrustPermission-library')
+//    implementation project(':TrustPermission-library')
     implementation project(':trustbluetooth')
     implementation project(':TrustLive')
     implementation project(':maplibrary')

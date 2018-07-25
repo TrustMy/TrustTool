@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alipay.sdk.app.PayTask
 import com.trust.demo.basis.base.TrustMVPActivtiy
 import com.trust.paylibrary.R
 import com.trust.paylibrary.bean.PayBean
@@ -66,5 +67,17 @@ class TrustPayActivity : TrustMVPActivtiy<IPayView,IPayPresenter>() ,IPayView{
 
     override fun resultPayData(bean: PayBean) {
         showToast(bean.info)
+        getPayStatus(bean)
     }
+
+
+    private fun getPayStatus(bean: PayBean){
+        Thread(Runnable {
+            val alipay = PayTask(this)
+            val result = alipay.payV2(bean!!.content.alipayResponse, true)
+            getPresenter()?.getPayStatus(this,result)
+        }).start()
+    }
+
+
 }

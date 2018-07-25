@@ -8,9 +8,9 @@ import android.view.View
 import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
-import com.dn.tim.lib_permission.annotation.Permission
-import com.dn.tim.lib_permission.annotation.PermissionCanceled
-import com.dn.tim.lib_permission.annotation.PermissionDenied
+//import com.dn.tim.lib_permission.annotation.Permission
+//import com.dn.tim.lib_permission.annotation.PermissionCanceled
+//import com.dn.tim.lib_permission.annotation.PermissionDenied
 
 import com.trust.demo.basis.base.TrustMVPActivtiy
 import com.trust.demo.basis.trust.utils.TrustAppUtils
@@ -84,7 +84,7 @@ class LoginActivity : TrustMVPActivtiy<ILoginView,ILoginPresenter>() , ILoginVie
         Toast.makeText(mContext,msg,Toast.LENGTH_LONG).show()
     }
 
-    @Permission(Manifest.permission.READ_PHONE_STATE)
+//    @Permission(Manifest.permission.READ_PHONE_STATE)
     private fun submintLogin(){
         userName = ed_login_phone.text.trim().toString()
         val passWord = ed_login_pwd.text.trim().toString()
@@ -112,12 +112,12 @@ class LoginActivity : TrustMVPActivtiy<ILoginView,ILoginPresenter>() , ILoginVie
         getPresenter()?.userInfo(map)
     }
 
-    @PermissionCanceled
+//    @PermissionCanceled
     private fun cancel() {
         showToast("你拒绝了这个权限")
     }
 
-    @PermissionDenied
+//    @PermissionDenied
     private fun denied() {
         showToast("没有这个权限手机无法正常使用")
     }

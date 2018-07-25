@@ -6,9 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.dn.tim.lib_permission.annotation.Permission
-import com.dn.tim.lib_permission.annotation.PermissionCanceled
-import com.dn.tim.lib_permission.annotation.PermissionDenied
 
 import com.trust.demo.basis.base.TrustMVPActivtiy
 import com.trust.demo.basis.trust.utils.TrustLogUtils
@@ -100,20 +97,20 @@ class MVPTestActivity : TrustMVPActivtiy<LoginView,LoginPresenter>(),LoginView{
         testPermission()
     }
 
-    @Permission(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
+//    @Permission(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
     fun testPermission(){
         Toast.makeText(this, "请求两个权限成功（写和相机）", Toast.LENGTH_SHORT).show()
     }
 
 
-    @PermissionCanceled
+//    @PermissionCanceled
     private fun cancel() {
         Log.i("lhh", "writeCancel: ")
         Toast.makeText(this, "PermissionCanceled", Toast.LENGTH_SHORT).show()
     }
 
 
-    @PermissionDenied
+//    @PermissionDenied
     private fun cancels() {
         Log.i("lhh", "PermissionDenied: ")
         Toast.makeText(this, "PermissionDenied", Toast.LENGTH_SHORT).show()

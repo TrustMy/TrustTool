@@ -3,7 +3,14 @@
     package="com.trust.paylibrary">
 
     <application>
-        <activity android:name=".ui.activity.TrustPayActivity"></activity>
+        <activity android:name=".ui.activity.TrustPayActivity"/>
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
     </application>
 
 </manifest>
