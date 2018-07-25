@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.trust.demo.basis.base.TrustMVPActivtiy
 import com.trust.paylibrary.R
+import com.trust.paylibrary.bean.PayBean
 import com.trust.paylibrary.ipresenter.IPayPresenter
 import com.trust.paylibrary.iview.IPayView
 import kotlinx.android.synthetic.main.activity_trust_pay.*
@@ -63,7 +64,7 @@ class TrustPayActivity : TrustMVPActivtiy<IPayView,IPayPresenter>() ,IPayView{
         return IPayPresenter()
     }
 
-    override fun resultPayData(bean: String) {
-        showToast(bean)
+    override fun resultPayData(bean: PayBean) {
+        showToast(bean.info)
     }
 }

@@ -20,11 +20,11 @@ public class APP extends TrustApplication {
         super.onCreate();
         /*http://192.168.1.139:8081
         https://syvehicle.cn/tomcat/*/
-        ProjectInit.init(this).setApiHost("https://syvehicle.cn/tomcat/")
+      /*  ProjectInit.init(this).setApiHost("https://syvehicle.cn/tomcat/")
                 .setSSL("cacerts_sy.bks","changeit")
-                .configure();
+                .configure();*/
 
-//        ProjectInit.init(this).setApiHost("http://58.246.120.86:50080/rent/").configure();
+        ProjectInit.init(this).setApiHost("http://58.246.120.86:50080/rent/").configure();
         ARouter.openLog();     // 打印日志
         ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
         ARouter.init(this); // 尽可能早，推荐在Application中初始化

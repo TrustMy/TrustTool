@@ -4,6 +4,7 @@ import com.trust.demo.basis.base.ModuleResultInterface
 import com.trust.demo.basis.base.model.RequestResultListener
 import com.trust.demo.basis.base.model.TrustModel
 import com.trust.demo.basis.base.model.http.TrustRetrofitModel
+import com.trust.paylibrary.bean.PayBean
 import com.trust.retrofit.net.TrustRetrofitUtils
 
 /**
@@ -15,10 +16,10 @@ class IPayModule :TrustModel<TrustRetrofitModel>(),IPayModuleInterface{
         return TrustRetrofitModel()
     }
 
-    override fun getPayData(params: HashMap<String, Any>, moduleInterface: ModuleResultInterface<String>) {
+    override fun getPayData(params: HashMap<String, Any>, moduleInterface: ModuleResultInterface<PayBean>) {
         requestModule
-                ?.requestJsonParams("rest/getOrderInf", TrustRetrofitUtils.POST_RAW,params,object :RequestResultListener<String>{
-                    override fun resultSuccess(bean: String?) {
+                ?.requestGet("rest/getOrderInfo",params,object :RequestResultListener<PayBean>{
+                    override fun resultSuccess(bean: PayBean?) {
                         moduleInterface.resultData(bean!!)
                     }
 
@@ -29,6 +30,6 @@ class IPayModule :TrustModel<TrustRetrofitModel>(),IPayModuleInterface{
                     override fun netWorkError(msg: String?) {
                     }
 
-                },String::class.java)
+                },PayBean::class.java)
     }
 }
