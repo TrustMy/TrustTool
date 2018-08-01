@@ -57,7 +57,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation project(':TrustBasis')
-//    implementation project(':TrustPermission-library')
+    implementation project(':TrustPermission-library')
     implementation files('libs/AMap3DMap_6.3.0_AMapNavi_6.2.0_AMapSearch_6.1.0_AMapLocation_4.1.0_20180705.jar')
 
     implementation 'com.alibaba:arouter-api:1.3.1'

@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 def sdkVersion = rootProject.ext.androidVersion
 def appid = rootProject.ext.appid
 def supporCompiles = rootProject.ext.supporCompiles
+
+
 kapt {
     arguments {
         arg("moduleName", project.getName())
@@ -33,6 +35,12 @@ android {
         }
     }
 
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']//将so文件目录指向libs目录
+        }
+    }
 }
 
 dependencies {

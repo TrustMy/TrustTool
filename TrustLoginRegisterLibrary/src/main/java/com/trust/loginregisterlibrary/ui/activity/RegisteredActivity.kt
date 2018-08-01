@@ -7,6 +7,7 @@ import android.text.Html
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.dn.tim.lib_permission.annotation.Permission
 import com.trust.demo.basis.base.TrustMVPActivtiy
 import com.trust.demo.basis.base.veiw.TrustView
 import com.trust.demo.basis.trust.utils.TrustAppUtils
@@ -63,7 +64,7 @@ class RegisteredActivity : TrustMVPActivtiy<TrustView, IRegisteredPresenter>() ,
         }
     }
 
-//    @Permission(Manifest.permission.READ_PHONE_STATE)
+    @Permission(Manifest.permission.READ_PHONE_STATE)
     private fun checkUserInfo() {
         val userName = TrustAppUtils.getEdString(ed_registered_user_name)
         val idCardNum = TrustAppUtils.getEdString(ed_registered_id_card_num)

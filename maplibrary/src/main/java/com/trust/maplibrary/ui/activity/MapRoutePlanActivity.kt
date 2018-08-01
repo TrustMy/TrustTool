@@ -9,6 +9,7 @@ import com.amap.api.location.AMapLocation
 import com.amap.api.maps.AMap
 import com.amap.api.maps.model.LatLng
 import com.amap.api.services.core.LatLonPoint
+import com.dn.tim.lib_permission.annotation.Permission
 //import com.dn.tim.lib_permission.annotation.Permission
 import com.trust.maplibrary.BaseMapActivity
 import com.trust.maplibrary.R
@@ -113,7 +114,7 @@ class MapRoutePlanActivity : BaseMapActivity<IRoutePlanView,IRoutePlanPresenter>
      * 单次定位
      */
 
-//    @Permission(Manifest.permission.ACCESS_FINE_LOCATION)
+    @Permission(Manifest.permission.ACCESS_FINE_LOCATION)
     private fun positioning() {
         positioning!!.startGps()
     }
