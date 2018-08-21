@@ -8,6 +8,7 @@ import android.os.Process
 import com.trust.demo.basis.trust.utils.TrustLogUtils
 import com.trust.modular.TrustRetrofit
 import com.trust.retrofit.config.ProjectInit
+import com.trust.svgmapdemo.dialog.CrashHandler
 
 /**
  * Created by Trust on 2018/5/28.
@@ -38,7 +39,8 @@ import com.trust.retrofit.config.ProjectInit
         context = applicationContext
         handler = Handler()
         mainThreadId = Process.myTid()
-        TrustLogUtils.configLog("onCreate ---------SUCCESS---------")
+        CrashHandler(this)
+//        TrustLogUtils.configLog("onCreate ---------SUCCESS---------")
 
     }
 

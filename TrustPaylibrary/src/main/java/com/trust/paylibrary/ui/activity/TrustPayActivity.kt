@@ -72,9 +72,9 @@ class TrustPayActivity : TrustMVPActivtiy<IPayView,IPayPresenter>() ,IPayView{
 
 
     private fun getPayStatus(bean: PayBean){
-        Thread(Runnable {
+        Thread({
             val alipay = PayTask(this)
-            val result = alipay.payV2(bean!!.content.alipayResponse, true)
+            val result = alipay.payV2(bean.content.alipayResponse, true)
             getPresenter()?.getPayStatus(this,result)
         }).start()
     }

@@ -35,6 +35,10 @@
         <activity android:name=".activity.RecyclerViewActivity" />
         <activity android:name=".mvptest.PermissActivity"></activity>
 
+        <activity android:name="com.trust.maplibrary.ui.activity.MapRoutePlanActivity">
+
+        </activity>
+
     </application>
 
 </manifest>

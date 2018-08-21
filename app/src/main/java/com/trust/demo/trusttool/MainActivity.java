@@ -55,9 +55,12 @@ public class MainActivity extends AppCompatActivity {
         context = this;
         activity = this;
 
+
         findViewById(R.id.ble_btn).setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
+              Toast.makeText(null,"",Toast.LENGTH_SHORT).show();
+
               startActivity(new Intent(context, BlueActivity.class));
           }
       });

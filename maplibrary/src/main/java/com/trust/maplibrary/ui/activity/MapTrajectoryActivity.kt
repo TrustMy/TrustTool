@@ -99,6 +99,7 @@ class MapTrajectoryActivity : BaseMapActivity<ITrajectoryView, ITrajectoryPresen
                     ml.add(coordinateTransformation!!.transformation(LatLng(gpsBean.lat, gpsBean.lng)))
                 }
             }
+
             e.onNext(ml)
         }).subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
